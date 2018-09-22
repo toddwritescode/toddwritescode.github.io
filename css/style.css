@@ -10,11 +10,6 @@ body {
 	height: 100vw;
 	max-height: 50vh;
 	position: relative;
-	/*background: linear-gradient(
-        50deg,
-    	rgba(3, 39, 67, 1),
-    	rgba(3, 39, 67, 0.45)
-    ), url(../images/blue-background.jpg) no-repeat;*/
     background: url(../images/wander-background.png) no-repeat;
     background-size: cover;
     background-position: right;
@@ -78,16 +73,4 @@ i {
 	.header > h1 {
 		font-size: 100px;
 	}
-}
-
-@media screen and (min-width: 595px) and (max-width: 1012px) {
-	/*.header {
-		max-height: 300px;
-	}*/
-}
-
-@media screen and (min-width: 1013px){
-	/*.header {
-		max-height: 200px;
-	}*/
 }
