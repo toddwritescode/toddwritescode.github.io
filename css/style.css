@@ -2,6 +2,10 @@ body {
 	color: rgba(12, 0, 70, 1);
 }
 
+p {
+	font-family: 'Georgia', cursive;
+}
+
 .container-fluid {
 	height: 100vh;
 }
