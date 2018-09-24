@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# v1.3 - 201809241444
+# v1.4 - 201809241447
 # This is a comment.
 
 https://toddwritescode.github.io/images/wander-background.png
@@ -9,4 +9,5 @@ https://toddwritescode.github.io/images/sam.png
 https://toddwritescode.github.io/images/todd.png
 https://toddwritescode.github.io/images/favicon.ico
 https://toddwritescode.github.io/css/style.css
+https://toddwritescode.github.io/css/bootstrap.min.css
 https://toddwritescode.github.io/fonts/DancingScript-Regular.ttf
