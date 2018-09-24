@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# v1.1.0 - 201809241601
+# v1.1.1 - 201809241621
 # This is a comment.
 
 # images
@@ -26,4 +26,3 @@ https://toddwritescode.github.io/font-awesome/webfonts/fa-solid-900.woff2
 
 # js
 https://toddwritescode.github.io/js/main.js
-https://toddwritescode.github.io/js/sw.js
