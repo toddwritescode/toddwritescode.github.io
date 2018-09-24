@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('../fonts/DancingScript-Regular.ttf');
+}
+
 body {
 	color: rgba(12, 0, 70, 1);
 }
@@ -24,7 +29,7 @@ p {
 
 .row > div {
 	text-align: center;
-	font-family: 'Marko One', cursive;
+	font-family: 'Dancing Script', cursive;
 	margin-top: 25px;
 }
 
