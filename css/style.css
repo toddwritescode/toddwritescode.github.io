@@ -51,6 +51,12 @@ i {
 	font-family: 'Anonymous Pro', monospace;
 }
 
+@media screen and (max-width: 320px) {
+	#anchor-iframe {
+		width: 250px;
+	}
+}
+
 @media screen and (max-width: 480px) {
 	.header {
 		background: url(../images/wander.jpg);
