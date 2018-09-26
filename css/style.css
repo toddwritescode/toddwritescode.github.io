@@ -53,6 +53,9 @@ i {
 	text-align: center;
 	background-color: rgba(12, 0, 70, 1);
 	color: rgba(256, 256, 256, 0.7);
+}
+
+.anon-font {
 	font-family: 'Anonymous Pro', monospace;
 }
 
@@ -62,7 +65,7 @@ i {
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 635px) {
 	.header {
 		background: url(../images/wander.jpg);
 		background-size: cover;
