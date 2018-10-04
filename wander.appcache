@@ -1,0 +1,31 @@
+CACHE MANIFEST
+
+# v1.1.5 - 201810041119
+# This is a comment.
+
+# images
+https://toddwritescode.github.io/images/wander-background.png
+https://toddwritescode.github.io/images/wander.jpg
+https://toddwritescode.github.io/images/sam.png
+https://toddwritescode.github.io/images/todd.png
+https://toddwritescode.github.io/images/favicon.ico
+
+# css
+https://toddwritescode.github.io/css/style.css
+https://toddwritescode.github.io/css/bootstrap.min.css
+
+# fonts
+https://toddwritescode.github.io/fonts/DancingScript-Regular.ttf
+
+# font awesome
+https://toddwritescode.github.io/font-awesome/css/all.min.css
+https://toddwritescode.github.io/font-awesome/webfonts/fa-brands-400.ttf
+https://toddwritescode.github.io/font-awesome/webfonts/fa-brands-400.woff2
+https://toddwritescode.github.io/font-awesome/webfonts/fa-solid-900.ttf
+https://toddwritescode.github.io/font-awesome/webfonts/fa-solid-900.woff2
+
+# js
+https://toddwritescode.github.io/js/main.js
+
+NETWORK:
+*
