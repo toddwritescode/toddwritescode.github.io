@@ -1,31 +1,28 @@
 CACHE MANIFEST
 
-# v1.1.5 - 201810041119
+# v1.1.8 - 201810041303
 # This is a comment.
 
 # images
-https://toddwritescode.github.io/images/wander-background.png
-https://toddwritescode.github.io/images/wander.jpg
-https://toddwritescode.github.io/images/sam.png
-https://toddwritescode.github.io/images/todd.png
-https://toddwritescode.github.io/images/favicon.ico
+http://wanderthepodcast.website/images/wander-background.png
+http://wanderthepodcast.website/images/wander.jpg
+http://wanderthepodcast.website/images/sam.png
+http://wanderthepodcast.website/images/todd.png
+http://wanderthepodcast.website/images/favicon.ico
 
 # css
-https://toddwritescode.github.io/css/style.css
-https://toddwritescode.github.io/css/bootstrap.min.css
+http://wanderthepodcast.website/css/style.css
+http://wanderthepodcast.website/css/bootstrap.min.css
 
 # fonts
-https://toddwritescode.github.io/fonts/DancingScript-Regular.ttf
+http://wanderthepodcast.website/fonts/DancingScript-Regular.ttf
 
 # font awesome
-https://toddwritescode.github.io/font-awesome/css/all.min.css
-https://toddwritescode.github.io/font-awesome/webfonts/fa-brands-400.ttf
-https://toddwritescode.github.io/font-awesome/webfonts/fa-brands-400.woff2
-https://toddwritescode.github.io/font-awesome/webfonts/fa-solid-900.ttf
-https://toddwritescode.github.io/font-awesome/webfonts/fa-solid-900.woff2
+http://wanderthepodcast.website/font-awesome/css/all.min.css
+http://wanderthepodcast.website/font-awesome/webfonts/fa-brands-400.ttf
+http://wanderthepodcast.website/font-awesome/webfonts/fa-brands-400.woff2
+http://wanderthepodcast.website/font-awesome/webfonts/fa-solid-900.ttf
+http://wanderthepodcast.website/font-awesome/webfonts/fa-solid-900.woff2
 
 # js
-https://toddwritescode.github.io/js/main.js
-
-NETWORK:
-*
+http://wanderthepodcast.website/js/main.js

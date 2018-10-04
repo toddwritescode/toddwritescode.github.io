@@ -1,1 +1,6 @@
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^(www\.)?wanderthepodcast\.website
+RewriteRule ^(.*)$ https://www.wanderthepodcast.website/$1 [R,L]
+
 AddType text/cache-manifest .appcache
