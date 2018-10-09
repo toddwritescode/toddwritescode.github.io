@@ -25,7 +25,7 @@
 	<div class="container-fluid" style="padding: 10px;">
 		<div class="row">
 			<div class="col-lg-4 col-md-6">
-				<div class="center card active-card steel-bg" id="welcome">
+				<div class="center card active-card steel-bg" id="welcome" onclick="updateActiveCard('welcome')">
 					<input type="checkbox" name="menu-toggle" id="menu-toggle" style="opacity:0;">
 					<label class="hamburger-label" for="menu-toggle" style="font-size:40px;">&#9776;</label>
 					<div class="menu timber-bg" style="padding-top:15px;color:white;" role="navigation">
@@ -73,7 +73,7 @@
 			</div>
 			<div class="col-lg-4 col-md-6">
 				<input type="checkbox" name="proficiencies-toggle" id="proficiencies-toggle" style="opacity:0;">
-				<div class="center card prof-front" id="proficiencies-front" style="padding-right: 15px;">
+				<div class="center card prof-front" id="proficiencies-front" style="padding-right: 15px;" onclick="updateActiveCard(['proficiencies-front', 'proficiencies-back'])">
 					<label class="proficiencies-label" for="proficiencies-toggle" style="font-size:40px;">&#8634;</label>
 					<h2>Proficiencies</h2>
 					<h4>What am I actually good at?</h4>
@@ -122,7 +122,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="center card prof-back" id="proficiencies-back" style="padding-right: 15px;">
+				<div class="center card prof-back" id="proficiencies-back" style="padding-right: 15px;" onclick="updateActiveCard(['proficiencies-front', 'proficiencies-back'])">
 					<label class="proficiencies-label" for="proficiencies-toggle" style="font-size:40px;">&#8635;</label>
 					<h2>Prof cont.</h2>
 					<h4>I can do back end stuff too!</h4>
@@ -173,7 +173,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<div class="center card steel-bg" id="current-projects">
+				<div class="center card steel-bg" id="current-projects" onclick="updateActiveCard('current-projects')">
 					<h2>Current Projects</h2>
 					<h4>What am I working on right now?</h4>
 				</div>
