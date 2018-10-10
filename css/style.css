@@ -8,7 +8,7 @@
 
 body {
     cursor: default;
-    background-color: black;
+    background-color: rgb(12, 93, 116);
 }
 
 h2 {
@@ -25,7 +25,17 @@ i {
     padding: 0 10px 0 10px;
 }
 
-.background-image {
+a {
+    font-weight:bold;
+}
+
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* .background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,7 +45,7 @@ i {
     width: 100vw;
     background: url(../images/code-wall-lg.jpeg);
     background-size: fill;
-}
+} */
 
 .hamburger-label,
 .proficiencies-label {
@@ -147,6 +157,12 @@ i {
     background-position: center;
 }
 
+.clouds-bg {
+    background: url(../images/clouds-bg.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .todd-card {
     position: absolute;
     top: 15%;
@@ -219,11 +235,12 @@ div.code-row:hover {
     width: 50px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    transform: translate(-5px, -5px);
 }
 
 .scroll-to-top > i {
     font-size: 40px;
-    transform: translate(-5px, 5px);
+    transform: translate(-2px, 5px);
 }
 
 @keyframes wave {
@@ -235,21 +252,9 @@ div.code-row:hover {
     }
 }
 
-@media screen and (max-width: 426px) {
-    .background-image {
-        background: url(../images/code-wall-sm.jpeg);
-    }
-}
-
 @media screen and (max-width: 767px) {
     .wander-logo,
     .github-logo {
         display: none;
-    }
-}
-
-@media screen and (max-width: 853px) {
-    .background-image {
-        background: url(../images/code-wall-md.jpeg);
     }
 }

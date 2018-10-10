@@ -8,8 +8,9 @@ function closeMenu(activeCard) {
             activeCards[0].classList.remove("active-card");
         }
         document.querySelector('#' + activeCard).scrollIntoView({
-            alignToTop: true,
-            behavior: 'smooth'
+            block: "start",
+            inline: "nearest",
+            behavior: "smooth"
         });
         if (Array.isArray(activeCard)) {
             for (i = 0; i < activeCard.length; i++) {
@@ -36,7 +37,7 @@ function updateActiveCard(activeCard) {
     }
 }
 
-function scrollToTop(){
+function scrollToTop() {
     window.scroll({
         top: 0,
         left: 0,

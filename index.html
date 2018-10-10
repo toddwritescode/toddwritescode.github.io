@@ -21,8 +21,7 @@
 </head>
 
 <body>
-	<div class="background-image"></div>
-	<div class="container-fluid" style="padding: 10px;">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="center card active-card steel-bg" id="welcome" onclick="updateActiveCard('welcome')">
@@ -37,6 +36,11 @@
 								</a>
 							</li>
 							<li class="nav-item">
+								<a class="nav-link" href="#" onclick="closeMenu('about')">
+									<h2>About</h2>
+								</a>
+							</li>
+							<li class="nav-item">
 								<a class="nav-link" href="#" onclick="closeMenu('proficiencies')">
 									<h2>Proficiencies</h2>
 								</a>
@@ -47,7 +51,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link disabled" href="#" onclick="closeMenu('inspirations')">
+								<a class="nav-link" href="#" onclick="closeMenu('inspirations')">
 									<h2>Inspirations</h2>
 								</a>
 							</li>
@@ -69,6 +73,16 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="center card" id="about" onclick="updateActiveCard('about')">
+					<h2>About Me</h2>
+					<p style="padding:10px;text-align: justify;">Hi I'm Todd Smyth, a <b>Software Engineer</b> based out of Sydney, Australia.<br>
+						<b>-- </b>I've been working in the software development industry for <b>over 7 years</b> now as both a <b>Front End</b> and <b>Full Stack</b> Developer across both Government and Privately owned companies and institutions.<br>
+						<b>-- </b>Working with software which can range from less than 5 users, to <b>over 10,000 users internationally</b>.<br>
+						<b>-- </b>Over the years I have developed many skills which can help you transform your software from run of the mill to <b>something cutting edge</b>, that everyone will want to be a part of.
+					</p>
 				</div>
 			</div>
 			<div class="col-lg-6">
@@ -200,6 +214,114 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="center card clouds-bg" id="inspirations" onclick="updateActiveCard('inspirations')" style="height: auto;">
+			<h2>Inspirations</h2>
+			<h4>Some of the heavy hitters behind fueling this rollercoaster ride</h4>
+			<div class="row" style="text-align:center;padding:25px;">
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<img src="images/ironman.png" height="200px" alt="Iron Man">
+				</div>
+				<div class="col-md-6">
+					<h2>Tony Stark / IronMan</h2>
+					<p>Yes I'm aware he is a fictional character. But I am also aware that he built himself based on purely science
+						and knowledge.
+						This is what inspires me, that with enough brain power you can achieve anything.</p>
+					<p style="opacity: 0.7;">
+						<a style="color:red;" href="https://clipart.info/cartoon-iron-man-clip-art-png-2746" target="_blank">"Cartoon
+							Iron Man Clip Art Png"</a>
+						by
+						<a style="color:red;" href="http://clipart.info/" target="_blank">Clipart.info</a> is licensed under
+						<a style="color:red;" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+					</p>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			<hr>
+			<div class="row" style="text-align:center;padding:25px;">
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<img src="images/rob.jpg" height="150px" alt="Robert Wade" style="border-radius:50%;">
+				</div>
+				<div class="col-md-3">
+					<h2>Robert Wade</h2>
+					<p>
+						<a href="https://www.instagram.com/explore/tags/robs100daysofcode/" target="_blank">#robs100daysofcode</a> or <a
+						 href="https://www.instagram.com/developer_journeys/" target="_blank">@developer_journeys</a> sound familiar? <br>
+						Whether they do or not this is the man that started it all. And is responsible for me starting my <a href="https://www.instagram.com/explore/tags/100daysofcode/"
+						 target="_blank">#100daysofcode</a> journey on Instagram and what has brought me to this point today.<br>
+						So thank you Rob for being a big part of my inspiration to this point.
+					</p>
+				</div>
+				<div class="col-md-3">
+					<h4>Check Rob out for yourself</h4>
+					<div class="row">
+						<div class="col-6">
+							<i class="fab fa-instagram" onclick="window.open('https://bit.ly/2IpoRZU', '_blank');"></i>
+						</div>
+						<div class="col-6">
+							<i class="fab fa-github" onclick="window.open('https://bit.ly/2NPjA3R', '_blank');"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			<hr>
+			<div class="row" style="text-align:center;padding:25px;">
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<img src="images/casey.jpg" height="150px" alt="Casey Neistat" style="border-radius:50%;">
+				</div>
+				<div class="col-md-3">
+					<h2>Casey Neistat</h2>
+					<p>The person most recognised for his daily vlogs. But more recognised for his amazing work ethic and the
+						following he
+						has built over the years. This work ethic inspires me to <b>work harder</b> and <b>do what you can't</b>.</p>
+				</div>
+				<div class="col-md-3">
+					<h4>Check Casey out for yourself</h4>
+					<div class="row">
+						<div class="col-6">
+							<i class="fab fa-youtube" onclick="window.open('https://bit.ly/1sEbnIU', '_blank');"></i>
+						</div>
+						<div class="col-6">
+							<i class="fab fa-instagram" onclick="window.open('https://bit.ly/1UprQ5K', '_blank');"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+			<hr>
+			<div class="row" style="text-align:center;padding:25px;">
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<img src="images/dan.jpg" height="150px" alt="Dan Mace" style="border-radius:50%;">
+				</div>
+				<div class="col-md-3">
+					<h2>Dan Mace</h2>
+					<p>His left of center film making style and involvement with Casey Neistat has brought him to my attention. This
+						style
+						which is a mix of confusion and simplicity. Taking simple ideas and making them into interesting creations is my
+						source
+						of inspiration from him. Thanks very much <b>bru</b>.
+					</p>
+				</div>
+				<div class="col-md-3">
+					<h4>Check Dan out for yourself</h4>
+					<div class="row">
+						<div class="col-6">
+							<i class="fab fa-youtube" onclick="window.open('https://bit.ly/2Ku81ZX', '_blank');"></i>
+						</div>
+						<div class="col-6">
+							<i class="fab fa-instagram" onclick="window.open('https://bit.ly/2x0blaC', '_blank');"></i>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1"></div>
 			</div>
 		</div>
 	</div>
