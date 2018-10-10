@@ -7,6 +7,10 @@ function closeMenu(activeCard) {
         while (activeCards.length > 0) {
             activeCards[0].classList.remove("active-card");
         }
+        document.querySelector('#' + activeCard).scrollIntoView({
+            alignToTop: true,
+            behavior: 'smooth'
+        });
         if (Array.isArray(activeCard)) {
             for (i = 0; i < activeCard.length; i++) {
                 document.getElementById(activeCard[i]).classList.add("active-card");
@@ -30,5 +34,12 @@ function updateActiveCard(activeCard) {
     } else {
         document.getElementById(activeCard).classList.add("active-card");
     }
+}
 
+function scrollToTop(){
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
 }
