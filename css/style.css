@@ -16,7 +16,7 @@ p {
     text-align: center;
     background-color: #00ACED;
     color: black;
-    padding-bottom: 25px;
+    padding: 0 15px 25px 15px;
 }
 
 .home > h1 {
@@ -24,7 +24,7 @@ p {
 }
 
 .home > p {
-    padding: 10px 50px 0 50px;
+    /* padding: 10px 50px 0 50px; */
     color: white;
 }
 
