@@ -10,6 +10,7 @@ p {
 
 /* home section */
 .home {
+    z-index: 50;
     display: block;
     height: auto;
     width: 100%;
@@ -17,6 +18,7 @@ p {
     background-color: #00ACED;
     color: black;
     padding: 0 15px 25px 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .home > h1 {
@@ -25,7 +27,7 @@ p {
 }
 
 .home > p {
-    /* padding: 10px 50px 0 50px; */
+    padding: 10px 50px 0 50px;
     color: white;
 }
 
@@ -38,12 +40,14 @@ p {
 
 /* social section */
 .social {
-    height: 400px;
+    z-index: 49;
+    height: 450px;
     width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .social-bg {
-    height: 400px;
+    height: 450px;
     background: url(../images/social-media.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -60,7 +64,7 @@ p {
 }
 
 .social-info > p {
-    padding: 10px 25px 0 25px;
+    padding: 10px 50px 0 50px;
 }
 
 .todd-contact {
@@ -75,7 +79,7 @@ p {
     border-radius: 10px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
     .social-bg {
         display: none;
     }
@@ -87,11 +91,14 @@ p {
 
 /* Projects Section */
 .projects {
-    height: 400px;
+    z-index: 48;
+    height: 550px;
     width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .projects-info {
+    height: 550px;
     text-align: center;
     background-color: #00ACED;
 }
@@ -102,7 +109,7 @@ p {
 }
 
 .projects-info > p {
-    padding: 10px 25px 0 25px;
+    padding: 10px 50px 0 50px;
     color: white;
 }
 
