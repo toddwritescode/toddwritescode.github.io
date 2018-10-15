@@ -21,6 +21,7 @@ p {
 
 .home > h1 {
     padding-top: 50px;
+    font-size: 50px;
 }
 
 .home > p {
@@ -50,6 +51,7 @@ p {
 
 .social-info {
     text-align: center;
+    padding-bottom: 25px;
 }
 
 .social-info > h1 {
