@@ -24,6 +24,8 @@
 }
 
 .container > h1 {
+    font-family: monospace;
+    font-size: 60px;
     padding: 0 25px 0 25px;
 }
 
@@ -219,6 +221,10 @@
         width: 100vw;
     }
 
+    .container > h1 {
+      font-size: 40px;
+    }
+
     .pacman {
         -webkit-animation: pacman-moving 4s linear infinite;
         animation: pacman-moving 4s linear infinite;
@@ -238,6 +244,10 @@
     .pacman {
         -webkit-animation: pacman-moving 3s linear infinite;
         animation: pacman-moving 3s linear infinite;
+    }
+
+    .container > h1 {
+      font-size: 25px;
     }
 
     @keyframes pacman-moving {
