@@ -104,8 +104,26 @@ p {
     color: white;
 }
 
-/* Scroll to Top */
+/* Hamburger Menu */
+.hamburger-menu {
+    cursor: pointer;
+    display: relative;
+    position: fixed;
+    z-index: 999;
+    top: 15px;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+    color: white;
+}
 
+.hamburger-menu > i {
+    font-size: 40px;
+    transform: translate(7px, 5px);
+}
+
+/* Scroll to Top */
 .scroll-to-top {
     cursor: pointer;
     display: none;

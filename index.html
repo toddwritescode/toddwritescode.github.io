@@ -9,14 +9,31 @@
 	<link rel="stylesheet" href="css/pacman.css">
 	<link rel="shortcut icon" href="favicon.png" type="image/x-generic">
 	<script>
+		var isPageLoaded = false;
+		isLoaded();
+
+		function isLoaded() {
+			setTimeout(() => {
+				if (!isPageLoaded) {
+					console.log('[Pacman] We should be playing?');
+					document.getElementById('pacman-loading').style.display = 'block';
+				}
+			}, 200);
+		};
 		function pageLoaded() {
-			// setTimeout(function () {
-				console.log('[Pacman] Level Complete! 100/100');
-				document.getElementById('pacman-loading').style.display = 'none';
-			// }, 4500);
-		}
+			isPageLoaded = true;
+			console.log('[Pacman] Level Complete! 100/100');
+			document.getElementById('pacman-loading').style.display = 'none';
+		};
 	</script>
 	<style>
+		* { padding: 0; margin: 0; }
+		html, body, #fullheight {
+			min-height: 100% !important;
+			height: 100%;
+			max-width: 100% !important;
+			width: 100%;
+		}
 		body {
 			overflow-x: hidden;
 		}
@@ -66,9 +83,10 @@
 </head>
 
 <body onload="pageLoaded()">
-	<!-- REMOVE DISPLAY NONE AFTER TESTING!!! -->
-	<!-- <div id="pacman-loading" class="pacman-loading" style="display:none;"> -->
-	<div id="pacman-loading" class="pacman-loading">
+	<div class="hamburger-menu" id="hamburger-menu">
+		<i class="fas fa-bars" onclick="toggleMenu()"></i>
+	</div>
+	<div id="pacman-loading" class="pacman-loading" style="display:none;">
 		<div class="container">
 			<h1 class="header">Welcome to Todd Writes Code</h1>
 			<div class="pacman">
