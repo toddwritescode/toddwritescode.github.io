@@ -1,342 +1,146 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<!-- <html lang="en" manifest="todd.appcache"> -->
 
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-	<!-- Custom -->
-	<link rel="shortcut icon" href="favicon.png" type="image/x-generic">
-	<link rel="icon" href="favicon.png" type="image/x-generic">
-	<link rel="stylesheet" href="font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="js/main.js"></script>
-
 	<title>Todd Writes Code</title>
 
+	<!-- Items required initially -->
+	<link rel="stylesheet" href="css/pacman.css">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-generic">
+	<script>
+		function pageLoaded() {
+			setTimeout(function () {
+				console.log('[Pacman] Level Complete! 100/100');
+				document.getElementById('pacman-loading').style.display = 'none';
+			}, 4500);
+		}
+	</script>
+	<style>
+		body {
+			overflow-x: hidden;
+		}
+	</style>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Todd Writes Code">
+	<meta name="author" content="Todd Smyth">
+	<meta name="theme-color" content="#00ACED">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+
+	<!-- defering of unnecessary items until DOM is loaded -->
+	<script type="text/javascript">
+		var styleCss = document.createElement('link');
+		styleCss.rel = 'stylesheet';
+		styleCss.href = 'css/style.css';
+		styleCss.type = 'text/css';
+		var styleDefer = document.getElementsByTagName('link')[0];
+		styleDefer.parentNode.insertBefore(styleCss, styleDefer);
+		var bootstrapCss = document.createElement('link');
+		bootstrapCss.rel = 'stylesheet';
+		bootstrapCss.href = 'css/bootstrap.min.css';
+		bootstrapCss.type = 'text/css';
+		var bootstrapDefer = document.getElementsByTagName('link')[0];
+		bootstrapDefer.parentNode.insertBefore(bootstrapCss, bootstrapDefer);
+		var faCss = document.createElement('link');
+		faCss.rel = 'stylesheet';
+		faCss.href = 'font-awesome/css/all.min.css';
+		faCss.type = 'text/css';
+		var faDefer = document.getElementsByTagName('link')[0];
+		faDefer.parentNode.insertBefore(faCss, faDefer);
+	</script>
+	<!-- Backup plan for failing script -->
+	<noscript>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet" href="font-awesome/css/all.min.css">
+	</noscript>
+	<script async type="text/javascript" src="js/main.js"></script>
 </head>
 
-<body>
-	<div class="container-fluid">
+<body onload="pageLoaded()">
+	<!-- REMOVE DISPLAY NONE AFTER TESTING!!! -->
+	<!-- <div id="pacman-loading" class="pacman-loading" style="display:none;"> -->
+	<div id="pacman-loading" class="pacman-loading">
+		<div class="container">
+			<h1 class="header">Welcome to Todd Writes Code</h1>
+			<div class="pacman">
+				<div style="width:100%;height:100%" class="lds-pacman">
+					<div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<h1 id="footer" class="footer">Be right with you...</h1>
+		</div>
+		<script>
+			setTimeout(() => {
+				document.getElementById('footer').innerHTML = "Nearly there...";
+			}, 3000);
+		</script>
+	</div>
+	<section id="home" class="home">
+		<h1>"So who is this Todd guy anyway?"</h1>
+		<p>
+			Todd is a Software Engineer with over 7 years of experience, based out of Sydney, Australia.
+			Who not only is able to produce you anything technology based ranging from a simple single page website all the way
+			through to a CMS (content management system) servicing many hundreds of users, but is also able to talk in the
+			third
+			person.
+		</p>
+		<p class="signature"><b>@toddwritescode</b></p>
+	</section>
+	<section id="social" class="social">
 		<div class="row">
-			<div class="col-lg-6">
-				<div class="center card active-card steel-bg" id="welcome" onclick="updateActiveCard('welcome')">
-					<input type="checkbox" name="menu-toggle" id="menu-toggle" style="opacity:0;">
-					<label class="hamburger-label" for="menu-toggle" style="font-size:40px;">&#9776;</label>
-					<div class="menu timber-bg" style="padding-top:15px;color:white;" role="navigation">
-						<h2><u>Menu</u></h2>
-						<ul class="nav flex-column nav-pills">
-							<li class="nav-item">
-								<a class="nav-link" href="#" onclick="closeMenu('welcome')">
-									<h2>Welcome</h2>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#" onclick="closeMenu('about')">
-									<h2>About</h2>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#" onclick="closeMenu('proficiencies')">
-									<h2>Proficiencies</h2>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#" onclick="closeMenu('current-projects')">
-									<h2>Current Projects</h2>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#" onclick="closeMenu('inspirations')">
-									<h2>Inspirations</h2>
-								</a>
-							</li>
-						</ul>
+			<div class="col-md-6 social-bg"></div>
+			<div class="col-md-6 social-info">
+				<h1>"How do I find Todd?"</h1>
+				<p><b>Todd can be found in a variety of ways. Check them out below.</b></p>
+				<div class="row">
+					<div class="col-6">
+						<i class="fab fa-instagram todd-contact" onclick="window.open('https://bit.ly/2zranFW', '_blank');"></i>
 					</div>
-					<div class="todd-card">
-						<div class="todd" style="padding-bottom: 10px;">
-							<h2>Todd Smyth</h2>
-							<img class="center todd-no-palm" src="images/todd-bit-no-palm.png" alt="Picture of Todd" height="150px" style="opacity:0.9;border-bottom: 1px solid #111;" />
-							<img class="todd-palm" src="images/todd-bit-palm.png" alt="Todd's hand waving" height="50px" style="opacity:0.9;">
-						</div>
-						<div class="movement">
-							<h4>Software Engineer</h4>
-							<div class="row">
-								<div class="col-lg-3 col-6"><i class="fab fa-instagram todd-contact" onclick="window.open('https://bit.ly/2zranFW', '_blank');"></i></div>
-								<div class="col-lg-3 col-6"><i class="fab fa-github todd-contact" onclick="window.open('https://github.com/toddwritescode', '_blank');"></i></div>
-								<div class="col-lg-3 col-6"><i class="far fa-envelope todd-contact" onclick="window.open('mailto:toddwritescode@gmail.com?Subject=Website%20Contact', '_blank');"></i></div>
-								<div class="col-lg-3 col-6"><i class="fab fa-whatsapp todd-contact" onclick="window.open('http://bit.ly/2RwQ157', '_blank');"></i></div>
-							</div>
-						</div>
+					<div class="col-6">
+						<i class="fab fa-github todd-contact" onclick="window.open('https://github.com/toddwritescode', '_blank');"></i>
 					</div>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="center card" id="about" onclick="updateActiveCard('about')">
-					<h2>About Me</h2>
-					<p style="padding:10px;text-align: justify;">Hi I'm Todd Smyth, a <b>Software Engineer</b> based out of Sydney, Australia.<br>
-						<b>-- </b>I've been working in the software development industry for <b>over 7 years</b> now as both a <b>Front End</b> and <b>Full Stack</b> Developer across both Government and Privately owned companies and institutions.<br>
-						<b>-- </b>Working with software which can range from less than 5 users, to <b>over 10,000 users internationally</b>.<br>
-						<b>-- </b>Over the years I have developed many skills which can help you transform your software from run of the mill to <b>something cutting edge</b>, that everyone will want to be a part of.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="center card prof-container" id="proficiencies">
-					<input type="checkbox" name="proficiencies-toggle" id="proficiencies-toggle" style="opacity:0;">
-					<div class="prof-front" id="proficiencies-front" style="padding-right: 15px;" onclick="updateActiveCard('proficiencies')">
-						<label class="proficiencies-label" for="proficiencies-toggle" style="font-size:40px;">&#8634;</label>
-						<h2>Proficiencies</h2>
-						<h4>What am I actually good at?</h4>
-						<div class="row" style="text-align:left;padding: 25px 0 0 10px;">
-							<div class="col-6">
-								<p><b>AngularJs, Anguar2+</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row" style="text-align:left;padding-left: 10px;">
-							<div class="col-6">
-								<p><b>HTML, CSS, JavaScript</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
-									 aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row" style="text-align:left;padding-left: 10px;">
-							<div class="col-6">
-								<p><b>Redis, NestJs</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row" style="text-align:left;padding-left: 10px;">
-							<div class="col-6">
-								<p><b>C, C++</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 35%"></div>
-								</div>
-							</div>
-						</div>
+					<div class="col-6">
+						<i class="far fa-envelope todd-contact" onclick="window.open('mailto:toddwritescode@gmail.com?Subject=Website%20Contact', '_blank');"></i>
 					</div>
-					<div class="prof-back" id="proficiencies-back" style="padding-right: 15px;" onclick="updateActiveCard('proficiencies')">
-						<label class="proficiencies-label" for="proficiencies-toggle" style="font-size:40px;">&#8635;</label>
-						<h2>Prof cont.</h2>
-						<h4>I can do back end stuff too!</h4>
-						<div class="row" style="text-align:left;padding: 25px 0 0 10px;">
-							<div class="col-6">
-								<p><b>RESTful APIs, SQL, JSON, XML</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row" style="text-align:left;padding-left: 10px;">
-							<div class="col-6">
-								<p><b>Groovy on Grails, Hibernate</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
-									 aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row" style="text-align:left;padding-left: 10px;">
-							<div class="col-6">
-								<p><b>Java, NodeJs</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row" style="text-align:left;padding-left: 10px;">
-							<div class="col-6">
-								<p><b>Objective C, Swift</b></p>
-							</div>
-							<div class="col-6" style="padding-top: 15px;">
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
-									 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 35%"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="center card steel-bg" id="current-projects" onclick="updateActiveCard('current-projects')">
-					<h2>Current Projects</h2>
-					<div class="row code-row" onclick="window.open('http://bit.ly/2Nj15Qh', '_blank');">
-						<div class="col-md-4">
-							<div class="wander-logo"></div>
-						</div>
-						<div class="col-md-8">
-							<h4>Wander the Podcast</h4>
-							<p>An Australian True Crime Comedy Podcast.
-								<br>A site exibiting an iFramed podcast player, webcache and responsive design.</p>
-						</div>
-					</div>
-					<div class="row code-row" onclick="window.open('http://bit.ly/2y3ImT7', '_blank');">
-						<div class="col-md-8">
-							<h4>GitHub</h4>
-							<p>Come follow me on GitHub. I'm always trying new things and making projects out of them over here.
-								<br>So come check out what I'm experimenting with right now.</p>
-						</div>
-						<div class="col-md-4">
-							<div class="github-logo">
-								<i class="fab fa-github"></i>
-							</div>
-						</div>
+					<div class="col-6">
+						<i class="fab fa-whatsapp todd-contact" onclick="window.open('http://bit.ly/2RwQ157', '_blank');"></i>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="center card clouds-bg" id="inspirations" onclick="updateActiveCard('inspirations')" style="height: auto;">
-			<h2>Inspirations</h2>
-			<h4>Some of the heavy hitters behind fueling this rollercoaster ride</h4>
-			<div class="row" style="text-align:center;padding:25px;">
-				<div class="col-md-1"></div>
-				<div class="col-md-3">
-					<img src="images/ironman.png" height="200px" alt="Iron Man">
-				</div>
-				<div class="col-md-6">
-					<h2>Tony Stark / IronMan</h2>
-					<p>Yes I'm aware he is a fictional character. But I am also aware that he built himself based on purely science
-						and knowledge.
-						This is what inspires me, that with enough brain power you can achieve anything.</p>
-					<p style="opacity: 0.7;">
-						<a style="color:red;" href="https://clipart.info/cartoon-iron-man-clip-art-png-2746" target="_blank">"Cartoon
-							Iron Man Clip Art Png"</a>
-						by
-						<a style="color:red;" href="http://clipart.info/" target="_blank">Clipart.info</a> is licensed under
-						<a style="color:red;" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
-					</p>
-				</div>
-				<div class="col-md-1"></div>
+	</section>
+	<section id="projects" class="projects">
+		<div class="row">
+			<div class="col-md-6 projects-info">
+				<h1>"Sure I can find Todd. But why would I?"</h1>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam libero excepturi rem sapiente vero dolore
+					cupiditate in provident unde perferendis. Dolore in ut illo quae. Ad libero harum cumque quibusdam.</p>
 			</div>
-			<hr>
-			<div class="row" style="text-align:center;padding:25px;">
-				<div class="col-md-1"></div>
-				<div class="col-md-3">
-					<img src="images/rob.jpg" height="150px" alt="Robert Wade" style="border-radius:50%;">
-				</div>
-				<div class="col-md-3">
-					<h2>Robert Wade</h2>
-					<p>
-						<a href="https://www.instagram.com/explore/tags/robs100daysofcode/" target="_blank">#robs100daysofcode</a> or <a
-						 href="https://www.instagram.com/developer_journeys/" target="_blank">@developer_journeys</a> sound familiar? <br>
-						Whether they do or not this is the man that started it all. And is responsible for me starting my <a href="https://www.instagram.com/explore/tags/100daysofcode/"
-						 target="_blank">#100daysofcode</a> journey on Instagram and what has brought me to this point today.<br>
-						So thank you Rob for being a big part of my inspiration to this point.
-					</p>
-				</div>
-				<div class="col-md-3">
-					<h4>Check Rob out for yourself</h4>
-					<div class="row">
-						<div class="col-6">
-							<i class="fab fa-instagram" onclick="window.open('https://bit.ly/2IpoRZU', '_blank');"></i>
-						</div>
-						<div class="col-6">
-							<i class="fab fa-github" onclick="window.open('https://bit.ly/2NPjA3R', '_blank');"></i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-1"></div>
-			</div>
-			<hr>
-			<div class="row" style="text-align:center;padding:25px;">
-				<div class="col-md-1"></div>
-				<div class="col-md-3">
-					<img src="images/casey.jpg" height="150px" alt="Casey Neistat" style="border-radius:50%;">
-				</div>
-				<div class="col-md-3">
-					<h2>Casey Neistat</h2>
-					<p>The person most recognised for his daily vlogs. But more recognised for his amazing work ethic and the
-						following he
-						has built over the years. This work ethic inspires me to <b>work harder</b> and <b>do what you can't</b>.</p>
-				</div>
-				<div class="col-md-3">
-					<h4>Check Casey out for yourself</h4>
-					<div class="row">
-						<div class="col-6">
-							<i class="fab fa-youtube" onclick="window.open('https://bit.ly/1sEbnIU', '_blank');"></i>
-						</div>
-						<div class="col-6">
-							<i class="fab fa-instagram" onclick="window.open('https://bit.ly/1UprQ5K', '_blank');"></i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-1"></div>
-			</div>
-			<hr>
-			<div class="row" style="text-align:center;padding:25px;">
-				<div class="col-md-1"></div>
-				<div class="col-md-3">
-					<img src="images/dan.jpg" height="150px" alt="Dan Mace" style="border-radius:50%;">
-				</div>
-				<div class="col-md-3">
-					<h2>Dan Mace</h2>
-					<p>His left of center film making style and involvement with Casey Neistat has brought him to my attention. This
-						style
-						which is a mix of confusion and simplicity. Taking simple ideas and making them into interesting creations is my
-						source
-						of inspiration from him. Thanks very much <b>bru</b>.
-					</p>
-				</div>
-				<div class="col-md-3">
-					<h4>Check Dan out for yourself</h4>
-					<div class="row">
-						<div class="col-6">
-							<i class="fab fa-youtube" onclick="window.open('https://bit.ly/2Ku81ZX', '_blank');"></i>
-						</div>
-						<div class="col-6">
-							<i class="fab fa-instagram" onclick="window.open('https://bit.ly/2x0blaC', '_blank');"></i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-1"></div>
-			</div>
+			<div class="col-md-6"></div>
 		</div>
-	</div>
+	</section>
+
 	<div class="scroll-to-top" id="scroll-to-top">
 		<i class="fas fa-arrow-up" onclick="scrollToTop()"></i>
 	</div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	 crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	 crossorigin="anonymous"></script> -->
 	<script type="text/javascript">
 		window.onscroll = function () {
 			if (window.scrollY > 100) {
