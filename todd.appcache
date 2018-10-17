@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# v1.3.7 - 201810171513
+# v1.3.8 - 201810171514
 # This is a comment.
 
 # images
@@ -19,9 +19,6 @@ https://toddwritescode.github.io/images/up-icon.png
 https://toddwritescode.github.io/images/youtube-icon.png
 
 https://toddwritescode.github.io/favicon.png
-
-# fonts
-https://fonts.googleapis.com/css?family=Comfortaa
 
 # css
 https://toddwritescode.github.io/css/style.min.css
