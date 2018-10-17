@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" manifest="todd.appcache">
+
+<head>
+    <title>Todd Writes Code</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Todd Writes Code">
+    <meta name="author" content="Todd Smyth">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="robots" content="none" />
+
+    <!-- Needed on Initial Load -->
+    <link rel="stylesheet" href="css/code-loader.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-generic">
+    <link rel="icon" href="favicon.png" type="image/x-generic">
+    <script>
+        function pageLoaded() {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+            }, 1500);
+        };
+    </script>
+    <style>
+        * { padding: 0; margin: 0; }
+		body { height: 100%; width: 100%; }
+	</style>
+
+    <!-- defering of unnecessary items until DOM is loaded -->
+    <script type="text/javascript">
+        var styleCss = document.createElement('link');
+        styleCss.rel = 'stylesheet';
+        styleCss.href = 'css/style.min.css';
+        styleCss.type = 'text/css';
+        var styleDefer = document.getElementsByTagName('link')[0];
+        styleDefer.parentNode.insertBefore(styleCss, styleDefer);
+		// var mLCss = document.createElement('link');
+		// mLCss.rel = 'stylesheet';
+		// mLCss.href = 'css/message-loader.css';
+		// mLCss.type = 'text/css';
+		// var mLDefer = document.getElementsByTagName('link')[0];
+		// mLDefer.parentNode.insertBefore(mLCss, mLDefer);
+    </script>
+    <!-- Backup plan for failing script -->
+    <noscript>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+        <!-- Message Loader CSS -->
+        <link rel="stylesheet" type="text/css" href="css/message-loader.css" />
+    </noscript>
+    <script async type="text/javascript" src="js/main.min.js"></script>
+</head>
+
+<body onload="pageLoaded()">
+    <div id="loader" class="loader">
+        <div class="lds-css ng-scope" style="width: 200px; height: 200px;">
+            <div style="width:100%;height:100%" class="lds-wedges">
+                <div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <input type="checkbox" name="menu-toggle" id="menu-toggle" style="opacity:0;">
+        <div class="hamburger">
+            <label class="hamburger-label" for="menu-toggle">&#9776;</label>
+        </div>
+        <h1>Todd Writes Code</h1>
+        <div class="icons">
+            <div class="tooltip">
+                <img src="images/instagram-icon.png" alt="Instagram" onclick="window.open('https://bit.ly/2zranFW', '_blank');">
+                <span class="tooltiptext">Instagram</span>
+            </div>
+            <div class="tooltip">
+                <img src="images/email-icon.png" alt="Email" onclick="window.open('mailto:toddwritescode@gmail.com?Subject=Hey%20Todd', '_blank');">
+                <span class="tooltiptext">Email</span>
+            </div>
+            <div class="tooltip">
+                <img src="images/github-icon.png" alt="GitHub" onclick="window.open('https://github.com/toddwritescode', '_blank');">
+                <span class="tooltiptext">GitHub</span>
+            </div>
+            <div class="tooltip">
+                <img src="images/whatsapp-icon.png" alt="Whatsapp" onclick="window.open('http://bit.ly/2RwQ157', '_blank');">
+                <span class="tooltiptext">Whatsapp</span>
+            </div>
+            <div class="tooltip">
+                <img src="images/youtube-icon.png" alt="YouTube" style="cursor: default;">
+                <span class="tooltiptext" style="cursor: default;">YouTube</span>
+            </div>
+        </div>
+        <nav>
+            <div class="close">
+                <label class="close-label" for="menu-toggle">&#10539;</label>
+            </div>
+            <h1 onclick="closeMenu('home')">Home</h1>
+            <h1 onclick="closeMenu('about')">About</h1>
+            <!-- <h1 onclick="closeMenu('inspiration')">Inspiration</h1> -->
+        </nav>
+    </header>
+    <main>
+        <div class="screen">
+            <section class="sydney" id="home">
+            </section>
+            <section class="intro column-2" id="about">
+                <div class="intro-text">
+                    <h1>A Dev Down Under</h1>
+                    <hr>
+                    <p><b>Hello World</b>, thanks for swinging by really appreciate it. Hopefully I can be of some
+                        help.</p>
+                    <p>With <b>over 7 years of experience</b> working with job titles such as <b>Software Engineer, Web
+                            and Full
+                            Stack
+                            Developer</b> I have experienced very many things over my career to this date. This allows
+                        me to provide
+                        excellent advice, but even more than
+                        that, advice in such a way that someone with very little to no technical background can
+                        understand. </p>
+                    <p>This coupled with extensive experience in technologies such as <b>Angular2+, AngularJs, HTML,
+                            CSS, JavaScript, SQL, RESTful API, Java</b> to name a few I can not only give excellent
+                        advice but can also
+                        provide
+                        software to a high standard whether it be a single page website to serve tens of people, to a
+                        content management
+                        system destined for world wide usage across thousands of users. <b>No problem is to big or to
+                            small.</b></p>
+                    <p>Sound like I can help you? Why not <b>shoot me a message</b>?</p>
+
+                    <button class="button" onclick="window.open('mailto:toddwritescode@gmail.com?Subject=Hey%20Todd', '_blank');">Email
+                        Me</button>
+                    <button class="button whatsapp" onclick="window.open('http://bit.ly/2RwQ157', '_blank');">Message
+                        Me</button>
+                </div>
+                <div class="intro-pic"></div>
+            </section>
+        </div>
+        <div class="mobile">
+            <div class="lds-css ng-scope">
+                <div style="width:100%;height:100%" class="lds-facebook">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="footer">
+                <input type="text" name="text-message-input" id="text-message-input" placeholder="Type Message">
+                <img src="images/send-icon.png" alt="Send">
+            </div>
+        </div>
+    </main>
+    <div class="scroll-to-top" id="scroll-to-top">
+        <img src="images/up-icon.png" alt="Scroll Up" onclick="scrollToTop()">
+    </div>
+
+    <script type="text/javascript">
+        window.onscroll = function () {
+            if (window.scrollY > 100) {
+                document.getElementById('scroll-to-top').style.display = 'block';
+            } else {
+                document.getElementById('scroll-to-top').style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>
