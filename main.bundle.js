@@ -4,9 +4,17 @@ webpackJsonp(["main"],{
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./features/+todd-writes-code/todd-writes-code-routing.module": [
-		"../../../../../src/app/features/+todd-writes-code/todd-writes-code-routing.module.ts",
-		"todd-writes-code-routing.module"
+	"./features/+contact/contact-routing.module": [
+		"../../../../../src/app/features/+contact/contact-routing.module.ts",
+		"contact-routing.module"
+	],
+	"./features/+home/home-routing.module": [
+		"../../../../../src/app/features/+home/home-routing.module.ts",
+		"home-routing.module"
+	],
+	"./features/+landing/landing-routing.module": [
+		"../../../../../src/app/features/+landing/landing-routing.module.ts",
+		"landing-routing.module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -43,7 +51,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var routes = [
-    { path: '', loadChildren: './features/+todd-writes-code/todd-writes-code-routing.module#ToddWritesCodeRoutingModule' },
+    { path: '', loadChildren: './features/+landing/landing-routing.module#LandingRoutingModule' },
+    { path: 'home', loadChildren: './features/+home/home-routing.module#HomeRoutingModule' },
+    { path: 'contact', loadChildren: './features/+contact/contact-routing.module#ContactRoutingModule' },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__shared_components_not_found_not_found_component__["a" /* NotFoundComponent */] }
 ];
 var AppRoutingModule = (function () {
@@ -70,7 +80,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* loading indicator */\r\n.loader {\r\n    padding: 25px;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    background-color: white;\r\n    height: calc(100vh - 50px);\r\n    width: 100%;\r\n    text-align: center;\r\n}\r\n\r\n.lds-css {\r\n    position: absolute;\r\n    top: calc((100vh / 2) - 100px);\r\n    left: calc((100vw / 2) - 100px);\r\n}\r\n\r\n@keyframes lds-wedges {\r\n  0% {\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n.lds-wedges {\r\n  position: relative;\r\n}\r\n.lds-wedges > div > div {\r\n  transform-origin: 100px 100px;\r\n  animation: lds-wedges 3s linear infinite;\r\n  opacity: 0.8;\r\n}\r\n.lds-wedges > div > div > div {\r\n  position: absolute;\r\n  left: 30px;\r\n  top: 30px;\r\n  width: 70px;\r\n  height: 70px;\r\n  border-radius: 70px 0 0 0;\r\n  transform-origin: 100px 100px;\r\n}\r\n.lds-wedges > div div:nth-child(1) > div {\r\n  background: #0099e5;\r\n  transform: rotate(0deg);\r\n}\r\n.lds-wedges > div div:nth-child(1) {\r\n  animation-duration: 0.75s;\r\n}\r\n.lds-wedges > div div:nth-child(2) > div {\r\n  background: #ff4c4c;\r\n  transform: rotate(0deg);\r\n}\r\n.lds-wedges > div div:nth-child(2) {\r\n  animation-duration: 1s;\r\n}\r\n.lds-wedges > div div:nth-child(3) > div {\r\n  background: #34bf49;\r\n  transform: rotate(0deg);\r\n}\r\n.lds-wedges > div div:nth-child(3) {\r\n  animation-duration: 1.5s;\r\n}\r\n.lds-wedges > div div:nth-child(4) > div {\r\n  background: #0099e5;\r\n  transform: rotate(0deg);\r\n}\r\n.lds-wedges > div div:nth-child(4) {\r\n  animation-duration: 3s;\r\n}\r\n.lds-wedges {\r\n  width: 200px !important;\r\n  height: 200px !important;\r\n  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);\r\n}", ""]);
 
 // exports
 
@@ -83,7 +93,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n    <app-nav-bar></app-nav-bar>\r\n</header>\r\n\r\n<div style=\"margin-top: 100px;\">\r\n    <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<header>\r\n    <app-nav-bar></app-nav-bar>\r\n</header>\r\n\r\n<div style=\"margin-top: 50px;\">\r\n    <router-outlet></router-outlet>\r\n</div>\r\n\r\n<!-- loading indicator -->\r\n<!-- <div>\r\n    <div id=\"loader\" class=\"loader\">\r\n        <div class=\"lds-css ng-scope\" style=\"width: 200px; height: 200px;\">\r\n            <div style=\"width:100%;height:100%\" class=\"lds-wedges\">\r\n                <div>\r\n                    <div>\r\n                        <div></div>\r\n                    </div>\r\n                    <div>\r\n                        <div></div>\r\n                    </div>\r\n                    <div>\r\n                        <div></div>\r\n                    </div>\r\n                    <div>\r\n                        <div></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div> -->"
 
 /***/ }),
 
@@ -174,7 +184,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "@font-face {\r\n    font-family: 'header-font';\r\n    src: url(/assets/todd-writes-code/ChakraPetch-Bold.ttf) format('truetype');\r\n}\r\n\r\n/* navbar */\r\n\r\nnav {\r\n    width: 100%;\r\n    height: 100px;\r\n    padding: 0;\r\n    margin: 0;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 999;\r\n    background-color: white;\r\n    color: #333;\r\n    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\r\n    line-height: 45px;\r\n}\r\n\r\n.header-row {\r\n    height: 50px;\r\n    width: 100%;\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: calc(100vw - 270px) 270px;\r\n        grid-template-columns: calc(100vw - 270px) 270px;\r\n    border-bottom: 2px double rgba(0,0,0,0.01);\r\n}\r\n\r\n.nav-row {\r\n    height: 50px;\r\n    width: 100%;\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: (1fr)[5];\r\n        grid-template-columns: repeat(5, 1fr);\r\n}\r\n\r\n/* title */\r\n\r\n.title > h1 {\r\n    font-family: 'header-font', sans-serif;\r\n    font-size: 20px;\r\n    padding: 0;\r\n    margin: 5px 0 0 25px;\r\n}\r\n\r\n/* social */\r\n\r\n.social {\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: (1fr)[5];\r\n        grid-template-columns: repeat(5, 1fr);\r\n    margin-right: 25px;\r\n}\r\n\r\n/* tooltip */\r\n\r\n.tooltip {\r\n    position: relative;\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    cursor: pointer;\r\n    height: 50px;\r\n    width: 50px;\r\n}\r\n\r\n.tooltip > img { /* Safari 6.0 - 9.0 */\r\n    filter: grayscale(0%);\r\n    transition: all 1s ease;\r\n}\r\n\r\n.tooltip:hover > img { /* Safari 6.0 - 9.0 */\r\n    filter: grayscale(100%);\r\n}\r\n\r\n.tooltip .tooltiptext {\r\n    visibility: hidden;\r\n    width: 80px;\r\n    height: 20px;\r\n    background-color: #333;\r\n    color: #fff;\r\n    text-align: center;\r\n    line-height: 20px;\r\n    font-size: 13px;\r\n    border-radius: 6px;\r\n    padding: 0 0;\r\n    \r\n    /* Position the tooltip */\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 60%;\r\n    left: 50%;\r\n    margin-left: -40px;\r\n}\r\n\r\n.tooltip:hover .tooltiptext {\r\n    visibility: visible;\r\n}\r\n\r\n.nav-item {\r\n    text-align: center;\r\n    cursor: pointer;\r\n    transition: all 1s ease;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.nav-item:hover {\r\n    background-color: #90CAFC;\r\n    border-radius: 25px;\r\n}\r\n\r\n.nav-item > h1 {\r\n    font-family: 'header-font', sans-serif;\r\n    font-size: 20px;\r\n    padding: 0;\r\n    margin: 0;\r\n    transition: all 1s ease;\r\n}\r\n\r\n.nav-item:hover h1 {\r\n    font-size: 25px;\r\n}\r\n\r\n@media screen and (max-width: 350px){\r\n    .title > h1 {\r\n        margin-left: 20px;\r\n    }\r\n\r\n    .tooltip > img {\r\n        height: 40px;\r\n        margin: 5px;\r\n    }\r\n\r\n    .social {\r\n        margin: 0;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/* navbar */\r\n\r\nnav {\r\n    width: 100%;\r\n    height: 50px;\r\n    padding: 0;\r\n    margin: 0;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 998;\r\n    background-color: white;\r\n    color: #333;\r\n    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\r\n    line-height: 45px;\r\n}\r\n\r\n.header-row {\r\n    height: 50px;\r\n    width: 100%;\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: 50px auto;\r\n        grid-template-columns: 50px auto;\r\n    border-bottom: 2px double rgba(0,0,0,0.01);\r\n}\r\n\r\n/* title */\r\n.title {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 60px;\r\n    line-height: 50px;\r\n    cursor: pointer;\r\n}\r\n\r\n.title > h1 {\r\n    display: inline;\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-size: 30px;\r\n}\r\n\r\n/* sidebar */\r\n.sidebar {\r\n    position: absolute;\r\n    top: 0;\r\n    left: -300px;\r\n    width: 300px;\r\n    height: 100vh;\r\n    z-index: 999;\r\n    background-color: #333;\r\n    border-top-right-radius: 25px;\r\n    border-bottom-right-radius: 25px;\r\n    color: white;\r\n    text-align: center;\r\n    font-family: 'Montserrat', sans-serif;\r\n    transition: all 0.5s ease;\r\n}\r\n\r\nnav #menu-toggle {\r\n    opacity: 0;\r\n}\r\n\r\nnav #menu-toggle:checked ~ .sidebar{\r\n    left: 0;\r\n}\r\n\r\n.header-row label .open-menu {\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 10px;\r\n    font-size: 30px;\r\n}\r\n\r\n.header-row label .open-menu:hover {\r\n    cursor: pointer;\r\n}\r\n\r\n.sidebar label .close-menu {\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 250px;\r\n    font-size: 30px;\r\n}\r\n\r\n.sidebar label .close-menu:hover {\r\n    cursor: pointer;\r\n}\r\n\r\n.sidebar .header {\r\n    font-size: 35px;\r\n    margin: 20px 0 25px 0;\r\n}\r\n\r\n.sidebar .menu {\r\n    display: -ms-grid;\r\n    display: grid;\r\n    -ms-grid-columns: 1fr;\r\n        grid-template-columns: 1fr;\r\n}\r\n\r\n.menu .menu-item {\r\n    font-size: 30px;\r\n    padding: 10px 0 10px 0;\r\n}\r\n\r\n.menu .menu-item:hover {\r\n    background-color: white;\r\n    color: #333;\r\n    cursor: pointer;\r\n}\r\n\r\n.menu .menu-item p {\r\n    padding-left: 15px;\r\n    display: inline;\r\n}\r\n\r\n.menu .menu-hr {\r\n    margin-top: 25px;\r\n    padding-bottom: 25px;\r\n    border: 2px #333 solid;\r\n    border-top-color: white;\r\n    height: 2px;\r\n    width: 80%;\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n@media screen and (max-height: 660px){\r\n    .sidebar .header {\r\n        font-size: 27px;\r\n        margin: 15px 0 12px 0;\r\n    }\r\n\r\n    .menu .menu-item {\r\n        font-size: 22px;\r\n        padding: 5px 0 5px 0;\r\n    }\r\n\r\n    .menu .menu-hr {\r\n        margin-top: 15px;\r\n        padding-bottom: 15px;\r\n    }\r\n}\r\n\r\n@media screen and (max-height: 530px){\r\n    .sidebar .header {\r\n        font-size: 20px;\r\n        margin: 10px 0 7px 0;\r\n    }\r\n\r\n    .menu .menu-item {\r\n        font-size: 18px;\r\n        padding: 5px 0 5px 0;\r\n    }\r\n\r\n    .menu .menu-hr {\r\n        margin-top: 8px;\r\n        padding-bottom: 8px;\r\n    }\r\n}\r\n\r\n@media screen and (max-height: 490px){\r\n    .social-menu {\r\n        display: none;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -187,7 +197,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/shared/components/nav-bar/nav-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\r\n  <div class=\"header-row\">\r\n    <div class=\"title\">\r\n      <h1>{{title}}</h1>\r\n    </div>\r\n    <div class=\"social\">\r\n      <div class=\"tooltip\"> <img src=\"assets/todd-writes-code/instagram-icon.png\" alt=\"Instagram\" onclick=\"window.open('https://bit.ly/2zranFW', '_blank');\">\r\n        <span class=\"tooltiptext\">Instagram</span></div>\r\n      <div class=\"tooltip\"> <img src=\"assets/todd-writes-code//email-icon.png\" alt=\"Email\" onclick=\"window.open('mailto:toddwritescode@gmail.com?Subject=Hey%20Todd', '_blank');\">\r\n        <span class=\"tooltiptext\">Email</span></div>\r\n      <div class=\"tooltip\"> <img src=\"assets/todd-writes-code//blog-icon.png\" alt=\"Blog\" onclick=\"window.open('http://www.toddwritesblogs.com', '_blank');\">\r\n        <span class=\"tooltiptext\">Blog</span></div>\r\n      <div class=\"tooltip\"> <img src=\"assets/todd-writes-code//facebook-icon.png\" alt=\"Facebook\" onclick=\"window.open('https://bit.ly/2PH1wpf', '_blank');\">\r\n        <span class=\"tooltiptext\">Facebook</span></div>\r\n      <div class=\"tooltip\"> <img src=\"assets/todd-writes-code//youtube-icon.png\" alt=\"YouTube\" onclick=\"window.open('https://bit.ly/2pWO0Tf', '_blank');\">\r\n        <span class=\"tooltiptext\">YouTube</span></div>\r\n    </div>\r\n  </div>\r\n  <div class=\"nav-row\">\r\n    <div class=\"nav-item\" routerLink=\"/\">\r\n      <h1>Home</h1>\r\n    </div>\r\n    <div class=\"nav-item\">\r\n      <h1>Coming</h1>\r\n    </div>\r\n    <div class=\"nav-item\">\r\n      <h1>Soon</h1>\r\n    </div>\r\n    <div class=\"nav-item\">\r\n      <h1>More</h1>\r\n    </div>\r\n    <div class=\"nav-item\">\r\n      <h1>Nav</h1>\r\n    </div>\r\n  </div>\r\n</nav>"
+module.exports = "<nav id=\"navbar\">\r\n  <input type=\"checkbox\" name=\"menu-toggle\" id=\"menu-toggle\" [checked]=\"menuToggle\" (change)=\"menuToggle = !menuToggle\">\r\n  <div class=\"sidebar\">\r\n    <label for=\"menu-toggle\"><i class=\"far fa-times-circle close-menu\"></i></label>\r\n    <div class=\"header\"><u>Menu</u></div>\r\n    <div class=\"menu\">\r\n      <div class=\"menu-item\" (click)=\"onNavigate('/contact')\">\r\n        <i class=\"far fa-envelope\"></i>\r\n        <p>Contact</p>\r\n      </div>\r\n      <div class=\"menu-hr\"></div>\r\n      <div class=\"menu-item\" (click)=\"onNavigate('/home')\">\r\n        <i class=\"fas fa-home\"></i>\r\n        <p>Home</p>\r\n      </div>\r\n      <div class=\"menu-item\" (click)=\"onNavigate('/about')\">\r\n        <i class=\"fas fa-user-tie\"></i>\r\n        <p>About</p>\r\n      </div>\r\n      <div class=\"menu-item\" (click)=\"onNavigate('/portfolio')\">\r\n        <i class=\"fas fa-book-open\"></i>\r\n        <p>Portfolio</p>\r\n      </div>\r\n      <div class=\"menu-hr\"></div>\r\n      <div class=\"menu-item\" (click)=\"onNavigate('https://bit.ly/2zranFW', true)\">\r\n        <i class=\"fab fa-instagram\"></i>\r\n        <p>Instagram</p>\r\n      </div>\r\n      <div class=\"menu-item\" (click)=\"onNavigate('http://www.toddwritesblogs.com', true)\">\r\n        <i class=\"fab fa-blogger\"></i>\r\n        <p>Blog</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"header-row\">\r\n    <label for=\"menu-toggle\"><i class=\"fas fa-bars open-menu\"></i></label>\r\n    <div class=\"title\" (click)=\"onNavigate('/')\">\r\n      <h1>{{title}}</h1>\r\n    </div>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -215,6 +225,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var NavBarComponent = (function () {
     function NavBarComponent(router) {
         this.router = router;
+        this.title = 'Todd Writes Code';
+        this.menuToggle = false;
         this._minScreenWidth = 488;
         this.updateTitle();
     }
@@ -230,6 +242,17 @@ var NavBarComponent = (function () {
     NavBarComponent.prototype.onResize = function (event) {
         this.updateTitle();
     };
+    NavBarComponent.prototype.onClick = function (event) {
+        var navbarElement = document.getElementById('navbar');
+        var eventElement = event.target;
+        do {
+            if (navbarElement === eventElement) {
+                return;
+            }
+            eventElement = eventElement.parentNode;
+        } while (eventElement);
+        this.menuToggle = false;
+    };
     NavBarComponent.prototype.updateTitle = function () {
         if (window.innerWidth > this._minScreenWidth) {
             this.title = 'Todd Writes Code';
@@ -237,6 +260,16 @@ var NavBarComponent = (function () {
         else {
             this.title = 'T.W.C';
         }
+    };
+    NavBarComponent.prototype.onNavigate = function (url, external) {
+        if (external === void 0) { external = false; }
+        if (external) {
+            window.open(url, '_blank');
+        }
+        else {
+            window.location.href = url;
+        }
+        this.menuToggle = false;
     };
     return NavBarComponent;
 }());
@@ -246,6 +279,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], NavBarComponent.prototype, "onResize", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:click', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], NavBarComponent.prototype, "onClick", null);
 NavBarComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2_ngx_auto_unsubscribe__["a" /* AutoUnsubscribe */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
@@ -269,7 +308,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".not-found {\r\n    height: calc(100vh - 50px);\r\n    width: 100vw;\r\n    background: url('/assets/404.jpeg');\r\n    background-position: right;\r\n    background-size: cover;\r\n    text-align: center;\r\n}\r\n\r\n.not-found-heading {\r\n    position: absolute;\r\n    top: calc((100vh - 50px) / 6);\r\n    left: calc(100vw / 8);\r\n    height: auto;\r\n    width: calc((100vw / 8) * 6);\r\n    padding: 0 25px 25px 25px;\r\n    background-color: rgba(256, 256, 256, 0.35);\r\n    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.19), 0 6px 6px rgba(255, 255, 255, 0.23);\r\n    border-radius: 25px;\r\n}\r\n\r\n.not-found-heading > h1 {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-weight: 700;\r\n    font-size: 60px;\r\n    padding: 0 50px 0 50px;;\r\n}\r\n\r\n.not-found-heading > h2 {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-weight: 700;\r\n    font-size: 45px;\r\n    padding: 0 50px 0 50px;\r\n}\r\n\r\n.not-found-heading > h4 {\r\n    font-family: 'Montserrat', sans-serif;\r\n    font-weight: 700;\r\n    font-size: 30px;\r\n    padding: 0 50px 0 50px;\r\n}\r\n\r\n.not-found-button {\r\n\tbox-shadow: 0px 0px 25px 0px #43941e;\r\n\tbackground-color:#6dcc3d;\r\n\tborder-radius:28px;\r\n\tborder:1px solid #55ad29;\r\n\tdisplay:inline-block;\r\n\tcursor:pointer;\r\n\tcolor:black;\r\n\tfont-family:Trebuchet MS;\r\n\tfont-size:28px;\r\n\tfont-weight:bold;\r\n\tpadding:16px 31px;\r\n\ttext-decoration:none;\r\n\ttext-shadow:0px 1px 23px #5fab2c;\r\n}\r\n.not-found-button:hover {\r\n\tbackground-color:#6ec443;\r\n}\r\n.not-found-button:active {\r\n\tposition:relative;\r\n\ttop:1px;\r\n}\r\n\r\n@media screen and (max-width: 1024px){\r\n    .not-found-heading {\r\n        top: 50px;\r\n        left: 0;\r\n        height: 100vh;\r\n        width: 100vw;\r\n        padding: 0;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -282,7 +321,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/shared/components/not-found/not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  not-found works!\n</p>\n"
+module.exports = "<div class=\"not-found\">\r\n    <div class=\"not-found-heading\">\r\n        <h1>Lost?</h1>\r\n        <h2>This probably isn't where you thought you would be.</h2>\r\n        <h4>Must have taken a wrong turn.<br>Let's go home and start again.</h4>\r\n        <a href=\"#\" class=\"not-found-button\">Take Me Home</a>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
