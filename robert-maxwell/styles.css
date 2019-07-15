@@ -154,8 +154,9 @@
 
   #signature {
     position: absolute;
-    bottom: 2vh;
-    left: calc(50vw - 225px);
+    width: 50vw;
+    bottom: 5vh;
+    right: 5vw;
     color: white;
     font-size: 10px;
   }
