@@ -84,6 +84,13 @@
     opacity: 0.85;
   }
 
+  @media screen and (max-width: 600px) {
+    .learn-more {
+      -webkit-animation-name: learn-more-mini; /* Safari 4.0 - 8.0 */
+      animation-name: learn-more-mini;
+    }
+  }
+
   /* --------------------------- NAVIGATION */
 
   #menu-div {
@@ -218,6 +225,38 @@
   100% {
     width: 250px;
     left: calc(50vw - 125px);
+  }
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes learn-more-mini {
+  0% {
+    width: 25vw;
+    left: calc(50vw - 125px);
+  }
+  50% {
+    width: 30vw;
+    left: calc(50vw - 150px);
+  }
+  100% {
+    width: 25vw;
+    left: calc(50vw - 125px);
+  }
+}
+
+/* Standard syntax */
+@keyframes learn-more-mini {
+  0% {
+    width: 50vw;
+    left: calc(50vw - 25vw);
+  }
+  50% {
+    width: 60vw;
+    left: calc(50vw - 30vw);
+  }
+  100% {
+    width: 50vw;
+    left: calc(50vw - 25vw);
   }
 }
 
