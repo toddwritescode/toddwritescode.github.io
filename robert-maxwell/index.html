@@ -95,77 +95,73 @@
     <section id="session-section">
         <img id="session" src="./images/sessions.png" alt="Sessions">
         <img id="face-secondary" src="./images/face.png" alt="Vocal & Acting Electicity">
-        <img id="session-header" class="session-header fade" src="./images/session header text.png" alt="How can voice coaching help me?">
-        <img id="session-header" class="session-header fade" src="./images/session header what.png" alt="What’s a voice coaching session like?">
-        <img id="session-header-small" class="session-header fade" src="./images/session header learn.png" alt="What will I learn?">
-        <img id="session-header" class="session-header fade" src="./images/session header where.png" alt="Where do your voice coaching sessions take place?">
-        <img id="session-header" class="session-header fade" src="./images/session header how.png" alt="How many sessions will I need?">
+        <img id="session-header" class="session-header initial-header" src="./images/session header text.png" alt="How can voice coaching help me?">
+        <img id="session-header" class="session-header" src="./images/session header what.png" alt="What’s a voice coaching session like?">
+        <img id="session-header-small" class="session-header" src="./images/session header learn.png" alt="What will I learn?">
+        <img id="session-header" class="session-header" src="./images/session header where.png" alt="Where do your voice coaching sessions take place?">
+        <img id="session-header" class="session-header" src="./images/session header how.png" alt="How many sessions will I need?">
 
-        <div class="session-grid slideshow-container">
-            <div class="session-slide fade">
-                <p>No matter what your line of work – whether you’re an actor, teacher or business professional – voice coaching can help you speak with presence and confidence. In the past I’ve worked with clients on the following:</p>
-                <p>
-                    <ul>
-                        <li>Roles and auditions</li>
-                        <li>Dialect acquisition</li>
-                        <li>Script analysis</li>
-                        <li>Presentations</li>
-                        <li>Meetings and pitches</li>
-                        <li>Workplace communication</li>
-                        <li>Speeches and lectures</li>
-                        <li>Interviews and press conferences</li>
-                        <li>Vocal health and fitness</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="session-slide fade">
-                <p>You can join a group workshop, take part in one-on-one sessions, or choose a combination of both.</p>
-                <p>One-on-one sessions allow for an in-depth investigation into your voice and body use, and are tailored to individual needs. </p>
-                <p>Group workshops are designed to suit the needs of a specific troupe of individuals, or a mix of like-minded people keen on developing their voices. </p>
-                <p>All sessions are relaxed, fun, informative, and ego-free.</p>
-            </div>
-            <div class="session-slide fade">
-                <p>Depending on your needs, your session may focus on:</p>
-                <p>
-                    <ul>
-                        <li>Vocal presence, confidence and clarity</li>
-                        <li>Vocal nuance and dexterity</li>
-                        <li>Vocal resonance, articulation, range, pitch & placement</li>
-                        <li>Vocal health and wellbeing</li>
-                        <li>Freeing the breath</li>
-                        <li>Body energies and alignment</li>
-                        <li>Targeting nerves and anxiety</li>
-                        <li>Techniques to reduce the risk of dysphonia and other voice conditions</li>
-                        <li>Safe voice use for large spaces, including: room acoustics, competing with environmental noise, and other factors that may act as barriers to a healthy voice</li>
-                        <li>Microphone technique and how not to panic if your amplification fails</li>
-                        <li>Acting techniques that enhance vocal freedom and individual expression</li>
-                    </ul>
-                </p>
-            </div>
-            <div class="session-slide fade">
-                <p>All group workshops are held in-house, or at a location agreed on between me and you</p>
-                <p>Private sessions are held in a convenient city location, or at my studio in Neutral Bay.</p>
-            </div>
-            <div class="session-slide fade">
-                <p>
-                    <ul>
-                        <li>Voice work can be as energizing and liberating as any other kind of physical exercise. And just like other physical exercise, it’s an ongoing journey. But while I suggest you join me for ongoing sessions to truly discover your
-                            vocal potential, even one private class can equip you with the skills to radically improve your voice.</li>
-                        <li>Individual sessions are usually 1-2 hours, group sessions are a minimum of 2 hours.</li>
-                        <li>I also run half-day, full-day, and weekend intensives</li>
-                        <li>I offer a complimentary 15-minute consultation over the phone, FaceTime, Zoom or Skype, so we can have a chat about your goals, and develop a clear sense of whether we’re a good fit!</li>
-                    </ul>
-                </p>
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div id="back-arrow" onclick="previousSlide()">
+            <img src="images/left.png" alt="back">
         </div>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
+        <div id="forward-arrow" onclick="nextSlide()">
+            <img src="images/right.png" alt="forward">
+        </div>
+
+        <div id="one" class="slide initial">
+            <p>No matter what your line of work – whether you’re an actor, teacher or business professional – voice coaching can help you speak with presence and confidence. In the past I’ve worked with clients on the following:</p>
+            <p>
+                <ul>
+                    <li>Roles and auditions</li>
+                    <li>Dialect acquisition</li>
+                    <li>Script analysis</li>
+                    <li>Presentations</li>
+                    <li>Meetings and pitches</li>
+                    <li>Workplace communication</li>
+                    <li>Speeches and lectures</li>
+                    <li>Interviews and press conferences</li>
+                    <li>Vocal health and fitness</li>
+                </ul>
+            </p>
+        </div>
+        <div id="two" class="slide">
+            <p>You can join a group workshop, take part in one-on-one sessions, or choose a combination of both.</p>
+            <p>One-on-one sessions allow for an in-depth investigation into your voice and body use, and are tailored to individual needs. </p>
+            <p>Group workshops are designed to suit the needs of a specific troupe of individuals, or a mix of like-minded people keen on developing their voices. </p>
+            <p>All sessions are relaxed, fun, informative, and ego-free.</p>
+        </div>
+        <div id="three" class="slide">
+            <p>Depending on your needs, your session may focus on:</p>
+            <p>
+                <ul>
+                    <li>Vocal presence, confidence and clarity</li>
+                    <li>Vocal nuance and dexterity</li>
+                    <li>Vocal resonance, articulation, range, pitch & placement</li>
+                    <li>Vocal health and wellbeing</li>
+                    <li>Freeing the breath</li>
+                    <li>Body energies and alignment</li>
+                    <li>Targeting nerves and anxiety</li>
+                    <li>Techniques to reduce the risk of dysphonia and other voice conditions</li>
+                    <li>Safe voice use for large spaces, including: room acoustics, competing with environmental noise, and other factors that may act as barriers to a healthy voice</li>
+                    <li>Microphone technique and how not to panic if your amplification fails</li>
+                    <li>Acting techniques that enhance vocal freedom and individual expression</li>
+                </ul>
+            </p>
+        </div>
+        <div id="four" class="slide">
+            <p>All group workshops are held in-house, or at a location agreed on between me and you</p>
+            <p>Private sessions are held in a convenient city location, or at my studio in Neutral Bay.</p>
+        </div>
+        <div id="five" class="slide">
+            <p>
+                <ul>
+                    <li>Voice work can be as energizing and liberating as any other kind of physical exercise. And just like other physical exercise, it’s an ongoing journey. But while I suggest you join me for ongoing sessions to truly discover your vocal
+                        potential, even one private class can equip you with the skills to radically improve your voice.</li>
+                    <li>Individual sessions are usually 1-2 hours, group sessions are a minimum of 2 hours.</li>
+                    <li>I also run half-day, full-day, and weekend intensives</li>
+                    <li>I offer a complimentary 15-minute consultation over the phone, FaceTime, Zoom or Skype, so we can have a chat about your goals, and develop a clear sense of whether we’re a good fit!</li>
+                </ul>
+            </p>
         </div>
 
         <img class="learn-more" src="./images/pricing.png" alt="To Pricing" style="cursor: pointer;" onClick="document.getElementById('pricing-section').scrollIntoView({behavior:'smooth',block:'start'});">

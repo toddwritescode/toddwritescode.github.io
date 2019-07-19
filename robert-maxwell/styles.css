@@ -358,6 +358,15 @@ input[type=checkbox]:checked~#menu-div {
     width: 75vw;
 }
 
+.session-header {
+    opacity: 0;
+}
+
+.initial-header,
+.active-header {
+    opacity: 1;
+}
+
 #session-header-small {
     position: absolute;
     left: 3vw;
@@ -412,133 +421,169 @@ input[type=checkbox]:checked~#menu-div {
 }
 
 
-/* --------------------------- SESSIONS CAROUSEL */
+/* --------------------------- SESSION TRANSITION */
 
+#back-arrow {
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: 1vw;
+    cursor: pointer;
+    z-index: 1;
+    transform-origin: center center;
+    transform: rotate(90deg);
+    opacity: 0.7;
+}
 
-/* Slideshow container */
+#back-arrow>img {
+    height: 50px;
+}
 
-.slideshow-container {
-    /* max-width: 90vw; */
-    position: relative;
+#back-arrow:hover {
+    top: calc(50vh - 75px);
+    left: calc(1vw - 12.5px);
+    opacity: 1;
+}
+
+#back-arrow:hover>img {
+    height: 75px;
+}
+
+#forward-arrow {
+    position: absolute;
+    top: calc(50vh + 25px);
+    left: 1vw;
+    cursor: pointer;
+    z-index: 1;
+    transform-origin: center center;
+    transform: rotate(90deg);
+    opacity: 0.7;
+}
+
+#forward-arrow>img {
+    height: 50px;
+}
+
+#forward-arrow:hover {
+    top: calc(50vh + 25px);
+    left: calc(1vw - 12.5px);
+    opacity: 1;
+}
+
+#forward-arrow:hover>img {
+    height: 75px;
+}
+
+.slide {
     height: 60vh;
-    /* margin: auto; */
-}
-
-
-/* Next & previous buttons */
-
-.prev,
-.next {
-    cursor: pointer;
+    width: 85vw;
     position: absolute;
-    top: 50%;
-    width: auto;
-    margin: 15vh 2px 15vh 2px;
-    padding: 16px;
-    color: black;
-    font-weight: bold;
-    font-size: 40px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-
-/* Position the "next button" to the right */
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-
-/* On hover, add a black background color with a little bit see-through */
-
-.prev:hover,
-.next:hover {
-    background-color: black;
-    color: white;
-}
-
-
-/* Caption text */
-
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
+    top: 20vh;
+    left: 10vw;
     text-align: center;
+    opacity: 0;
+    z-index: 0;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    padding: 10px;
+    text-align: justify;
+    font-size: 25px;
+    visibility: hidden;
 }
 
-
-/* Number text (1/3 etc) */
-
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
-
-
-/* The dots/bullets/indicators */
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 15vh 2px 15vh 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-
-/* Fading animation */
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
+@media screen and (max-width: 800px) {
+    .slide {
+        font-size: 20px;
     }
 }
 
-@keyframes fade {
-    from {
-        opacity: .4
+.initial {
+    opacity: 1;
+    transform: rotate(0);
+    visibility: visible;
+}
+
+.active {
+    animation: move-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.active-reverse {
+    animation: move-in-reverse;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.previous {
+    animation: move-out;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+.previous-reverse {
+    animation: move-out-reverse;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes move-in {
+    0% {
+        height: 10px;
+        width: 10px;
+        visibility: visible;
     }
-    to {
-        opacity: 1
+    100% {
+        opacity: 1;
+        transform: rotate(0);
+        visibility: visible;
     }
 }
 
+@keyframes move-in-reverse {
+    0% {
+        height: 10px;
+        width: 10px;
+        transform-origin: bottom left;
+        transform: rotate(90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0);
+        visibility: visible;
+    }
+}
 
-/* On smaller screens, decrease text size */
+@keyframes move-out {
+    0% {
+        opacity: 1;
+        transform: rotate(0);
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        transform-origin: bottom left;
+        transform: rotate(90deg);
+        height: 10px;
+        width: 10px;
+        visibility: hidden;
+    }
+}
 
-@media only screen and (max-width: 300px) {
-    .prev,
-    .next,
-    .text {
-        font-size: 11px
+@keyframes move-out-reverse {
+    0% {
+        opacity: 1;
+        transform: rotate(0);
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        transform-origin: top left;
+        transform: rotate(-90deg);
+        height: 10px;
+        width: 10px;
+        visibility: hidden;
     }
 }
 
@@ -667,12 +712,12 @@ input[type=checkbox]:checked~#menu-div {
 
 @media screen and (min-width: 700px) {
     #approach-footer {
-        width: 210px;
-        left: calc(50vw - 105px);
+        width: 250px;
+        left: calc(50vw - 125px);
     }
     #approach-footer:hover {
-        width: 260px;
-        left: calc(50vw - 130px);
+        width: 300px;
+        left: calc(50vw - 150px);
     }
 }
 
