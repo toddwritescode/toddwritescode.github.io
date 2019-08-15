@@ -1,30 +1,51 @@
 /* GLOBALS  ------------------------------- */
 
+
+/* Icons Sourced from: https://www.iconfinder.com/iconsets/core-ui-outlined */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
     font-family: neutraface2, 'Josefin Sans', sans-serif;
+    /* Scroll Snapping */
     -ms-scroll-snap-type: mandatory;
     scroll-snap-type: mandatory;
     -ms-scroll-snap-points-y: repeat(100vh);
     scroll-snap-points-y: repeat(100vh);
     -ms-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
-    overflow-x: hidden;
+    /* No user selection */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 @font-face {
     font-family: neutraface2;
     src: url(fonts/neutraface2.otf);
-    font-weight:400;
+    font-weight: 400;
 }
 
 section {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-align: start;
     padding: 15px;
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
 }
 
 .background-head {
@@ -35,15 +56,12 @@ section {
     top: 12.5vh;
     padding-left: 55vw;
     opacity: 0.1;
-    z-index: 1;
+    z-index: 0;
 }
 
 @media screen and (max-width: 768px) {
     .background-head {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0;
+        height: 80vmin;
     }
 }
 
@@ -62,6 +80,19 @@ h2 {
     color: rgb(30, 30, 30);
 }
 
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.5;
+}
+
+label {
+    filter: invert(50%);
+}
+
+label:hover {
+    filter: invert(0);
+}
+
 @media screen and (min-width: 1440px) {
     h1 {
         font-size: 100px;
@@ -76,6 +107,7 @@ a {
     text-decoration: none !important;
 }
 
+
 /* LOADER SECTION  ------------------------------- */
 
 #loader {
@@ -86,6 +118,7 @@ a {
     width: 100vw;
     background-color: black;
     padding: 0;
+    z-index: 9999;
 }
 
 #loading-indicator {
@@ -99,6 +132,7 @@ a {
     animation-iteration-count: infinite;
     animation-timing-function: ease;
     filter: invert(100%);
+    z-index: 9990;
 }
 
 @keyframes pulse {
@@ -113,13 +147,12 @@ a {
     }
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
     #loading-indicator {
         padding: 0;
         margin-left: auto;
         margin-right: auto;
-    }   
-    
+    }
     @keyframes pulse {
         0% {
             height: 75vmin;
@@ -155,6 +188,33 @@ a {
     }
 }
 
+
+/* BACK TO TOP  ------------------------------- */
+
+#back-to-top {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 50;
+    height: 50px;
+    width: 50px;
+    background-image: url(images/menu\ up.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    #back-to-top {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+
 /* MENU SECTION  ------------------------------- */
 
 #menu-label {
@@ -166,7 +226,7 @@ a {
     z-index: 99;
     height: 50px;
     width: 50px;
-    background-image: url(images/menu\ down.png);
+    background-image: url(images/menu\ open.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -189,7 +249,7 @@ a {
     display: none;
 }
 
-#menu-box:checked ~ #menu > label {
+#menu-box:checked~#menu>label {
     animation: rotate180;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -198,26 +258,29 @@ a {
 
 @keyframes rotate {
     0% {
-        transform: rotate(270deg);
+        transform: rotate(180deg);
         filter: invert(100%);
+        background-image: url(images/menu\ close.png);
     }
     100% {
-        transform: rotate(90deg);
+        transform: rotate(0);
+        background-image: url(images/menu\ open.png);
     }
 }
 
 @keyframes rotate180 {
     0% {
-        transform: rotate(90deg);
+        transform: rotate(0);
+        background-image: url(images/menu\ open.png);
     }
     100% {
-        transform: rotate(270deg);
+        transform: rotate(180deg);
         filter: invert(100%);
+        background-image: url(images/menu\ close.png);
     }
-
 }
 
-#menu-box:checked ~ #menu {
+#menu-box:checked~#menu {
     animation: menu-open;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -257,7 +320,7 @@ a {
     }
 }
 
-#menu > #open {
+#menu>#open {
     position: fixed;
     padding: 15px;
     margin: 0;
@@ -272,7 +335,7 @@ a {
     filter: invert(50%);
 }
 
-#menu-box:checked ~ #menu > #open {
+#menu-box:checked~#menu>#open {
     animation: fadeout;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
@@ -297,7 +360,7 @@ a {
     }
 }
 
-#menu > #close {
+#menu>#close {
     position: fixed;
     padding: 15px;
     margin: 0;
@@ -311,7 +374,7 @@ a {
     filter: invert(50%);
 }
 
-#menu-box:checked ~ #menu > #close {
+#menu-box:checked~#menu>#close {
     animation: fadein;
     animation-duration: 0.5s;
     animation-delay: 0.5s;
@@ -340,11 +403,11 @@ a {
     color: white;
 }
 
-#menu-text > a {
+#menu-text>a {
     color: grey;
 }
 
-#menu-text > a:hover {
+#menu-text>a:hover {
     color: white;
 }
 
@@ -353,6 +416,7 @@ a {
         width: 50vw;
     }
 }
+
 
 /* INTRODUCTION SECTION  ------------------------------- */
 
@@ -377,4 +441,209 @@ a {
         width: 100vw;
         padding: 15vh 0;
     }
+}
+
+#introduction-head {
+    opacity: 0.6;
+    position: absolute;
+}
+
+
+/* HOME SECTION  ------------------------------- */
+
+#home-header {
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+}
+
+#home-paragraph {
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 12.5vw;
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+/* SESSIONS SECTION  ------------------------------- */
+
+.session-slide {
+    display: none;
+    /* animation: hideslide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease; */
+}
+
+
+/* @keyframes hideslide {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    95% {
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+} */
+
+.active-slide {
+    display: block;
+    /* animation: showslide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease; */
+}
+
+
+/* @keyframes showslide {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+    5% {
+        display: block;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+.sessions-header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 3vw;
+    color: rgb(30, 30, 30);
+    font-weight: bold;
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+    text-align: center;
+}
+
+@media screen and (min-width: 1440px) {
+    .sessions-header {
+        font-size: 44px;
+    }
+}
+
+.sessions-paragraph,
+.sessions-list {
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 12.5vw;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.sessions-list {
+    padding-left: 35px;
+    list-style-type: circle;
+    list-style-position: outside;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.5;
+}
+
+.slide-label {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50vh - 50px);
+    z-index: 50;
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-image: url(images/menu\ up.png);
+}
+
+#previous-session {
+    left: 15px;
+    transform: rotate(-90deg);
+}
+
+#next-session {
+    right: 15px;
+    transform: rotate(90deg);
+}
+
+@media screen and (max-width: 768px) {
+    .slide-label {
+        height: 35px;
+        width: 35px;
+        top: calc(50vh - 35px);
+    }
+}
+
+
+/* PRICING SECTION  ------------------------------- */
+
+#pricing-header {
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+}
+
+.pricing-paragraph {
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 12.5vw;
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+/* ABOUT SECTION  ------------------------------- */
+
+#about-header {
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+}
+
+.about-paragraph {
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 12.5vw;
+    font-size: 20px;
+    text-align: justify;
+}
+
+#headshot {
+    float: left;
+    margin: 0;
+    margin-left: 50px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    height: 40vh;
+    width: auto;
+}
+
+
+/* CONTACT SECTION  ------------------------------- */
+
+#contact-header {
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+}
+
+#contact-paragraph {
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 12.5vw;
+    font-size: 20px;
+    text-align: justify;
 }
