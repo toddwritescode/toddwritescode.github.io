@@ -1,0 +1,380 @@
+/* GLOBALS  ------------------------------- */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: neutraface2, 'Josefin Sans', sans-serif;
+    -ms-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-y: repeat(100vh);
+    scroll-snap-points-y: repeat(100vh);
+    -ms-scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: neutraface2;
+    src: url(fonts/neutraface2.otf);
+    font-weight:400;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    padding: 15px;
+}
+
+.background-head {
+    display: block;
+    position: fixed;
+    height: 75vmin;
+    width: auto;
+    top: 12.5vh;
+    padding-left: 55vw;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .background-head {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+    }
+}
+
+h1 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 7vw;
+}
+
+h2 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 3vw;
+    color: rgb(30, 30, 30);
+}
+
+@media screen and (min-width: 1440px) {
+    h1 {
+        font-size: 100px;
+    }
+    h2 {
+        font-size: 44px;
+    }
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+/* LOADER SECTION  ------------------------------- */
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    padding: 0;
+}
+
+#loading-indicator {
+    transform-origin: center center;
+    position: relative;
+    top: 12.5vh;
+    padding-left: 55vw;
+    display: block;
+    animation: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    filter: invert(100%);
+}
+
+@keyframes pulse {
+    0% {
+        height: 75vmin;
+    }
+    50% {
+        height: 60vmin;
+    }
+    100% {
+        height: 75vmin;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    #loading-indicator {
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }   
+    
+    @keyframes pulse {
+        0% {
+            height: 75vmin;
+        }
+        50% {
+            height: 60vmin;
+        }
+        100% {
+            height: 75vmin;
+        }
+    }
+}
+
+.hide-loader {
+    z-index: 9999;
+    animation: hideloader;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes hideloader {
+    0% {
+        opacity: 1
+    }
+    99% {
+        top: 0;
+    }
+    100% {
+        opacity: 0;
+        top: -100vh;
+    }
+}
+
+/* MENU SECTION  ------------------------------- */
+
+#menu-label {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 99;
+    height: 50px;
+    width: 50px;
+    background-image: url(images/menu\ down.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    animation: rotate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    transform: rotate(90deg);
+}
+
+@media screen and (max-width: 768px) {
+    #menu-label {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+#menu-box {
+    display: none;
+}
+
+#menu-box:checked ~ #menu > label {
+    animation: rotate180;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(270deg);
+        filter: invert(100%);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotate180 {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(270deg);
+        filter: invert(100%);
+    }
+
+}
+
+#menu-box:checked ~ #menu {
+    animation: menu-open;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: -50vw;
+    padding: 0;
+    margin: 0;
+    width: 50vw;
+    background-color: black;
+    z-index: 90;
+    animation: menu-closed;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes menu-open {
+    0% {
+        right: -50vw;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes menu-closed {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -50vw;
+    }
+}
+
+#menu > #open {
+    position: fixed;
+    padding: 15px;
+    margin: 0;
+    top: 15px;
+    right: 65px;
+    height: 20px;
+    width: auto;
+    animation: fadein;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    filter: invert(50%);
+}
+
+#menu-box:checked ~ #menu > #open {
+    animation: fadeout;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#menu > #close {
+    position: fixed;
+    padding: 15px;
+    margin: 0;
+    top: 15px;
+    right: 65px;
+    height: 20px;
+    width: auto;
+    animation: fadeout;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    filter: invert(50%);
+}
+
+#menu-box:checked ~ #menu > #close {
+    animation: fadein;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@media screen and (max-width: 768px) {
+    #open,
+    #close {
+        display: none;
+    }
+}
+
+#menu-text {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 5;
+    align-items: center;
+    z-index: 92;
+    height: 100vh;
+    width: 50vw;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+#menu-text > a {
+    color: grey;
+}
+
+#menu-text > a:hover {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #menu-text {
+        width: 50vw;
+    }
+}
+
+/* INTRODUCTION SECTION  ------------------------------- */
+
+#intro-section {
+    padding: 0;
+}
+
+#intro-text {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+    text-align: center;
+    padding: 25vh 10vw;
+}
+
+@media screen and (max-width: 768px) {
+    #intro-text {
+        position: absolute;
+        width: 100vw;
+        padding: 15vh 0;
+    }
+}
