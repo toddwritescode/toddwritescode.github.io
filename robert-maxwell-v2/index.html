@@ -51,7 +51,7 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body onscroll="toggleVisibility();" onresize="activateScroll();">
+<body id="website-body" onscroll="toggleVisibility();">
     <section id="loader">
         <img id="loading-indicator" src="images/head.png" alt="Loading">
     </section>
@@ -72,7 +72,10 @@
                 <h1>PRICING</h1>
             </a>
             <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('about-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1>ABOUT</h1>
+                <h1>ABOUT ME</h1>
+            </a>
+            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('testamonials-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                <h1>TESTAMONIALS</h1>
             </a>
             <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('contact-section').scrollIntoView({behavior:'smooth',block:'start'});">
                 <h1>CONTACT</h1>
@@ -95,10 +98,8 @@
             the kids. You’ll learn simple yet effective techniques to help you free, strengthen and enrich your voice, as you enhance your innate ability to communicate with ease.</p>
     </section>
     <section id="sessions-section">
-        <h1 style="opacity: 0;">SESSIONS</h1>
-        <label class="slide-label" id="previous-session" onClick="nextSlide()"></label>
-        <label class="slide-label" id="next-session" onClick="nextSlide()"></label>
-        <div class="active-slide session-slide">
+        <h1 id="sessions-heading">SESSIONS</h1>
+        <div class="session-slide">
             <p class="sessions-header">HOW CAN VOICE COACHING HELP ME?</p>
             <p class="sessions-paragraph">No matter what your line of work – whether you’re an actor, teacher or business professional – voice coaching can help you speak with presence and confidence. In the past I’ve worked with clients on the following:
                 <ul class="sessions-list">
@@ -114,6 +115,9 @@
                 </ul>
             </p>
         </div>
+    </section>
+    <section>
+        <h2 class="sessions-subheading">SESSIONS</h2>
         <div class="session-slide">
             <p class="sessions-header">WHAT'S A VOICE COACHING SESSION LIKE?</p>
             <p class="sessions-paragraph">
@@ -127,6 +131,9 @@
                 </ul>
             </p>
         </div>
+    </section>
+    <section>
+        <h2 class="sessions-subheading">SESSIONS</h2>
         <div class="session-slide">
             <p class="sessions-header">WHAT WILL I LEARN?</p>
             <p class="sessions-paragraph">Depending on your needs, your session may focus on:
@@ -145,6 +152,9 @@
                 </ul>
             </p>
         </div>
+    </section>
+    <section>
+        <h2 class="sessions-subheading">SESSIONS</h2>
         <div class="session-slide">
             <p class="sessions-header">WHERE DO YOUR VOICE COACHING SESSIONS TAKE PLACE?</p>
             <p class="sessions-paragraph">
@@ -154,6 +164,9 @@
                 </ul>
             </p>
         </div>
+    </section>
+    <section>
+        <h2 class="sessions-subheading">SESSIONS</h2>
         <div class="session-slide">
             <p class="sessions-header">HOW MANY SESSIONS WILL I NEED?</p>
             <p class="sessions-paragraph">
@@ -176,12 +189,59 @@
     </section>
     <section id="about-section">
         <h1 id="about-header">ABOUT ME</h1>
-        <img id="headshot" src="images/rob.jpg" alt="Robert Maxwell">
-        <p class="about-paragraph">I'm Rob, an experienced voice and acting coach based in Sydney, Australia. I work with performers and non-performers alike, applying principles of actor training to help people rediscover their innate vocal freedom.</p>
-        <p class="about-paragraph">I hold a Master of Fine Arts in Voice from the National Institute of Dramatic Art (NIDA) and a Bachelor of Arts from The University of Melbourne. I'm also a graduate of the Atlantic Acting School's Professional Conversatory in New York City, and
-            have worked extensively as an actor and teacher both here in Australia and overseas.</p>
-        <p class="about-paragraph">My experience includes residencies at some of the world's top acting conversatories, such as NIDA, Yale School of Drama and Carneige Mellon School of Drama. When I'm not coaching privately, I teach voice on the Bachelor of Fine Arts (Acting) and
-            Master of Fine Arts (Voice) courses at NIDA.</p>
+        <div class="about-slide">
+            <img id="headshot" src="images/rob.jpg" alt="Robert Maxwell">
+            <p class="about-paragraph">I'm Rob, an experienced voice and acting coach based in Sydney, Australia. I work with performers and non-performers alike, applying principles of actor training to help people rediscover their innate vocal freedom.</p>
+            <p class="about-paragraph">I hold a Master of Fine Arts in Voice from the National Institute of Dramatic Art (NIDA) and a Bachelor of Arts from The University of Melbourne. I'm also a graduate of the Atlantic Acting School's Professional Conversatory in New York City,
+                and have worked extensively as an actor and teacher both here in Australia and overseas.</p>
+            <p class="about-paragraph">My experience includes residencies at some of the world's top acting conversatories, such as NIDA, Yale School of Drama and Carnegie Mellon School of Drama. When I'm not coaching privately, I teach voice on the Bachelor of Fine Arts (Acting)
+                and Master of Fine Arts (Voice) courses at NIDA.</p>
+        </div>
+    </section>
+    <section>
+        <h2 class="about-subheader" style="opacity: 1;">TESTAMONIALS</h2>
+        <div class="about-slide">
+            <p class="about-header">WHAT ARE PEOPLE SAYING?</p>
+            <p class="about-paragraph">Rob is a curious, intelligent, kind, and creative teacher. The exercises he employs are practical, effective, and highly useful for anyone wishing to develop their voice, acquire a new dialect, or deepen their psycho-visceral connection to
+                text and language.
+                <br>
+                <b>Beth McGuire</b><br>
+                <b>Director of Speech & Dialects - Yale School of Drama; Dialect Coach - <i>Black Panther</i></b>
+            </p>
+            <p class="about-paragraph">Robert is thoughtful, and engaging, he teaches will skill and precision, and the feedback he offers is succinct and insightful.
+                <br>
+                <b>Tess Dignan</b><br>
+                <b>Head of Voice - Shakespeare’s Globe.
+                </b>
+            </p>
+            <p class="about-paragraph">Rob is a committed and highly effective teacher, who cares deeply about voice and text work. He is exceedingly well organised and focused, and is able to make profound connections for students between practical work and professional needs.
+                <br>
+                <b>Katerina Moraitis</b><br>
+                <b>Head of Voice - National Institute of Dramatic Art (NIDA)</b>
+            </p>
+        </div>
+    </section>
+    <section id="testamonials-section">
+        <h2 class="about-subheader">TESTAMONIALS</h2>
+        <div class="about-slide">
+            <p class="about-paragraph">My sessions with Rob taught me so much about my voice, and gave me the tools I need to speak and present in any context. His tips were educational and practical, and I was able to implement them straight away. I now feel confident in meetings
+                and in front of large groups, and have my own routine of warming up, which empowers me to be more successful at my job.
+                <br>
+                <b>Louissa Johnson</b><br>
+                <b>People and Culture Manager - Sustainable Timber Tasmania</b>
+            </p>
+            <p class="about-paragraph">Rob’s holistic and precise approach to the work in the classroom is a breath of fresh air. His feedback is succinct and to the point, and is backed up not only by the wisdom of a trained actor, but a well-rounded human being.
+                <br>
+                <b>Trevor Clarida</b><br>
+                <b>Carnegie Mellon School of Drama</b>
+            </p>
+            <p class="about-paragraph">Rob's ability to tackle text, specifically Shakespeare, through a range of physical exercises, really helped me to unpick the intricacies of the syntax and rhythm of text, and break free of my habitual delivery. His informal yet professional
+                teaching style made it easy to jump straight into the work, and I feel lucky to have had the opportunity to do so.
+                <br>
+                <b>Nat McCloskey</b><br>
+                <b>Rose Bruford College</b>
+            </p>
+        </div>
     </section>
     <section id="contact-section">
         <h1 id="contact-header">GET IN TOUCH</h1>

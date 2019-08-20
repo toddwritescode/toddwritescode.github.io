@@ -42,7 +42,8 @@ body {
 }
 
 section {
-    padding: 15px;
+    border-bottom: 1px solid white;
+    padding: 1rem;
     height: 100vh;
     scroll-snap-align: start;
     position: relative;
@@ -393,7 +394,7 @@ a {
     position: relative;
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 5;
+    grid-template-rows: 6;
     align-items: center;
     z-index: 92;
     height: 100vh;
@@ -469,50 +470,23 @@ a {
 
 /* SESSIONS SECTION  ------------------------------- */
 
+#sessions-heading {
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+}
+
+.sessions-subheading {
+    font-size: 6vw;
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+    opacity: 0.1;
+}
+
 .session-slide {
-    display: none;
-    /* animation: hideslide;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease; */
+    display: relative;
 }
-
-
-/* @keyframes hideslide {
-    0% {
-        display: block;
-        opacity: 1;
-    }
-    95% {
-        display: block;
-    }
-    100% {
-        opacity: 0;
-        display: none;
-    }
-} */
-
-.active-slide {
-    display: block;
-    /* animation: showslide;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease; */
-}
-
-
-/* @keyframes showslide {
-    0% {
-        opacity: 0;
-        display: none;
-    }
-    5% {
-        display: block;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
 
 .sessions-header {
     position: relative;
@@ -524,7 +498,7 @@ a {
     margin: 50px;
     margin-right: 25vw;
     line-height: 1.25;
-    text-align: center;
+    text-align: left;
 }
 
 @media screen and (min-width: 1440px) {
@@ -611,6 +585,33 @@ a {
     line-height: 1.25;
 }
 
+.about-subheader {
+    font-size: 6vw;
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+    opacity: 0.1;
+}
+
+.about-header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 3vw;
+    color: rgb(30, 30, 30);
+    font-weight: bold;
+    margin: 50px;
+    margin-right: 25vw;
+    line-height: 1.25;
+    text-align: left;
+}
+
+@media screen and (min-width: 1440px) {
+    .about-header {
+        font-size: 44px;
+    }
+}
+
 .about-paragraph {
     padding: 0;
     margin-top: 50px;
@@ -628,6 +629,10 @@ a {
     padding-bottom: 10px;
     height: 40vh;
     width: auto;
+}
+
+.about-slide {
+    position: relative;
 }
 
 
