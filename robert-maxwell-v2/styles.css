@@ -575,8 +575,11 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    #sessions-heading {
+        margin: 20px;
+    }
     .sessions-subheading {
-        margin-bottom: 20px;
+        margin: 20px;
     }
     .sessions-header {
         text-align: center;
@@ -609,6 +612,9 @@ a {
     .sessions-paragraph,
     .sessions-list {
         margin-top: 20px;
+    }
+    .sessions-list {
+        padding-left: 10px;
     }
 }
 
@@ -662,6 +668,12 @@ a {
     text-align: justify;
 }
 
+@media screen and (max-width: 768px) {
+    #pricing-header {
+        margin: 20px;
+    }
+}
+
 
 /* ABOUT SECTION  ------------------------------- */
 
@@ -699,6 +711,9 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    #about-header {
+        margin: 20px;
+    }
     .about-subheader {
         margin-bottom: 20px;
     }
@@ -738,7 +753,12 @@ a {
         padding: 0;
         margin-left: 10px;
         margin-right: 10px;
-        /* display: none; */
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #headshot {
+        display: none;
     }
 }
 
@@ -792,5 +812,11 @@ a {
     }
     #contact-paragraph {
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #contact-paragraph {
+        display: none;
     }
 }
