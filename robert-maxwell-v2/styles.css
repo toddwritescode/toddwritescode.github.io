@@ -62,6 +62,7 @@ section {
     .background-head {
         position: relative;
         padding: 0;
+        margin-top: 30vh;
         margin-left: auto;
         margin-right: auto;
     }
@@ -103,6 +104,15 @@ li {
     }
 }
 
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 5vmax;
+    }
+    h2 {
+        font-size: 2.5vmax;
+    }
+}
+
 @media screen and (max-width: 700px) {
     p,
     li {
@@ -113,7 +123,14 @@ li {
 @media screen and (max-width: 550px) {
     p,
     li {
-        line-height: 1.2;
+        line-height: 1.25;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    p,
+    li {
+        font-size: 14px;
     }
 }
 
@@ -181,7 +198,9 @@ a {
 
 @media screen and (max-width: 768px) {
     #loading-indicator {
+        position: relative;
         padding: 0;
+        margin-top: 30vh;
         margin-left: auto;
         margin-right: auto;
     }
@@ -464,7 +483,7 @@ a {
 
 #intro-text {
     z-index: 2;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     height: 100vh;
@@ -477,7 +496,7 @@ a {
     #intro-text {
         position: absolute;
         width: 100vw;
-        padding: 15vh 0;
+        padding: 0;
     }
 }
 
@@ -499,6 +518,12 @@ a {
     margin: 50px;
     margin-right: 25vw;
     line-height: 1.25;
+}
+
+@media screen and (max-width: 768px) {
+    #home-header {
+        margin: 20px;
+    }
 }
 
 #home-paragraph {
@@ -549,6 +574,20 @@ a {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .sessions-subheading {
+        margin-bottom: 20px;
+    }
+    .sessions-header {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2.5vmax;
+    }
+}
+
 .sessions-paragraph,
 .sessions-list {
     padding: 0;
@@ -564,6 +603,13 @@ a {
     list-style-position: outside;
     font-family: 'Josefin Sans', sans-serif;
     line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+    .sessions-paragraph,
+    .sessions-list {
+        margin-top: 20px;
+    }
 }
 
 .slide-label {
@@ -652,6 +698,20 @@ a {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .about-subheader {
+        margin-bottom: 20px;
+    }
+    .about-header {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2.5vmax;
+    }
+}
+
 .about-paragraph {
     padding: 0;
     margin-top: 50px;
@@ -670,8 +730,42 @@ a {
     width: auto;
 }
 
+@media screen and (max-width: 768px) {
+    .about-paragraph {
+        margin: 15px;
+    }
+    #headshot {
+        padding: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        /* display: none; */
+    }
+}
+
 .about-slide {
     position: relative;
+}
+
+.testimonial-signature {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+    .testimonial-signature {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 700) {
+    .testimonial-signature {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .testimonial-signature {
+        font-size: 13px;
+    }
 }
 
 
@@ -689,4 +783,14 @@ a {
     margin-left: 10vw;
     margin-right: 12.5vw;
     text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    #contact-header {
+        margin: 20px;
+        margin-bottom: 5px;
+    }
+    #contact-paragraph {
+        margin-top: 20px;
+    }
 }
