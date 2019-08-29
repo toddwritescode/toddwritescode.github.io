@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- VERSION: 1.290820192010 -->
+    <!-- VERSION: 1.290820192033 -->
     <!-- Config -->
     <meta charset="UTF-8">
     <meta name="description" content="Robert Maxwell">
@@ -58,29 +58,41 @@
     </section>
     <label id="back-to-top" onClick="document.getElementById('home-section').scrollIntoView({behavior:'smooth',block:'start'});"></label>
     <input type="checkbox" name="menu-box" id="menu-box">
+    <label id="menu-label" for="menu-box"></label>
     <div id="menu">
         <img id="open" src="images/menu.png" alt="Menu">
         <img id="close" src="images/close.png" alt="Close Menu">
-        <label id="menu-label" for="menu-box"></label>
         <div id="menu-text">
-            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('home-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1 class="menu-link">HOME</h1>
-            </a>
-            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('sessions-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1 class="menu-link">SESSIONS</h1>
-            </a>
-            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('pricing-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1 class="menu-link">PRICING</h1>
-            </a>
-            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('about-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1 class="menu-link">ABOUT ME</h1>
-            </a>
-            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('testamonials-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1 class="menu-link">TESTIMONIALS</h1>
-            </a>
-            <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('contact-section').scrollIntoView({behavior:'smooth',block:'start'});">
-                <h1 class="menu-link">CONTACT</h1>
-            </a>
+            <div class="menu-link-container">
+                <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('home-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                    <h1 class="menu-link">HOME</h1>
+                </a>
+            </div>
+            <div class="menu-link-container">
+                <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('sessions-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                    <h1 class="menu-link">SESSIONS</h1>
+                </a>
+            </div>
+            <div class="menu-link-container">
+                <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('pricing-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                    <h1 class="menu-link">PRICING</h1>
+                </a>
+            </div>
+            <div class="menu-link-container">
+                <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('about-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                    <h1 class="menu-link">ABOUT ME</h1>
+                </a>
+            </div>
+            <div class="menu-link-container">
+                <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('testamonials-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                    <h1 class="menu-link">TESTIMONIALS</h1>
+                </a>
+            </div>
+            <div class="menu-link-container">
+                <a onclick="document.getElementById('menu-box').checked = false;document.getElementById('contact-section').scrollIntoView({behavior:'smooth',block:'start'});">
+                    <h1 class="menu-link">CONTACT</h1>
+                </a>
+            </div>
         </div>
     </div>
     <section id="intro-section">
