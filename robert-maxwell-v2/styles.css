@@ -13,13 +13,6 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: neutraface2, 'Josefin Sans', sans-serif;
-    /* Scroll Snapping */
-    -ms-scroll-snap-type: mandatory;
-    scroll-snap-type: mandatory;
-    -ms-scroll-snap-points-y: repeat(100vh);
-    scroll-snap-points-y: repeat(100vh);
-    -ms-scroll-snap-type: y mandatory;
-    scroll-snap-type: y mandatory;
     /* No user selection */
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -33,6 +26,16 @@ body {
     /* Internet Explorer/Edge */
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.scrollSnapping {
+    /* Scroll Snapping */
+    -ms-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-y: repeat(100vh);
+    scroll-snap-points-y: repeat(100vh);
+    -ms-scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
 }
 
 @font-face {

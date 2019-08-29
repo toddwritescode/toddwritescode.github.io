@@ -13,6 +13,8 @@ function shouldWeScrollSnap() {
         navigator.userAgent.match(/BlackBerry/i) ||
         navigator.userAgent.match(/Windows Phone/i)) {
         console.log("You're using Mobile Device!!")
+    } else {
+        document.getElementById('website-body').classList.add('scrollSnapping');
     }
 }
 
