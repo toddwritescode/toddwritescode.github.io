@@ -755,7 +755,8 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-    .about-paragraph {
+    .about-paragraph,
+    .testimonials-paragraph {
         margin: 15px;
     }
     #headshot {
@@ -776,6 +777,7 @@ a {
 }
 
 .testimonial-signature {
+    text-align: left;
     font-weight: bold;
 }
 
