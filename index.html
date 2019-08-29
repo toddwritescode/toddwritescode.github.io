@@ -1,22 +1,115 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Todd Writes Code</title>
-        <link rel="stylesheet" type="text/css" href="main.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-        <link rel="manifest" href="favicon/site.webmanifest">
-        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="theme-color" content="#ffffff">
-    </head>
-<body>
-    <img id="header" src="images/header.png">
-    <img id="builders" src="images/builders.jpg">
+<html lang="en">
 
-    <h1 id="welcome-text">Got these guys working on the site.<br>So hold tight...</h1>
+<head>
+    <!-- VERSION: 1.280820192200 -->
+    <!-- Config -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Todd Writes Code">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="toddwritescode">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href="http://robert-maxwell.com/" target="_blank"> -->
+    <title>TWC</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- File Linking -->
+    <link rel="stylesheet" href="reset.css?v=1.6">
+    <link rel="stylesheet" href="styles.css?v=1.0">
+
+    <!-- Initial Scripts -->
+    <script type="text/javascript">
+        // used to control the back to top arrow
+        function toggleVisibility() {
+            var docPos = document.documentElement.scrollTop;
+            if (docPos > 1250) {
+                document.getElementById("back-to-top").style.display = "block";
+            } else {
+                document.getElementById("back-to-top").style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Backup Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="header-section">
+        <header>
+            <span id="desktop-banner">
+                <img src="icons/Todd.png" alt="Todd">
+                <img src="icons/Writes.png" alt="Writes">
+                <img src="icons/Code.png" alt="Code">
+            </span>
+            <span id="mobile-banner">
+                <img src="icons/TWC.png" alt="TWC">
+            </span>
+        </header>
+        <input type="checkbox" name="menu-box" id="menu-box" style="display: none;">
+        <label id="menu-label" for="menu-box"></label>
+        <nav>
+
+        </nav>
+    </section>
+    <section style="height: 80px;">
+        <!-- use this to pad down all other sections and account for menu -->
+    </section>
+    <section id="intro-section">
+        <div id="intro-grid">
+            <div id="money-cell">
+                <img id="money-sprite" src="images/money.png" alt="Money">
+                <h2>Want a Website that doesn't break the bank?</h2>
+            </div>
+            <div id="certification-cell">
+                <h2>From someone who has a Bachelor of Computer Science?</h2>
+                <img id="certification-sprite" src="images/certification.png" alt="Certificate of Completion">
+            </div>
+            <div id="time-cell">
+                <img id="time-sprite" src="images/time.png" alt="Todd holding a watch">
+                <h2>In a reasonable time frame?</h2>
+            </div>
+        </div>
+    </section>
+    <section class="transition-section" id="first-transition"></section>
+    <!-- <section id="about-section">
+        <div id="about-grid">
+            <div>
+                <h1>About Me</h1>
+                <p>
+                    Welcome, thanks for swinging by.
+                </p>
+                <p> My name is <b>Todd</b>, and for <b>over 10 years</b> I have been writing code in various forms, on various projects in various languages.
+                </p>
+                <p>Having worked in both the <b>public and private sector</b> of the workforce on both <b>international and domestic projects</b> there isn't much that I haven't seen.<br> Whether you are after a <b>simple website</b> as a face for your business,
+                    to the <b>blog</b> you wish you started but didn't know how, need a <b>new booking or ordering system</b> for your restaraunt or motel, I've got you covered.
+                </p>
+            </div>
+            <div>
+                put my headshot in here
+            </div>
+        </div>
+    </section>
+    <section id="filler-section" style="height: 100vh;"></section> -->
+    <script type="text/javascript" src="scripts.js?v=1.0"></script>
 </body>
+
 </html>
