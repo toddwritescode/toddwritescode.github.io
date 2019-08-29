@@ -728,6 +728,14 @@ a {
 }
 
 .about-paragraph {
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 12.5vw;
+    text-align: justify;
+}
+
+.testimonials-paragraph {
     padding: 25px 0;
     margin-top: 50px;
     margin-left: 10vw;
