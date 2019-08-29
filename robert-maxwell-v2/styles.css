@@ -442,9 +442,13 @@ a {
 
 #menu-text {
     position: relative;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1;
     grid-template-columns: 1;
+    -ms-grid-rows: 6;
     grid-template-rows: 6;
+    grid-auto-rows: 50px;
     align-items: center;
     z-index: 92;
     height: 100vh;
