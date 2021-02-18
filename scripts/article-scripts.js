@@ -220,11 +220,59 @@ function generateMostRecentArticles() {
             "id": "hidden-words",
             "title": "Hidden Words in a Grid?",
             "paragraphs": [
-                ""
+                "As the title of this one and the page name implies. If you head on over to the hidden works page <a href=\"../pages/find-hidden-words.html\">here</a>, have a go and see if you can work it out."
             ],
             "dateCreated": "02/11/2021",
             "dayNumber": 17,
-            "tags": ["blur", "mousePosition", "magnify"]
+            "tags": ["blur", "mousePosition", "magnify", "first game", "hidden"]
+        }, {
+            "id": "obfuscated-code",
+            "title": "Read only for machines",
+            "paragraphs": [
+                "Today was spent doing research into obfuscated code, when I then used on my first game (see day #17 if you don't know what I'm talking about)."
+            ],
+            "dateCreated": "02/12/2021",
+            "dayNumber": 18,
+            "tags": ["code obfuscation", "machine only", "hidden in plain sight"]
+        }, {
+            "id": "string-math",
+            "title": "You cannot do math on strings",
+            "paragraphs": [
+                "Another day of enhancing other projects. Went back to my dynamic grid work to ensure that I was converting input type string into integers before attempting any mathematical operations."
+            ],
+            "dateCreated": "02/13/2021",
+            "dayNumber": 19,
+            "tags": ["maths", "string", "parseInt"]
+        }, {
+            "id": "svg-land",
+            "title": "Have you looked into SVGs?",
+            "paragraphs": [
+                "So I fell down the SVG rabbit hole and ended up consuming my weekend with all things SVG related. Making up a few cool rasterised images (my logo which is in the menu of the index page is one of them).",
+                "Hoping to include more of these over the coming weeks into my site as I build it."
+            ],
+            "dateCreated": "02/14/2021",
+            "dayNumber": 20,
+            "tags": ["svg", "logo"]
+        }, {
+            "id": "lost-days",
+            "title": "Turns out I might have lost a few days...",
+            "paragraphs": [
+                "In updating this article list I am starting to notice that I'm a few days behind where I thought I was on the challenge.",
+                "Now I know I did code for every day since I started, but I have no idea what I did for those days... So just going to skip over those..."
+            ],
+            "dateCreated": "02/15/2021",
+            "dayNumber": "~21+",
+            "tags": ["lost", "confused"]
+        }, {
+            "id": "site-build",
+            "title": "If you are reading this I did it!",
+            "paragraphs": [
+                "Today was all about getting my github site up. And so if you are reading this I was successful, and told you about it!",
+                "Here will be where I put all kinds of things to show off and just have some fun coding."
+            ],
+            "dateCreated": "02/18/2021",
+            "dayNumber": "24",
+            "tags": ["site", "github"]
         }
     ];
 
