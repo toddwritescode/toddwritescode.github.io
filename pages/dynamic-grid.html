@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grid</title>
+</head>
+<body>
+    <div id="grid-inputs">
+        <h1>Specify your grid</h1>
+        Columns: <input id="columns" name="columns" type="text" value="1" onchange="redrawGrid()">
+        Rows: <input id="rows" name="columns" type="text" value="1" onchange="redrawGrid()">
+    </div>
+    <div id="the-grid">
+        <div></div>
+    </div>
+</body>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    #grid-inputs {
+        position: absolute;
+        top: 25px;
+        left: calc(50vw - 250px);
+        height: 100px;
+        width: 500px;
+        text-align: center;
+    }
+    #the-grid {
+        position: absolute;
+        top: 125px;
+        left: calc(50vw - 250px);
+        height: 500px;
+        width: 500px;
+        display: grid;
+        grid-gap: 10px;
+    }
+    #the-grid > div {
+        background-color: black;
+        padding: 15px;
+    }
+    .column-div {
+        background-color: red;
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+<script>
+    function redrawGrid() {
+        var columns = parseInt(document.getElementById('columns').value);
+        var rows = parseInt(document.getElementById('rows').value);
+        var theGrid = document.getElementById('the-grid');
+
+        console.log('draw grid with ' + columns + ' columns and ' + rows + ' rows.');
+
+        theGrid.innerHTML = "";
+        var columnsAndRowsHTML = "";
+        for(x = 0; x < columns*rows; x++){
+            columnsAndRowsHTML += "<div class='grid-div'></div>";
+        }
+        theGrid.innerHTML = columnsAndRowsHTML;
+        document.getElementById('the-grid').style.cssText = "grid-template-columns: " + "1fr ".repeat(columns) + "; grid-template-rows: " + "1fr ".repeat(rows);
+    }
+</script>
+</html>

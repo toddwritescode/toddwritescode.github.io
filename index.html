@@ -1,177 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todd_Writes_Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Todd Writes Code BoilerPlate">
+    <meta name="dcterms.created" content="Thu, 18 Feb 2021 00:47:19 GMT">
+    <meta name="description" content="Landing page for Todd Writes Code">
+    <meta name="keywords" content="Landing page for Todd Writes Code">
+    <!-- Using .ico to be backwards compatible with IE9 -->
+    <link rel="icon" href="./favicon.ico">
+    <!-- Below code also will allow for png to be used, but not back compat with IE9 -->
+    <!-- <link rel="icon" href="./favicon.png"> -->
+    <title>Todd Writes Code</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/classes.css">
 </head>
-
-<body>
-    <div id="mouse-circle"> <img src="./magnify.svg"></div>
-    <div id="grid-inputs">
-        <h1>Solve the clue to find the hidden words</h1>
-        <p onclick="document.getElementById('hidden-text').style='color:black;'">Lets make the first one a bit easy => <span id="hidden-text">What two numbers product is 20?</span></p> Columns: <input id="columns" name="columns" type="text" value="1" onchange="redrawGrid()"> Rows: <input id="rows" name="columns" type="text"
-            value="1" onchange="redrawGrid()">
-        <p>If you solve this one come on over to Instagram and let me know what the code is @todd_writes_code or click
-            <a href="https://www.instagram.com/todd_writes_code/">this link</a>.</p>
-    </div>
-    <div id="the-grid">
-        <div></div>
+<body class="noselect">
+    <input type="checkbox" name="menu-toggle" id="menu-toggle" style="display:none;" onchange="storeMenuState()">
+    <div class="container">
+        <img src="./images/twc keycap logo.svg" alt="Todd Writes Code Logo">
+        <div id="menu-icon">
+            <label for="menu-toggle">
+                <div id="top-line" class="line"></div>
+                <div id="center-line" class="line"></div>
+                <div id="bottom-line" class="line"></div>
+            </label>
+        </div>
+        <nav>
+            <div class="nav-padder"></div>
+            <div id="nav-items">
+                <h1><u>Menu</u></h1>
+                <h2 id="home-heading">
+                    <a href="./index.html">Home</a>
+                </h2>
+                <h2 id="days-of-code-heading">
+                    <a href="./pages/daysofcode.html">#100daysofcode</a>
+                </h2>
+                <h2 id="youtube-heading">
+                    <a id="yt-link" target="_blank" href="https://bit.ly/toddsmyth-YT">YouTube</a>
+                </h2>
+                <h2 id="instagram-heading">
+                    <a id="ig-link" target="_blank" href="https://bit.ly/TWC-IG">Instagram</a>
+                </h2>
+            </div>
+            <div class="nav-padder"></div>
+        </nav>
+        <div class="container-footer">
+            <h1></h1>
+        </div>
+    </div>        
+    <div id="noscript-dialog" class="dialog">
+        <div class="dialog-heading">
+            <span class="bubble red"></span>
+            <span class="bubble yellow"></span>
+            <span class="bubble green"></span>
+            <h1>Javascript Disabled</h1>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Sorry, your browser does not support JavaScript or you may not have it turned off.
+                (Or something might have gone wrong...)
+            </p>
+            <p>
+                <a href="http://bit.ly/2Mxnqyy" target="_blank">Enable JavaScript</a>
+            </p>
+        </div>
     </div>
 </body>
-<style>
-    html {
-        --mouseSize: 140px;
-        --negativeHalfMouseSize: -70px;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -o-user-select: none
+<!-- scripts -->
+<script>
+    function storeMenuState() {
+        var menuOpened = document.getElementById('menu-toggle').checked;
+        if(typeof(Storage) != undefined){
+            window.localStorage.setItem('menuState', menuOpened.toString());
+        }
     }
-    
+
+    function toggleMenu(isOpen){
+        document.getElementById('menu-toggle').checked = isOpen;
+    }
+
+    function checkForJavaScript() {
+        // first thing to fire on page
+        console.warn('Welcome to Todd Writes Code. Are you lost? Or did you mean to come here?');
+        // show useless facts dialog and hide non javascript dialog if javascript enabled
+        document.getElementById('noscript-dialog').classList.add('hide');
+    }
+
+    // determine if JS enabled for browser
+    checkForJavaScript();
+
+    (function(){
+        var menuOpened = false;
+        // fire on browser load
+        if(typeof(Storage) != "undefined"){
+            menuOpened = window.localStorage.getItem('menuState') == 'true' ? true : false;
+        }
+        toggleMenu(menuOpened);
+    })();
+</script>
+<style>
+    /* tags */
+
+@font-face {
+    font-family: yuseiMagic;
+    src: url('./fonts/YuseiMagic-Regular.ttf');
+}
     body {
         padding: 0;
         margin: 0;
-        height: auto;
-        width: 100vw;
-        overflow: hidden;
+        background-color: #1284ea;
     }
-    
-    h1 {
-        font-size: 20px
-    }
-    
-    p {
-        cursor: pointer
-    }
-    
-    #hidden-text {
-        color: white
-    }
-    
-    #hidden-text:hover {
-        cursor: text
-    }
-    
-    #hidden-text::selection {
-        background: black
-    }
-    
-    #hidden-text::-moz-selection {
-        background: black
-    }
-    
-    #grid-inputs {
-        position: relative;
-        top: 25px;
-        text-align: center;
-        left: calc(50vw - 32.5vw);
-        height: 25vh;
-        width: 50vw;
-    }
-    
-    #the-grid {
-        position: relative;
-        height: 50vh;
-        left: calc(50vw - 32.5vw);
-        width: 50vw;
-        display: grid;
-        grid-gap: 10px
-    }
-    
-    #the-grid>div {
-        background-color: black;
-        color: black;
-        padding: 15px
-    }
-    
-    #mouse-circle {
+
+    nav {
+        transition: 1s;
         z-index: 9;
+        position: relative;
+        top: -500px;
+        left: -500px;
+        font-family: yuseiMagic;
+        text-align: center;
+        opacity: 0;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* classes */
+    .container {
+        z-index: 8;
+        transition: 1.25s;
         position: absolute;
+        padding: 0;
+        margin: 0;
         top: 0;
         left: 0;
-        width: var(--mouseSize);
-        height: var(--mouseSize);
-        margin: var(--negativeHalfMouseSize);
-        border: 0;
-        border-radius: 50%;
-        pointer-events: none !important;
-        transform-origin: center center
+        height: 60px;
+        width: 60px;
+        background-color: black;
+        color: white;
+        border-bottom-right-radius: 25px;
     }
-    
-    #mouse-circle~#the-grid>div:hover {
-        color: white
-    }
-    
-    #mouse-circle>img {
+
+    .container > img {
+        transition: 2s;
         position: absolute;
-        top: -40px;
-        left: -40px;
-        height: 225px;
-        width: 225px
+        top: -530px;
+        left: -555px;
+        height: auto;
+        width: 350px;
+        opacity: 0.5;
+        transform-origin: center center;
+        animation: spinningCoin 90s linear infinite;
+    }
+
+    @keyframes spinningCoin {
+        from {
+            transform: rotateZ(0);
+        }
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+
+    .line {
+        transition: 1.5s;
+        animation-timing-function: linear;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 12.5px;
+        margin-left: 0;
+        height: 0;
+        width: 30px;
+        border: none;
+        border-top: 2px solid #d484ea;
+        transform-origin: top left;
+        transform: rotateZ(0);
+    }
+
+    /* ids */
+    #menu-icon {
+        transition: 1s;
+        position: relative;
+        z-index: 15;
+        height: 30px;
+        width: 30px;
+        top: 0;
+        left: 12.5px;
+    }
+
+    #nav-items {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+        min-width: 50vw;
+        max-width: 100vw;
+        color: white;
+    }
+
+    #nav-items > h1 {
+        font-size: 4.5rem;
+    }
+
+    #nav-items > h2 {
+        font-size: 2rem;
+        z-index: 11;
+        cursor: pointer;
+        transition: 1s;
+        background: linear-gradient(#fff, #fff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #nav-items > h2:hover {
+        font-size: 3rem;
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    #nav-items > h2#home-heading:hover {
+        /* https://cssgradient.io/blog/css-gradient-text/ */
+        background: linear-gradient(#ebc439, #ebda39);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #nav-items > h2#days-of-code-heading:hover {
+        /* https://cssgradient.io/blog/css-gradient-text/ */
+        background: linear-gradient(#0289fe, #02ebfe);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #nav-items > h2#youtube-heading:hover {
+        /* https://cssgradient.io/blog/css-gradient-text/ */
+        background: linear-gradient(white, red);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #nav-items > h2#instagram-heading:hover {
+        background: linear-gradient(#e66465, #c528fe);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #top-line {
+        top: 0;
+        left: 0;
+    }
+
+    #center-line {
+        top: 0;
+        left: 0;
+        transform: rotateZ(0);
+    }
+
+    #bottom-line {
+        top: 0;
+        left: 0;
+    }
+
+    #menu-icon:hover > label {
+        cursor: pointer;
+    }
+
+    #menu-icon:hover > label > #top-line,
+    #menu-icon:hover > label > #center-line,
+    #menu-icon:hover > label > #bottom-line {
+        filter: invert(1);
+        border-color: #fc475c;
+    }
+
+    #menu-toggle:checked ~ .container {
+        padding: 0;
+        background-color: black;
+        color: white;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #menu-toggle:checked ~ .container > img {
+        top: -130px;
+        left: -55px;
+    }
+
+    #menu-toggle:checked ~ .container > nav {
+        top: 0;
+        left: 0;
+        transition: 2s;
+        z-index: 10;
+        opacity: 1;
+    }
+
+    #menu-toggle:checked ~ .container > #menu-icon {
+        top: 15px;
+        left: calc(100% - 45px);
+    }
+
+    #menu-toggle:checked ~ .container > #menu-icon > label > .line {
+        margin: 0;
+        transform-origin: center center;
+        transform: rotateZ(45deg);
+        border-top: 4px solid white;
+    }
+
+    #menu-toggle:checked ~ .container > #menu-icon:hover > label > #top-line,
+    #menu-toggle:checked ~ .container > #menu-icon:hover > label > #center-line,
+    #menu-toggle:checked ~ .container > #menu-icon:hover > label > #bottom-line {
+        filter: invert(1);
+        border-color: #fc475c;
+    }
+
+    #menu-toggle:checked ~ .container > #menu-icon > label > #top-line {
+        top: 14px;
+    }
+    #menu-toggle:checked ~ .container > #menu-icon > label > #center-line {
+        top: 10px;
+        transform: rotateZ(135deg);
+    }
+
+    #menu-toggle:checked ~ .container > #menu-icon > label > #bottom-line {
+        top: 7px;
+        border-bottom: 0;
     }
 </style>
-
-<script>
-    // obfuscated code
-    var _0x4a7e = ['32px', '1fr\x20', ';\x20grid-template-rows:\x20', 'paddingLeft', 'loejentasb', 'slice', '62bFNNvr', '12323wSIjTZ', 'rows', '2577HSdyyz', '95ZuIDcw', 'the-grid', 'grid-template-columns:\x20', '535BGAMID', '</div>', 'left', 'paddingTop', 'innerHTML', 'backgroundPositionY', 'getElementById', 'top', '145085SxYZOh', '400417slrPLI', '113348NqHGCk', '3ZGcPBL', 'onmousemove', '(min-width:\x20768px)', 'value', 'columns', 'style', '<div\x20class=\x27grid-div\x27>', '211157TAjcat', 'matches', '7369nqebQA', 'includes', 'repeat'];
-    var _0x5dde = function(_0x383305, _0x2b7ee9) {
-        _0x383305 = _0x383305 - 0x14a;
-        var _0x4a7e63 = _0x4a7e[_0x383305];
-        return _0x4a7e63;
-    };
-    var _0x5e4c89 = _0x5dde;
-    (function(_0x2bee0f, _0x5bfe02) {
-        var _0x3a594e = _0x5dde;
-        while (!![]) {
-            try {
-                var _0x59e1f7 = parseInt(_0x3a594e(0x16a)) + -parseInt(_0x3a594e(0x169)) * parseInt(_0x3a594e(0x16b)) + parseInt(_0x3a594e(0x14e)) + -parseInt(_0x3a594e(0x15d)) * parseInt(_0x3a594e(0x150)) + -parseInt(_0x3a594e(0x15a)) * -parseInt(_0x3a594e(0x159)) + parseInt(_0x3a594e(0x168)) + parseInt(_0x3a594e(0x15c)) * parseInt(_0x3a594e(0x160));
-                if (_0x59e1f7 === _0x5bfe02) break;
-                else _0x2bee0f['push'](_0x2bee0f['shift']());
-            } catch (_0x177ed6) {
-                _0x2bee0f['push'](_0x2bee0f['shift']());
-            }
-        }
-    }(_0x4a7e, 0xad95d));
-
-    function redrawGrid() {
-        var _0x2675b6 = _0x5dde,
-            _0x47179c = _0x2675b6(0x157),
-            _0x10d163 = [0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe],
-            _0x4ea954 = parseInt(document['getElementById'](_0x2675b6(0x14b))[_0x2675b6(0x14a)]),
-            _0x174be8 = parseInt(document[_0x2675b6(0x166)](_0x2675b6(0x15b))['value']),
-            _0x1a64e3 = document[_0x2675b6(0x166)]('the-grid');
-        _0x1a64e3[_0x2675b6(0x164)] = '';
-        var _0x1fb54a = '';
-        for (x = 0x0; x < _0x4ea954 * _0x174be8; x++) {
-            _0x1fb54a += _0x2675b6(0x14d);
-            if (_0x10d163['slice'](0x0, 0x5)['includes'](x)) _0x1fb54a += _0x47179c[0x8 - x % 0x5 * 0x2];
-            else _0x10d163[_0x2675b6(0x158)](0x5)[_0x2675b6(0x151)](x) && (_0x1fb54a += _0x47179c[0x9 - x % 0x5 * 0x2]);
-            _0x1fb54a += _0x2675b6(0x161);
-        }
-        _0x1a64e3[_0x2675b6(0x164)] = _0x1fb54a, document[_0x2675b6(0x166)](_0x2675b6(0x15e))[_0x2675b6(0x14c)]['cssText'] = _0x2675b6(0x15f) + _0x2675b6(0x154)[_0x2675b6(0x152)](_0x4ea954) + _0x2675b6(0x155) + _0x2675b6(0x154)[_0x2675b6(0x152)](_0x174be8);
-    }
-    var mouseSize = 0x78;
-    if (window['matchMedia'](_0x5e4c89(0x16d))[_0x5e4c89(0x14f)]) {
-        let mousePosX = 0x0,
-            mousePosY = 0x0,
-            mouseCircle = document[_0x5e4c89(0x166)]('mouse-circle');
-        document[_0x5e4c89(0x16c)] = _0x4e404b => {
-            mousePosX = _0x4e404b['pageX'], mousePosY = _0x4e404b['pageY'];
-        };
-        let delay = 0xc,
-            revisedMousePosX = 0x0,
-            revisedMousePosY = 0x0;
-
-        function delayMouseFollow() {
-            var _0x38ff4f = _0x5e4c89;
-            requestAnimationFrame(delayMouseFollow), revisedMousePosX += (mousePosX - revisedMousePosX) / delay, revisedMousePosY += (mousePosY - revisedMousePosY) / delay, mouseCircle['style'][_0x38ff4f(0x167)] = revisedMousePosY - 0x19 + 'px', mouseCircle['style'][_0x38ff4f(0x162)] = revisedMousePosX - 0x19 + 'px', mouseCircle[_0x38ff4f(0x14c)][_0x38ff4f(0x163)] = '32px', mouseCircle[_0x38ff4f(0x14c)][_0x38ff4f(0x156)] = _0x38ff4f(0x153), mouseCircle[_0x38ff4f(0x14c)]['backgroundPositionX'] = '-' + (revisedMousePosX - mouseSize / 0x2) + 'px', mouseCircle[_0x38ff4f(0x14c)][_0x38ff4f(0x165)] = '-' + (revisedMousePosY - mouseSize / 0x2) + 'px';
-        }
-        delayMouseFollow();
-    }
-</script>
-
 </html>

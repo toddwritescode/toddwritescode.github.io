@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Useless Facts</title>
+    <link rel="stylesheet" href="../styles/classes.css">
+    <script src="../scripts/useless-facts-scripts.js"></script>
+</head>
+
+<body>
+    <h1 id="hidden-message">Facts have been stopped...</h1>
+    <div id="useless-facts-dialog" class="dialog">
+        <div class="dialog-heading">
+            <span class="bubble red "></span>
+            <span class="bubble yellow "></span>
+            <span class="bubble green "></span>
+            <h1 id="useless-facts-heading">Welcome to Todd Writes Code</h1>
+        </div>
+        <div class="dialog-body">
+            <h2>Useless Fact #<span id="factNumber">0</span></h2>
+            <p id="fact"></p>
+        </div>
+        <div class="dialog-loading-indicator"></div>
+    </div>
+</body>
+<script>
+    (function() {
+        console.warn('Welcome to Todd Writes Code. Are you lost? Or did you mean to come here?');
+        generateUselessFact();
+        document.getElementById('useless-facts-dialog').classList.remove('hide');
+    })();
+</script>
+<style>
+    body {
+        padding-top: 25%;
+        text-align: center;
+    }
+    
+    .dialog-loading-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        height: 10px;
+        width: 0;
+        background-color: rgba(54, 255, 26, 0.1);
+        animation: loadingIndicator 5s linear 0s infinite;
+    }
+    
+    @keyframes loadingIndicator {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 100%;
+        }
+    }
+</style>
+
+</html>

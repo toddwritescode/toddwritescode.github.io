@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Todd Writes Code BoilerPlate">
+    <meta name="dcterms.created" content="Thu, 18 Feb 2021 00:47:19 GMT">
+    <meta name="description" content="The initial collection of pages to track the 100 Days of Code Challenge">
+    <meta name="keywords" content="100daysofcode challenge pages website toddwritescode todd_writes_code">
+    <!-- Using .ico to be backwards compatible with IE9 -->
+    <link rel="icon" href="../favicon.ico">
+    <!-- Below code also will allow for png to be used, but not back compat with IE9 -->
+    <!-- <link rel="icon" href="./favicon.png"> -->
+    <title>100 Days of Code</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="../styles/classes.css">
+    <!-- scripts -->
+    <script src="../scripts/start-up-scripts.js"></script>
+    <script src="../scripts/useless-facts-scripts.js "></script>
+</head>
+
+<body class="noselect">
+    <nav class="hide">
+        <img id="nav-picture" src="../android-chrome-192x192.png" alt="Animated picture of Todd Smyth">
+        <h1 id="nav-heading"><span id="day-count"></span><u> Days of Code Remaining.</u></h1>
+        <label for="article-metadata">Search:</label>
+        <input list="article-metadata" name="article-metadata-choice" id="article-metadata-choice" />
+        <datalist id="article-metadata"></datalist>
+    </nav>
+    <div id="noscript-dialog" class="dialog">
+        <div class="dialog-heading">
+            <span class="bubble red"></span>
+            <span class="bubble yellow"></span>
+            <span class="bubble green"></span>
+            <h1>Javascript Disabled</h1>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Sorry, your browser does not support JavaScript or you may not have it turned off.
+            </p>
+            <p>
+                <a href="http://bit.ly/2Mxnqyy" target="_blank">Enable JavaScript</a>
+            </p>
+        </div>
+    </div>
+    <div id="useless-facts-dialog" class="dialog hide">
+        <div class="dialog-heading">
+            <span class="bubble red"></span>
+            <span class="bubble yellow"></span>
+            <span class="bubble green"></span>
+            <h1 id="useless-facts-heading">Welcome</h1>
+        </div>
+        <div class="dialog-body">
+            <h2>Useless Fact #<span id="factNumber">0</span></h2>
+            <p id="fact"></p>
+        </div>
+        <div class="dialog-loading-indicator"></div>
+    </div>
+    <div class="footer">
+        <a onclick="scrollToTop(true)">
+            <img class="navigation-icon" src="../images/icon/to-top.svg" alt="Scroll to Top" />
+        </a>
+    </div>
+</body>
+<!-- styles -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../styles/tags.css">
+<link rel="stylesheet" href="../styles/identifiers.css">
+<!-- scripts -->
+<script>
+    // determine if JS enabled for browser
+    checkForJavaScript();
+</script>
+<script defer src="../scripts/page-scripts.js"></script>
+<script defer src="../scripts/article-scripts.js "></script>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurred Focus</title>
+</head>
+
+<body>
+    <div class="background">
+    </div>
+    <div id="mouse-circle">
+        <img src="../images/icon/magnify.svg">
+    </div>
+
+</body>
+<script>
+    // Original Size
+    // var mouseSize = 64;
+    var mouseSize = 150;
+
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        let mousePosX = 0,
+            mousePosY = 0,
+            mouseCircle = document.getElementById("mouse-circle");
+
+        document.onmousemove = (e) => {
+            mousePosX = e.pageX;
+            mousePosY = e.pageY;
+        };
+
+        let delay = 12,
+            revisedMousePosX = 0,
+            revisedMousePosY = 0;
+
+        function delayMouseFollow() {
+            requestAnimationFrame(delayMouseFollow);
+
+            revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
+            revisedMousePosY += (mousePosY - revisedMousePosY) / delay;
+
+            mouseCircle.style.top = revisedMousePosY + "px";
+            mouseCircle.style.left = revisedMousePosX + "px";
+            mouseCircle.style.backgroundPositionX = "-" + (revisedMousePosX - (mouseSize / 2)) + "px";
+            mouseCircle.style.backgroundPositionY = "-" + (revisedMousePosY - (mouseSize / 2)) + "px";
+        }
+        delayMouseFollow();
+    }
+</script>
+<style>
+    html {
+        /* Original Measurements */
+        /* --mouseSize: 64px; */
+        /* --negativeHalfMouseSize: -32px; */
+        --mouseSize: 150px;
+        --negativeHalfMouseSize: -75px;
+    }
+    
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    .background {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        background-image: url('../images/blurred-focus-code.PNG');
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        background-position: top left;
+        filter: blur(5px);
+    }
+    
+    #mouse-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--mouseSize);
+        height: var(--mouseSize);
+        margin: var(--negativeHalfMouseSize);
+        border: 1px solid #000000;
+        border-radius: 50%;
+        pointer-events: none !important;
+        background-image: url('../images/blurred-focus-code.PNG');
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        background-position: top left;
+    }
+    
+    #mouse-circle>img {
+        position: absolute;
+        top: -31px;
+        left: -31px;
+        height: 230px;
+        width: 230px;
+    }
+</style>
+
+</html>

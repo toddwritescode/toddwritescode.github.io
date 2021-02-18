@@ -1,0 +1,425 @@
+/* A file to include all classes */
+
+.fade-in {
+    animation: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+}
+
+.fade-out {
+    animation: fadeOut;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hide {
+    display: none !important;
+}
+
+.blur {
+    filter: blur(4px);
+}
+
+.link-text:hover {
+    cursor: pointer;
+    color: black;
+    /* -webkit-text-fill-color: black; */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.link-text:focus {
+    color: black;
+    /* -webkit-text-fill-color: black; */
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: white;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.navigation-icon {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.navigation-icon:hover {
+    color: magenta;
+    background-color: magenta;
+    filter: invert(0);
+    border-radius: 50%;
+    transform: scale(1.5);
+}
+
+
+/* Tablet and Desktop Classes */
+
+@media(min-width:768px) {
+    .section-day-count {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 35px;
+        font-family: yuseiMagic;
+    }
+    .dialog {
+        position: fixed;
+        display: block;
+        top: calc(50vh - 160px);
+        left: calc(50vw - 220px);
+        height: 300px;
+        width: 400px;
+        margin: 0;
+        padding: 10px;
+        border: 1px black solid;
+        border-radius: 15px;
+        box-shadow: 7px 15px rgba(0, 0, 0, 0.2);
+        background-color: white;
+    }
+    .dialog-heading {
+        font-family: yuseiMagic;
+        border-bottom: 1px black solid;
+        margin: -10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding: 10px;
+    }
+    .dialog-heading>h1 {
+        padding: 0;
+        margin: 0;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 20px;
+        padding-bottom: 10px;
+    }
+    .dialog-body {
+        position: relative;
+        top: 20%;
+        margin: 0 15px;
+        text-align: center;
+    }
+    .dialog-loading-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        height: 10px;
+        width: 0;
+        background-color: rgba(54, 255, 26, 0.5);
+        animation: loadingIndicator 5s linear 0s infinite;
+    }
+    @keyframes loadingIndicator {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 100%;
+        }
+    }
+    .first-section {
+        margin-top: 142.5px;
+    }
+    .section-heading {
+        font-family: yuseiMagic;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 75px;
+        width: 100%;
+        font-size: 25px;
+    }
+    .bubble {
+        cursor: pointer;
+        position: absolute;
+        display: inline-block;
+        border: 1px black solid;
+        background-color: white;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+        top: 5px;
+        left: 10px;
+    }
+    .bubble.red {
+        background-color: rgb(255, 10, 10);
+    }
+    .bubble.yellow {
+        background-color: rgb(255, 188, 26);
+        left: calc(30px);
+    }
+    .bubble.green {
+        background-color: rgb(54, 255, 26);
+        left: calc(50px);
+    }
+    .footer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+        text-align: left;
+        z-index: 90;
+        padding-left: 25px;
+    }
+    /* TODO: write a new menu style set */
+    .menu {
+        display: block;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        max-width: calc(100vw - var(--scrollbarWidth));
+        height: 100vh;
+        z-index: 99;
+        text-align: center;
+        color: var(--headingTextFillColor);
+        background-color: black;
+    }
+    .menu-items {
+        z-index: 95;
+        list-style-type: none;
+    }
+    .menu-items>li>a {
+        text-decoration: none;
+    }
+    .menu-items>li>a>h1:hover {
+        cursor: pointer;
+        color: var(--headingTextFillColor);
+        /* -webkit-text-fill-color: black; */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+    }
+    .menu-items>li>a>h1:focus {
+        cursor: pointer;
+        -webkit-text-fill-color: rgb(94, 49, 43);
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: white;
+    }
+    .menu-close {
+        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        z-index: 0;
+    }
+}
+
+
+/* Mobile Classes */
+
+@media(max-width:767px) {
+    .navigation-icon {
+        display: none;
+    }
+    .section-day-count {
+        position: absolute;
+        top: 0;
+        left: -10px;
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+        font-family: yuseiMagic;
+    }
+    .dialog {
+        position: fixed;
+        display: block;
+        top: 25vh;
+        left: calc(5vw - 11px);
+        height: 50vh;
+        width: 90vw;
+        margin: 0;
+        padding: 10px;
+        border: 1px black solid;
+        border-radius: 15px;
+        box-shadow: 7px 15px rgba(0, 0, 0, 0.2);
+        background-color: white;
+    }
+    .dialog-heading {
+        font-family: yuseiMagic;
+        border-bottom: 1px black solid;
+        margin: -10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding: 10px;
+    }
+    .dialog-heading>h1 {
+        padding: 0;
+        margin: 0;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 20px;
+        padding-bottom: 10px;
+    }
+    .dialog-body {
+        position: relative;
+        top: 20%;
+        margin: 0 15px;
+        text-align: center;
+    }
+    .dialog-loading-indicator {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        height: 10px;
+        width: 0;
+        background-color: rgba(54, 255, 26, 0.5);
+        animation: loadingIndicator 5s linear 0s infinite;
+    }
+    @keyframes loadingIndicator {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 100%;
+        }
+    }
+    .first-section {
+        margin-top: 150px;
+    }
+    .section-heading {
+        font-family: yuseiMagic;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 100%;
+        font-size: 25px;
+    }
+    .bubble {
+        position: absolute;
+        display: inline-block;
+        border: 1px black solid;
+        background-color: white;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+        top: 5px;
+        left: 10px;
+    }
+    .bubble.red {
+        background-color: rgb(255, 10, 10);
+    }
+    .bubble.yellow {
+        background-color: rgb(255, 188, 26);
+        left: calc(30px);
+    }
+    .bubble.green {
+        background-color: rgb(54, 255, 26);
+        left: calc(50px);
+    }
+    .footer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+        text-align: left;
+        z-index: 90;
+        padding-left: 25px;
+    }
+    /* TODO: write a new menu style set */
+    .menu {
+        display: block;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        max-width: calc(100vw - var(--scrollbarWidth));
+        height: 100vh;
+        z-index: 99;
+        text-align: center;
+        color: var(--headingTextFillColor);
+        background-color: black;
+    }
+    .menu-items {
+        z-index: 95;
+        list-style-type: none;
+    }
+    .menu-items>li>a {
+        text-decoration: none;
+    }
+    .menu-items>li>a>h1:hover {
+        cursor: pointer;
+        color: var(--headingTextFillColor);
+        /* -webkit-text-fill-color: black; */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+    }
+    .menu-items>li>a>h1:focus {
+        cursor: pointer;
+        -webkit-text-fill-color: rgb(94, 49, 43);
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: white;
+    }
+    .menu-close {
+        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        z-index: 0;
+    }
+}
+
+.full-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.full-dialog > div {
+    padding: 0;
+    margin: 0;
+}
+
+.full-dialog > .dialog-heading > h1 {
+    font-size: 35px;
+    padding: 15px;
+}
