@@ -8,12 +8,12 @@
     <meta name="description" content="Landing page for Todd Writes Code">
     <meta name="keywords" content="Landing page for Todd Writes Code">
     <!-- Using .ico to be backwards compatible with IE9 -->
-    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="/favicon.ico">
     <!-- Below code also will allow for png to be used, but not back compat with IE9 -->
     <!-- <link rel="icon" href="./favicon.png"> -->
     <title>Todd Writes Code</title>
     <!-- styles -->
-    <link rel="stylesheet" href="./styles/classes.css">
+    <link rel="stylesheet" href="/styles/classes.css">
 </head>
 <body class="noselect">
     <input type="checkbox" name="menu-toggle" id="menu-toggle" style="display:none;" onchange="storeMenuState()">
@@ -31,10 +31,10 @@
             <div id="nav-items">
                 <h1><u>Menu</u></h1>
                 <h2 id="home-heading">
-                    <a href="./index.html">Home</a>
+                    <a href="/">Home</a>
                 </h2>
                 <h2 id="days-of-code-heading">
-                    <a href="./pages/daysofcode.html">#100daysofcode</a>
+                    <a href="/pages/daysofcode">#100daysofcode</a>
                 </h2>
                 <h2 id="youtube-heading">
                     <a id="yt-link" target="_blank" href="https://bit.ly/toddsmyth-YT">YouTube</a>
@@ -102,10 +102,6 @@
 <style>
     /* tags */
 
-@font-face {
-    font-family: yuseiMagic;
-    src: url('./fonts/YuseiMagic-Regular.ttf');
-}
     body {
         padding: 0;
         margin: 0;
@@ -232,7 +228,6 @@
     }
 
     #nav-items > h2#days-of-code-heading:hover {
-        /* https://cssgradient.io/blog/css-gradient-text/ */
         background: linear-gradient(#0289fe, #02ebfe);
         background-clip: text;
         -webkit-background-clip: text;
@@ -240,7 +235,6 @@
     }
 
     #nav-items > h2#youtube-heading:hover {
-        /* https://cssgradient.io/blog/css-gradient-text/ */
         background: linear-gradient(white, red);
         background-clip: text;
         -webkit-background-clip: text;
