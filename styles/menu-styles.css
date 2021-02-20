@@ -16,14 +16,14 @@ nav {
 .menu-container {
     z-index: 8;
     transition: 1.25s;
-    position: absolute;
+    position: fixed;
     padding: 0;
     margin: 0;
     top: 0;
     left: 0;
     height: 60px;
     width: 60px;
-    background-color: black;
+    background-color: white;
     color: white;
     border-bottom-right-radius: 25px;
 }
@@ -38,6 +38,21 @@ nav {
     opacity: 0.5;
     transform-origin: center center;
     animation: spinningCoin 90s linear infinite;
+}
+
+.scroll-to-top-container {
+    z-index: 7;
+    transition: 1.25s;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    color: white;
+    border-top-right-radius: 25px;
 }
 
 @keyframes spinningCoin {
@@ -61,7 +76,8 @@ nav {
     height: 0;
     width: 30px;
     border: none;
-    border-top: 2px solid #d484ea;
+    border-top: 2px solid black;
+    /*border-top: 2px solid #d484ea;*/
     transform-origin: top left;
     transform: rotateZ(0);
 }
@@ -143,17 +159,44 @@ nav {
 #top-line {
     top: 0;
     left: 0;
+    transform-origin: top left;
+    transform: rotateY(-45deg);
 }
 
 #center-line {
     top: 0;
     left: 0;
     transform: rotateZ(0);
+    transform-origin: center center;
+    transform: rotateY(180deg); 
 }
 
 #bottom-line {
     top: 0;
     left: 0;
+    transform-origin: top right;
+    transform: rotateY(45deg);
+}
+
+.scroll-to-top-container > #menu-icon > label > #top-line {
+    border-top-width: 4px;
+    transform-origin: top left;
+    transform: scale(0.5) rotateZ(-45deg);
+    top: 11px;
+    left: 4px;
+}
+
+.scroll-to-top-container > #menu-icon > label > #center-line {
+    transform-origin: center center;
+    transform: rotateZ(90deg);   
+}
+
+.scroll-to-top-container > #menu-icon > label > #bottom-line {
+    border-top-width: 4px;
+    transform-origin: top right;
+    transform: scale(0.5) rotateZ(45deg);
+    top: -20px;
+    left: -3.5px;
 }
 
 #menu-icon:hover > label {
@@ -163,8 +206,23 @@ nav {
 #menu-icon:hover > label > #top-line,
 #menu-icon:hover > label > #center-line,
 #menu-icon:hover > label > #bottom-line {
-    filter: invert(1);
-    border-color: #fc475c;
+    transform: rotateY(0);
+    border-color: #d484ea;
+}
+
+.scroll-to-top-container > #menu-icon:hover > label > #top-line {
+    transform: scale(0.5) rotateZ(-45deg);
+    left: -4.5px;
+}
+
+.scroll-to-top-container > #menu-icon:hover > label > #center-line {
+    transform-origin: center center;
+    transform: scale(0.5) rotateZ(90deg);   
+}
+
+.scroll-to-top-container > #menu-icon:hover > label > #bottom-line {
+    transform: scale(0.5) rotateZ(45deg);
+    left: 5px;
 }
 
 #menu-toggle:checked ~ .menu-container {
@@ -218,4 +276,21 @@ nav {
 #menu-toggle:checked ~ .menu-container > #menu-icon > label > #bottom-line {
     top: 7px;
     border-bottom: 0;
+}
+
+#menu-bar {
+    z-index: 7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+#menu-bar > h1 {
+    font-size: 35px;
+    line-height: 15px;
+    text-align: center;
 }

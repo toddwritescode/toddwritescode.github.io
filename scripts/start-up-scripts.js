@@ -3,7 +3,17 @@ function pageHasLoaded() {
     console.warn('Welcome to Todd Writes Code. Are you lost? Or did you mean to come here?');
     console.log('Thanks for waiting. Please take a look around');
     // hide loading div
-    document.getElementById('loading-div').classList.add('hide-loading-div');  
+    document.getElementById('loading-div').classList.add('hide-loading-div'); 
+    // unblur sections
+    setTimeout(function(){
+        for (var sections = document.getElementsByTagName('section'), i = sections.length; i--;) {
+            [/*Sections to not unblur*/].indexOf(sections[i].id) == -1 && (sections[i].classList.remove('blur'));
+        }
+        // enable page scrolling
+        var bodyElement = document.getElementsByTagName('BODY')[0];
+        bodyElement.classList.remove('overflowHidden'); 
+        bodyElement.classList.add('overflowYOnly'); 
+    }, 2000);
     // handle default loading for menu
     var menuOpened = false;
     // fire on browser load
@@ -12,6 +22,18 @@ function pageHasLoaded() {
     }
     toggleMenu(menuOpened);
 }
+
+// only show the scroll to top if page is scrolled down
+window.onscroll = function(){
+    var pageOffset =document.documentElement.scrollTop || document.body.scrollTop;
+    console.log(pageOffset);
+    if(pageOffset >= 250){
+        document.getElementById('scroll-to-top').classList.remove('hide');
+    }
+    else{
+        document.getElementById('scroll-to-top').classList.add('hide');
+    }
+};
 
 // Old Code 200220211600 ------------------------------------------------------------------------
 

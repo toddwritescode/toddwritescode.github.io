@@ -1,21 +1,11 @@
 /* A file to include all font imports and assignments */
 
 @font-face {
-    font-family: zefRave;
-    src: url('../fonts/zef_rave/ZeF\ RAVE\ Italic.ttf');
-}
-
-@font-face {
-    font-family: alarmClock;
-    src: url('../fonts/alarm_clock/alarm\ clock.ttf');
-}
-
-@font-face {
-    font-family: vcrOsd;
-    src: url('../fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf');
-}
-
-@font-face {
     font-family: yuseiMagic;
     src: url('../fonts/YuseiMagic-Regular.ttf');
+}
+
+@font-face {
+	font-family: localRoboto;
+	src: url('../fonts/Roboto-Italic.ttf');
 }

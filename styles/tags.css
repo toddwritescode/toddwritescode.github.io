@@ -1,128 +1,141 @@
-    /* A file to include all tag modifications/ enhancements AND variables */
-    
-    html {
-        scroll-behavior: smooth;
-        /* build out CSS variables to be used in code */
-        --scrollbarBG: rgb(90, 90, 90);
-        --scrollbarWidth: 11px;
-        --thumbBG: black;
-        --textFillColor: white;
-        --headingTextFillColor: rgb(9, 255, 0);
-        --strokeWidth: 0.1px;
-        --textStrokeColor: black;
-        --divMaxWidth: 75vw;
+/* A file to include all tag modifications/ enhancements AND variables */
+
+html {
+    scroll-behavior: smooth;
+    /* build out CSS variables to be used in code */
+    --scrollbarBG: rgb(90, 90, 90);
+    --scrollbarWidth: 11px;
+    --thumbBG: black;
+    --textFillColor: white;
+    --headingTextFillColor: rgb(9, 255, 0);
+    --strokeWidth: 0.1px;
+    --textStrokeColor: black;
+    --divMaxWidth: 75vw;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-image: url('../images/earth.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+a {
+    color: magenta;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: yuseiMagic;
+}
+
+p {
+    font-family: localRoboto;
+}
+
+section {
+    /*transition: 1s; -- appears to cause glitching due to performance */ 
+}
+
+section:first-of-type {
+    margin-top: 65px;
+}
+
+/* Tablet and Desktop Classes */
+
+@media(min-width:768px) {
+    h1 {
+        font-size: 35px;
     }
-    
+    b {
+        font-family: yuseiMagic;
+        font-size: 18px;
+    }
+    p {
+        font-size: 16px;
+    }
+    section {
+        position: relative;
+        padding: 15px 25px;
+        margin: 0 15vw;
+        margin-top: 25px;
+        /* height: 100vh; */
+        height: auto;
+        width: auto;
+        background-color: rgba(235, 235, 235, 0.95);
+        /* border: 1px solid rgba(0,0,0,0.2); */
+    }
+    /* Scrollbar stuff */
+    /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
+    /* https://css-tricks.com/the-current-state-of-styling-scrollbars/ */
+    /* Implementation taken from https://css-tricks.com/the-current-state-of-styling-scrollbars/#an-updated-version-of-a-fairly-consistently-styled-scrollbar-across-firefox-safari-chrome */
+    body::-webkit-scrollbar {
+        width: var(--scrollbarWidth);
+    }
     body {
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        background-image: url('../images/earth.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-color: white;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
     }
-    
-    a {
-        color: magenta;
+    body::-webkit-scrollbar-track {
+        background: var(--scrollbarBG);
     }
-    
-    a:hover {
-        text-decoration: none;
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG);
+        border-radius: 6px;
+        border: 3px solid var(--scrollbarBG);
     }
-    
-    section:last-child {
-        margin-bottom: 25px;
+}
+/* Mobile Classes */
+
+@media(max-width:767px) {
+    h1 {
+        font-size: 20px;
     }
-    /* Tablet and Desktop Classes */
-    
-    @media(min-width:768px) {
-        h1 {
-            font-size: 35px;
-        }
-        b {
-            font-family: yuseiMagic;
-            font-size: 18px;
-        }
-        p {
-            font-size: 16px;
-        }
-        section {
-            position: relative;
-            padding: 15px 25px;
-            margin: 0 15vw;
-            margin-top: 25px;
-            /* height: 100vh; */
-            height: auto;
-            width: auto;
-            background-color: rgba(235, 235, 235, 0.95);
-            /* border: 1px solid rgba(0,0,0,0.2); */
-        }
-        /* Scrollbar stuff */
-        /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
-        /* https://css-tricks.com/the-current-state-of-styling-scrollbars/ */
-        /* Implementation taken from https://css-tricks.com/the-current-state-of-styling-scrollbars/#an-updated-version-of-a-fairly-consistently-styled-scrollbar-across-firefox-safari-chrome */
-        body::-webkit-scrollbar {
-            width: var(--scrollbarWidth);
-        }
-        body {
-            scrollbar-width: thin;
-            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-        }
-        body::-webkit-scrollbar-track {
-            background: var(--scrollbarBG);
-        }
-        body::-webkit-scrollbar-thumb {
-            background-color: var(--thumbBG);
-            border-radius: 6px;
-            border: 3px solid var(--scrollbarBG);
-        }
+    b {
+        font-family: yuseiMagic;
+        font-size: 16px;
     }
-    /* Mobile Classes */
-    
-    @media(max-width:767px) {
-        h1 {
-            font-size: 20px;
-        }
-        b {
-            font-family: yuseiMagic;
-            font-size: 16px;
-        }
-        p {
-            font-size: 16px;
-        }
-        section {
-            position: relative;
-            padding: 15px 25px;
-            /* margin: 0 15vw; */
-            margin-top: 15px;
-            /* height: 100vh; */
-            height: auto;
-            width: auto;
-            background-color: rgba(235, 235, 235, 0.95);
-            /* border: 1px solid rgba(0,0,0,0.2); */
-        }
-        /* Scrollbar stuff */
-        /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
-        /* https://css-tricks.com/the-current-state-of-styling-scrollbars/ */
-        /* Implementation taken from https://css-tricks.com/the-current-state-of-styling-scrollbars/#an-updated-version-of-a-fairly-consistently-styled-scrollbar-across-firefox-safari-chrome */
-        body::-webkit-scrollbar {
-            width: var(--scrollbarWidth);
-        }
-        body {
-            scrollbar-width: thin;
-            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-        }
-        body::-webkit-scrollbar-track {
-            background: var(--scrollbarBG);
-        }
-        body::-webkit-scrollbar-thumb {
-            background-color: var(--thumbBG);
-            border-radius: 6px;
-            border: 3px solid var(--scrollbarBG);
-        }
+    p {
+        font-size: 16px;
     }
+    section {
+        position: relative;
+        padding: 15px 25px;
+        /* margin: 0 15vw; */
+        margin-top: 15px;
+        /* height: 100vh; */
+        height: auto;
+        width: auto;
+        background-color: rgba(235, 235, 235, 0.95);
+        /* border: 1px solid rgba(0,0,0,0.2); */
+    }
+    /* Scrollbar stuff */
+    /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
+    /* https://css-tricks.com/the-current-state-of-styling-scrollbars/ */
+    /* Implementation taken from https://css-tricks.com/the-current-state-of-styling-scrollbars/#an-updated-version-of-a-fairly-consistently-styled-scrollbar-across-firefox-safari-chrome */
+    body::-webkit-scrollbar {
+        width: var(--scrollbarWidth);
+    }
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--thumbBG);
+        border-radius: 6px;
+        border: 3px solid var(--scrollbarBG);
+    }
+}

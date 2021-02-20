@@ -1,103 +1,103 @@
-        /* A file to include all id(entifier) styles */
-        
-        #instagram-menu-link-text {
-            /* https://cssgradient.io/blog/css-gradient-text/ */
-            background: linear-gradient(#e66465, #9198e5);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: zefRave;
-        }
-        
-        #youtube-menu-link-text {
-            /* 
-        You cannot set gradients to text, must set it to the background instead,
-        see the article in above link.
-     */
-            background: linear-gradient(white, red);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: zefRave;
-        }
-        /* Animations */
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-        /* Tablet and Desktop Classes */
-        
-        @media(min-width:768px) {
-            #nav-heading {
-                padding: 10px 0;
-                margin: 0;
-                font-family: yuseiMagic;
-                text-align: center;
-                font-size: 37.5px;
-            }
-            #nav-picture {
-                /* cursor: pointer; */
-                position: absolute;
-                top: 0;
-                left: 15px;
-                padding: 10px;
-                margin: 0;
-                height: 50px;
-                width: 50px;
-            }
-            #day-count {
-                font-size: 45px;
-            }
-            #linear-gradient-heading {
-                text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
-                background: linear-gradient(black, rgb(92, 92, 92), black);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        }
-        /* Mobile Classes */
-        
-        @media(max-width:767px) {
-            #nav-heading {
-                padding: 10px 0;
-                margin: 0;
-                font-family: yuseiMagic;
-                text-align: center;
-                font-size: 25px;
-            }
-            #nav-picture {
-                /* cursor: pointer; */
-                position: absolute;
-                top: 0;
-                left: 7.5px;
-                padding: 10px;
-                margin: 0;
-                height: 25px;
-                width: 25px;
-            }
-            #day-count {
-                font-size: 35px;
-            }
-            #linear-gradient-heading {
-                text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
-                background: linear-gradient(black, rgb(92, 92, 92), black);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        }
+/* A file to include all id(entifier) styles */
+
+#instagram-menu-link-text {
+    /* https://cssgradient.io/blog/css-gradient-text/ */
+    background: linear-gradient(#e66465, #9198e5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: zefRave;
+}
+
+#youtube-menu-link-text {
+    /* 
+You cannot set gradients to text, must set it to the background instead,
+see the article in above link.
+*/
+    background: linear-gradient(white, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: zefRave;
+}
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/* Tablet and Desktop Classes */
+
+@media(min-width:768px) {
+    #nav-heading {
+        padding: 10px 0;
+        margin: 0;
+        font-family: yuseiMagic;
+        text-align: center;
+        font-size: 37.5px;
+    }
+    #nav-picture {
+        /* cursor: pointer; */
+        position: absolute;
+        top: 0;
+        left: 15px;
+        padding: 10px;
+        margin: 0;
+        height: 50px;
+        width: 50px;
+    }
+    #day-count {
+        font-size: 45px;
+    }
+    #linear-gradient-heading {
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(black, rgb(92, 92, 92), black);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+/* Mobile Classes */
+
+@media(max-width:767px) {
+    #nav-heading {
+        padding: 10px 0;
+        margin: 0;
+        font-family: yuseiMagic;
+        text-align: center;
+        font-size: 25px;
+    }
+    #nav-picture {
+        /* cursor: pointer; */
+        position: absolute;
+        top: 0;
+        left: 7.5px;
+        padding: 10px;
+        margin: 0;
+        height: 25px;
+        width: 25px;
+    }
+    #day-count {
+        font-size: 35px;
+    }
+    #linear-gradient-heading {
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(black, rgb(92, 92, 92), black);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

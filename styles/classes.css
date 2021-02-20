@@ -27,12 +27,95 @@
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.overflowHidden {
+    overflow: hidden;
+}
+
+.overflowYOnly {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .hide {
     display: none !important;
 }
 
 .blur {
     filter: blur(4px);
+}
+
+.full-width {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    left: 2.5%;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+.left-third-image-banner {
+    height: auto;
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr
+    place-items: center;
+}
+
+.left-third-image-banner > div:first-of-type {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: -15px -25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.left-third-image-banner > div:last-of-type {
+    padding-left: 50px;
+    margin: 3rem 2rem;
+    font-size: 2rem;
+}
+
+.right-third-image-banner {
+    height: auto;
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr
+    place-items: center;
+}
+
+.right-third-image-banner > div:last-of-type {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: -15px -25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.right-third-image-banner > div:first-of-type {
+    padding-right: 50px;
+    margin: 3rem 2rem;
+    font-size: 2rem;
+}
+
+.full-image {
+    height: 100%;
+    width: auto;
+}
+
+.quarter-image {
+    height: 7.5rem;
+    width: auto;
 }
 
 .link-text:hover {

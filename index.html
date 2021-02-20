@@ -17,10 +17,16 @@
     <link rel="stylesheet" href="./styles/loading-screen.css">
     <link rel="stylesheet" href="./styles/classes.css">
     <!-- scripts -->
+    <script>
+        (function(){
+            // scroll to top of page
+            window.scrollTo(0, 0);
+        })();
+    </script>
     <script src="./scripts/start-up-scripts.js"></script>
 </head>
 
-<body class="noselect">
+<body class="noselect overflowHidden">
     <noscript>
         <!-- To display in the case of JavaScript being disabled -->
         <div id="noscript-dialog" class="dialog">
@@ -60,6 +66,9 @@
     </div>
     <!-- BEGIN Menu -->    
     <input type="checkbox" name="menu-toggle" id="menu-toggle" style="display:none;" onchange="storeMenuState()">
+    <div id="menu-bar">
+        <h1>Todd Writes Code</h1>
+    </div>
     <div class="menu-container">
         <img class="lazy" src="./images/twc keycap logo.svg" alt="Todd Writes Code Logo">
         <div id="menu-icon">
@@ -88,7 +97,56 @@
             <h1></h1>
         </div>
     </div> 
+    <div id="scroll-to-top" class="scroll-to-top-container hide">
+        <div id="menu-icon">
+            <label for="menu-toggle">
+                <div id="top-line" class="menu-line"></div>
+                <div id="center-line" class="menu-line"></div>
+                <div id="bottom-line" class="menu-line"></div>
+            </label>
+        </div>
+    </div>
     <!-- END Menu -->
+    <!-- BEGIN Page Contents -->
+    <!-- <section class="blur full-width two-column">
+        <div>
+            <img class="lazy quarter-image" src="./images/10 years.svg" alt="Text 10">
+            <p>
+                <b>Over 10 years of experience</b> working on over 100 projects.
+                <br>Front End or Full Stack?<br>Framework or Vanilla?<br><b>Todd can do it all</b>.
+            </p>
+        </div>
+        <div>
+            <p>
+                <b>Working in both the public and private sectors</b> of the workforce, Todd is able to adapt quickly to any new environment.<br>
+                <b>From Start Ups to Universities</b>, there's not been a management style Todd hasn't experienced first hand.
+            </p>
+            <img class="lazy quarter-image" src="./images/public and private.svg" alt="Text Public and Private">
+        </div>
+    </section> -->
+    <section class="blur full-width right-third-image-banner">
+        <div>
+            <p>An accomplished programmer with <b>over 10 years of experience</b>. Working on projects in multiple different roles ranging <b>from Front End developer to Full Stack Programmer</b> and even Project Manager.</p>
+            <p>Todd has worked in <b>both public and private enterprises</b>. With clientele ranging from tnternationally renowned Universities to fresh Start Ups, with <b>no build to big or too small</b>.</p>
+        </div>
+        <div style="background-image:url('./images/twc keycap logo - timber.svg');">
+        </div>
+    </section>
+    <section class="blur full-width left-third-image-banner">
+        <div style="background-image:url('./images/burning logo.svg');">
+        </div>
+        <div>
+            <p>With a passion for development burning inside, Todd is <b>always ready to take on any challenge</b>, and even willing to burn the midnight oil to deliver a project (as he is <b>yet to miss a deadline</b>).</p>
+        </div>
+    </section>
+    <section class="blur full-width right-third-image-banner">
+        <div>
+            <p>Often found with his head in the clouds, Todd is always dreaming of what could be possible. <b>Exploring new technologies and methods to come up with cutting edge builds</b> using all the new school code and technologies.</p>
+        </div>
+        <div style="background-image:url('./images/sky logo.svg');">
+        </div>
+    </section>
+    <!-- END Page Contents -->
 </body>
 <!-- styles -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
