@@ -279,18 +279,51 @@ nav {
 }
 
 #menu-bar {
+    transition: 1.25s;
     z-index: 7;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 60px;
+    margin-left: -60px;
     height: 60px;
     width: 100%;
     background-color: black;
     color: white;
+    text-align: center;
+    border-bottom-right-radius: 25px;
 }
 
 #menu-bar > h1 {
+    position: absolute;
+    transition: 1s;
     font-size: 35px;
     line-height: 15px;
     text-align: center;
+}
+
+#menu-bar > h1#full-name {
+    transition: 1.4s;
+    top: 0;
+    left: calc(50vw - 139px);
+}
+
+#menu-bar > h1#short-name {
+    transition: 0.75s;
+    opacity: 0;
+    right: 12.5px;
+}
+
+div#menu-bar.minified {
+    font-size: 25px;
+    width: 150px;
+}
+
+div#menu-bar.minified > h1#full-name {
+    transition: 0.75s;
+    top: -150px;
+}
+
+div#menu-bar.minified > h1#short-name {
+    transition: 1.4s;
+    opacity: 1;
 }

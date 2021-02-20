@@ -23,18 +23,6 @@ function pageHasLoaded() {
     toggleMenu(menuOpened);
 }
 
-// only show the scroll to top if page is scrolled down
-window.onscroll = function(){
-    var pageOffset =document.documentElement.scrollTop || document.body.scrollTop;
-    console.log(pageOffset);
-    if(pageOffset >= 250){
-        document.getElementById('scroll-to-top').classList.remove('hide');
-    }
-    else{
-        document.getElementById('scroll-to-top').classList.add('hide');
-    }
-};
-
 // Old Code 200220211600 ------------------------------------------------------------------------
 
 // 
