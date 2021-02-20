@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colouring In</title>
+    <!-- Idea came from here: https://codepen.io/zephyo/pen/yGXxgw -->
+</head>
+<body>
+    <div id="box-for-colour">
+
+    </div>
+    <canvas id="DemoCanvas" width="500" height="200"></canvas>  
+    <script>  
+    var canvas = document.getElementById('DemoCanvas');
+    //Always check for properties and methods, to make sure your code doesn't break in other browsers.
+    if (canvas.getContext) 
+     {
+      var context = canvas.getContext('2d');
+      // Reset the current path
+      context.beginPath(); 
+      // Staring point (10,45)
+       context.moveTo(10,45);
+      // End point (180,47)
+      context.lineTo(180,47);
+      // Make the line visible
+      context.stroke();
+       }
+    </script> 
+</body>
+<style>
+    #box-for-colour {
+        position: absolute;
+        top: 25%;
+        left: calc(50vw - 250px);
+        height: 250px;
+        width: 500px;
+        border: 5px solid black;
+    }
+</style>
+<script>
+    var mousePos = {
+        'x': 0,
+        'y': 0
+    },
+    hue = 0,
+            mouseCircle = document.getElementById("mouse-circle");
+  document.onmousemove = (function(e) {
+    mousePos.x = e.pageX;
+    mousePos.y = e.pageY;
+  });
+  
+  document.onmouseleave = (function(e) {
+    mousePos.x = -1;
+    mousePos.y = -1;
+  });
+
+    var draw = setInterval(function(){
+    if(mousePos.x > 0 && mousePos.y > 0){
+      
+      var range = 8;
+      
+      var color = "background: hsla("+hue+",90%,60%,0.6);";
+      hue+=1;
+      if (hue>360){
+        hue=0;
+      }
+      
+    //   var sizeInt = getRandomInt(15, 45);
+      var sizeInt = 30;
+      size = "height: " + sizeInt + "px; width: " + sizeInt + "px;";
+      
+    //   var left = "left: " + getRandomInt(mousePos.x-range-sizeInt, mousePos.x+range) + "px;";
+      var left = "left: " + 30 + "px;";
+      
+    //   var top = "top: " + getRandomInt(mousePos.y-range-sizeInt, mousePos.y+range) + "px;"; 
+      var top = "top: " + 30 + "px;"; 
+
+      var style = left+top+color+size;
+
+    //   $("<div class='ball' style='" + style + "'></div>").appendTo('#wrap').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){$(this).remove();}); 
+    }
+  }, 30);
+</script>
+</html>

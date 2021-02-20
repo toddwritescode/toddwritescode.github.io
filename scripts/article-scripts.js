@@ -199,7 +199,7 @@ function generateMostRecentArticles() {
                 "This little experiment was to explore a few things. First was to track the mouse as it scrolls across the page which is easily enough done with a bit of JavaScript.",
                 "Then it was creating an image (circle) which tracked around the mouse position to highlight where the mouse was.",
                 "But then via some layering of background images, blur and an svg you get the finished product which is the code, which you can discover by moving the magnifying glass over it.",
-                "<b><a href=\"./pages/blurred-focus.html\">Click to the code yourself.</a></b>"
+                "<b><a href=\"../pages/blurred-focus.html\">Click to the code yourself.</a></b>"
             ],
             "dateCreated": "02/09/2021",
             "dayNumber": 15,
@@ -211,7 +211,7 @@ function generateMostRecentArticles() {
                 "If you are reading this and have no idea what CSS Grid is, stop reading and go find out.",
                 "Being a front end developer you should know all about different ways to manage the layout of pages.",
                 "CSS Grid is certainly a useful one. If you have heard of things like bootstrap and materialise then this operates like the columns and rows portion. Helping you to draw out a grid super quickly and easily.",
-                "Check out my dynamic grid generator <a href='./pages/dynamic-grid.html'>here</a>."
+                "Check out my dynamic grid generator <a href='../pages/dynamic-grid.html'>here</a>."
             ],
             "dateCreated": "02/10/2021",
             "dayNumber": 16,
@@ -220,59 +220,11 @@ function generateMostRecentArticles() {
             "id": "hidden-words",
             "title": "Hidden Words in a Grid?",
             "paragraphs": [
-                "As the title of this one and the page name implies. If you head on over to the hidden works page <a href=\"../pages/find-hidden-words.html\">here</a>, have a go and see if you can work it out."
+                ""
             ],
             "dateCreated": "02/11/2021",
             "dayNumber": 17,
-            "tags": ["blur", "mousePosition", "magnify", "first game", "hidden"]
-        }, {
-            "id": "obfuscated-code",
-            "title": "Read only for machines",
-            "paragraphs": [
-                "Today was spent doing research into obfuscated code, when I then used on my first game (see day #17 if you don't know what I'm talking about)."
-            ],
-            "dateCreated": "02/12/2021",
-            "dayNumber": 18,
-            "tags": ["code obfuscation", "machine only", "hidden in plain sight"]
-        }, {
-            "id": "string-math",
-            "title": "You cannot do math on strings",
-            "paragraphs": [
-                "Another day of enhancing other projects. Went back to my dynamic grid work to ensure that I was converting input type string into integers before attempting any mathematical operations."
-            ],
-            "dateCreated": "02/13/2021",
-            "dayNumber": 19,
-            "tags": ["maths", "string", "parseInt"]
-        }, {
-            "id": "svg-land",
-            "title": "Have you looked into SVGs?",
-            "paragraphs": [
-                "So I fell down the SVG rabbit hole and ended up consuming my weekend with all things SVG related. Making up a few cool rasterised images (my logo which is in the menu of the index page is one of them).",
-                "Hoping to include more of these over the coming weeks into my site as I build it."
-            ],
-            "dateCreated": "02/14/2021",
-            "dayNumber": 20,
-            "tags": ["svg", "logo"]
-        }, {
-            "id": "lost-days",
-            "title": "Turns out I might have lost a few days...",
-            "paragraphs": [
-                "In updating this article list I am starting to notice that I'm a few days behind where I thought I was on the challenge.",
-                "Now I know I did code for every day since I started, but I have no idea what I did for those days... So just going to skip over those..."
-            ],
-            "dateCreated": "02/15/2021",
-            "dayNumber": "~21+",
-            "tags": ["lost", "confused"]
-        }, {
-            "id": "site-build",
-            "title": "If you are reading this I did it!",
-            "paragraphs": [
-                "Today was all about getting my github site up. And so if you are reading this I was successful, and told you about it!",
-                "Here will be where I put all kinds of things to show off and just have some fun coding."
-            ],
-            "dateCreated": "02/18/2021",
-            "dayNumber": "24",
-            "tags": ["site", "github"]
+            "tags": ["blur", "mousePosition", "magnify"]
         }
     ];
 

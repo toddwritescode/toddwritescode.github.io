@@ -1,0 +1,49 @@
+{
+    "days": [
+        {
+            "id": "hello-world",
+            "title": "Hello World.",
+            "paragraphs": [
+                "My name is Todd and I've been a Software Engineer and Front End Developer for over 10 years now, with experience in both public and private sectors.",
+                "I've been lucky enough to experience the fantastic work/ life balance that universities allow their workforce, and also how it is to live the cutting edge in start up land - seeing what it takes to be competitive in the market.",
+                "My main intentions for this website is to hopefully collate things that I have learnt over my career, and hopefully you might find something helpful. There will be quick tips and tricks, longer more boring essays into \"<em>developerland</em>\" and all sorts of things in between.",
+                "As you can see I'm currently undertaking the 100 days of code and have the above number of days remaining. So why not click through and see what I've been working on each day."
+            ],
+            "dateCreated": "01/25/2021",
+            "dayNumber": 0
+        },
+        {
+            "id": "days-of-code",
+            "title": "#100daysofcode",
+            "paragraphs": [
+                "So you've seen this floating around the internet perhaps on instagram, plenty of developers posting code projects with the hashtag. But what does it actually mean?",
+                "Head on over to <a href=\"https://www.100daysofcode.com/\" target=\"_blank\">https://www.100daysofcode.com/</a> the official website for the challenge.",
+                "If you are reading this it means that I've taken up the challenge too (this signifying Day One), having built this site to track and showcase my individual progress. Enjoy."
+            ],
+            "dateCreated": "01/26/2021",
+            "dayNumber": 1
+        },
+        {
+            "id": "days-of-code",
+            "title": "<span id=\"linear-gradient-heading\">Linear Gradients on Text?</span>",
+            "paragraphs": [
+                "So most people would know that you can apply linear-gradient() to the background of an element. It's treated similar to background image.",
+                "One caveat to this is that you cannot apply linear gradients to text. Well what if I told you, that you can?",
+                "With a little background linear gradient, background clip text and text fill transparent... bing, bang, boom!<br>You've got yourself a header like the one above... Text with a gradient."
+            ],
+            "dateCreated": "01/27/2021",
+            "dayNumber": 2
+        },
+        {
+            "id": "checkbox-menu",
+            "title": "Use a checkbox to toggle a menu.",
+            "paragraphs": [
+                "A menu on any normal website has two states, open and closed. So naturally you write up a simple javascript function - true or false with a display none and you've got a menu.",
+                "What if you have a site that doesn't allow for JavaScript? You need a checkbox.",
+                "Checkboxes have the ability to store a checked and unchecked (or true/ false) state. Then have this accompanied with a css selector based on checked state and boom! Menu open and closed. This idea can really be taken and run with, anything that requires two states can be tracked with a checkbox, and you can even leverage the for label as a button to check/ uncheck your box."
+            ],
+            "dateCreated": "01/28/2021",
+            "dayNumber": 3
+        }
+    ]
+}

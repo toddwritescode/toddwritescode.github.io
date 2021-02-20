@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using .ico to be backwards compatible with IE9 -->
+    <link rel="icon" href="../favicon.ico">
+    <!-- Below code also will allow for png to be used, but not back compat with IE9 -->
+    <!-- <link rel="icon" href="./favicon.png"> -->
+    <title>Todd Writes Code </title>
+    <!-- styles -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../styles/classes.css">
+</head>
+<body>
+	<button onclick="launchThemeDialog()">Change Theme</button>
+	<div id="noscript-dialog" class="dialog">
+        <div class="dialog-heading">
+            <span class="bubble red"></span>
+            <span class="bubble yellow"></span>
+            <span class="bubble green"></span>
+            <h1>Javascript Disabled</h1>
+        </div>
+        <div class="dialog-body">
+            <p>
+                Sorry, your browser does not support JavaScript or you may not have it turned off.
+            </p>
+            <p>
+                <a href="http://bit.ly/2Mxnqyy" target="_blank">Enable JavaScript</a>
+            </p>
+        </div>
+	</div>
+	<div id="theme-selector-background">
+		<div id="the-grid">
+			<div></div>
+		</div>
+		<div id="theme-selector">
+			<div id="light-selector" onclick="confirmSiteTheme('light')">
+				<h1>Light Theme</h1>
+				<p style="color:white;">Like powdered snow, this choice will leave you wanting for warmth. Grab a cup of warm coffee and settle in for website exploration.</p>
+				<h2>Pick Me</h2>
+			</div>
+			<div id="dark-selector" onclick="confirmSiteTheme('dark')">
+				<h1>Dark Theme</h1>
+				<p style="color:black;">The only real choice for developers and designers alike. The dark of night consealing our movements through the web.</p>
+				<h2>Pick Me</h2>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- styles -->
+<style>
+	html {
+		overflow: hidden;
+        scroll-behavior: smooth;
+        /* build out CSS variables to be used in code */
+        --scrollbarBG: rgb(90, 90, 90);
+		--scrollbarWidth: 12px;
+	}
+	/* Scrollbar stuff */
+        /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
+        /* https://css-tricks.com/the-current-state-of-styling-scrollbars/ */
+        /* Implementation taken from https://css-tricks.com/the-current-state-of-styling-scrollbars/#an-updated-version-of-a-fairly-consistently-styled-scrollbar-across-firefox-safari-chrome */
+        body::-webkit-scrollbar {
+            width: var(--scrollbarWidth);
+        }
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+        }
+        body::-webkit-scrollbar-track {
+            background: var(--scrollbarBG);
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--thumbBG);
+            border-radius: 6px;
+            border: 3px solid var(--scrollbarBG);
+        }
+	#theme-selector {
+		z-index: 5;
+		position: absolute;
+		top: 5vh;
+		left: 10vw;
+		height: 75vh;
+		width: 80vw;
+		background-color: #0795FF;
+		border: 15px double black;
+		border-radius: 25px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.2);
+	}
+	#theme-selector > div {
+		cursor: pointer;
+		width: calc(100%-50px);
+		height: calc(100%-50px);
+		padding: 50px;
+        font-size: 2em;
+        font-family: yuseiMagic;
+		line-height: 50px;
+		transition: 2s;
+	}
+	#theme-selector > div > h1 {
+		transition: 2s;
+	}
+	#theme-selector > div > p {
+		transition: 2s;
+		opacity: 0;
+		filter: invert(1);
+		font-size: 18px;
+	}
+	#theme-selector > div:hover {
+		padding: 0 25px;
+		transition: 2s;
+		border-color: #0795FF;
+		border: 10px double #0795FF; 
+		border-radius: 10px;
+	}
+	#theme-selector > div:hover > h1 {
+		font-size: 50px;
+	}
+	#theme-selector > div:hover > p {
+		opacity: 1;
+		filter: invert(1);
+	}
+	#theme-selector > #light-selector {
+		background-color: white;
+		color: #0795FF;
+	}
+	#theme-selector > #dark-selector {
+		background-color: black;
+		color: #0795FF;
+	}
+	@media(max-width: 767px) {
+		#theme-selector {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+	}
+#the-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+		z-index: 1;
+        display: grid;
+    }
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform: rotateY(0deg);
+}
+
+.cube__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+    
+.cube__face--front  { 
+  background-color: red;
+  transform: rotateY(0deg) translateZ(100px); 
+}
+.cube__face--right  { 
+  background-color: green;
+  transform: rotateY( 90deg) translateZ(100px);
+}
+.cube__face--back   { 
+  background-color: violet;
+  transform: rotateY(180deg) translateZ(100px);
+}
+.cube__face--left   { 
+  background-color:blue;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+</style>
+<!-- scripts -->
+<script>
+    var currentColourIndex = 0;
+    function redrawGrid() {
+        // var columns = parseInt(document.getElementById('columns').value);
+        // var rows = parseInt(document.getElementById('rows').value);
+        var columns = rows = 12;
+        var theGrid = document.getElementById('the-grid');
+
+        theGrid.innerHTML = "";
+        var columnsAndRowsHTML = "";
+        for(x = 0; x < columns*rows; x++){
+            columnsAndRowsHTML += '<div class="cube" style="transition-delay:'+(0+((x%12)/10))+'s">';
+            columnsAndRowsHTML += '<div class="cube__face cube__face--front"></div><div class="cube__face cube__face--back"></div><div class="cube__face cube__face--right"></div><div class="cube__face cube__face--left"></div>';
+            columnsAndRowsHTML += '</div>';
+        }
+        theGrid.innerHTML = columnsAndRowsHTML;
+        document.getElementById('the-grid').style.cssText = "grid-template-columns: " + "1fr ".repeat(columns) + "; grid-template-rows: " + "1fr ".repeat(rows);
+
+        changeColour();
+    }
+
+    function changeColour(condition, callback) {
+	  var cubes = document.getElementsByClassName('cube');
+	  console.log('current colour index ', currentColourIndex);
+      var y = 0;
+        switch(currentColourIndex){
+          case 0:
+            y = 0;
+          break;
+          case 1:
+            y = 90;
+          break;
+          case 2:
+            y = 180;
+          break;
+          case 3:
+            y = 270;
+          break;
+          default:
+            currentColourIndex = 0;
+            changeColour(null);
+          break;
+		}
+
+        Array.from(cubes).forEach(function(cube){
+		  cube.style.transform = "rotateY("+y+"deg)";
+		});
+		
+		currentColourIndex += 1;
+
+          // change grid colour every 2 seconds
+          window.setTimeout(changeColour.bind(null, condition, callback), 5000);
+    }
+
+    redrawGrid();
+
+</script>
+<script src="../scripts/lazy-loading.js"></script>
+<script>
+	var websiteTheme = "";
+	function checkForJavaScript() {
+		// first thing to fire on page
+		console.warn('Welcome to Todd Writes Code. Are you lost? Or did you mean to come here?');
+		// show useless facts dialog and hide non javascript dialog if javascript enabled
+		document.getElementById('noscript-dialog').classList.add('hide');
+		confirmSiteTheme();
+	}
+
+	function confirmSiteTheme(argTheme = "") {
+		// check localstorage if theme already selected otherwise launch modal
+		if (typeof(Storage) !== "undefined") {
+		// Code for localStorage
+			var localStoreTheme = window.localStorage.getItem('websiteTheme');
+			if(!!localStoreTheme) {
+				websiteTheme = localStoreTheme;
+			}
+		} else {
+		// No web storage Support.
+		// Therefore you shall see the dark theme, because Todd says...
+		}
+		if(argTheme != ""){
+			// this will override the locally stored theme
+			websiteTheme = argTheme;
+			window.localStorage.setItem('websiteTheme', argTheme);
+		}
+		if(websiteTheme != ""){
+			// user had stored information in browser or its been parsed in
+			revealWebsite();
+		} else {
+			// user needs to select their theme
+			console.warn('Be careful, your next choice will affect the rest of your life...');
+			launchThemeDialog();
+		}
+	}
+
+	function launchThemeDialog() {
+		document.getElementById('theme-selector').classList.remove('hide');
+	}
+
+	function revealWebsite(){
+		document.getElementById('theme-selector').classList.add('hide');
+	}
+
+	function scrollToTop() {
+		// scroll to top of page
+		window.scrollTo(0, 0);
+	}
+
+    // determine if JS enabled for browser
+    checkForJavaScript();
+</script>
+</html>

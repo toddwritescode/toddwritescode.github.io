@@ -2,20 +2,20 @@
 
 @font-face {
     font-family: zefRave;
-    src: url('zef_rave/ZeF\ RAVE\ Italic.ttf');
+    src: url('../fonts/zef_rave/ZeF\ RAVE\ Italic.ttf');
 }
 
 @font-face {
     font-family: alarmClock;
-    src: url('alarm_clock/alarm\ clock.ttf');
+    src: url('../fonts/alarm_clock/alarm\ clock.ttf');
 }
 
 @font-face {
     font-family: vcrOsd;
-    src: url('vcr_osd_mono/VCR_OSD_MONO_1.001.ttf');
+    src: url('../fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf');
 }
 
 @font-face {
     font-family: yuseiMagic;
-    src: url('YuseiMagic-Regular.ttf');
+    src: url('../fonts/YuseiMagic-Regular.ttf');
 }

@@ -1,0 +1,100 @@
+/* 
+	All styles required for loading screen
+	Pulsing logo - then assign hide-loading-div class when complete
+*/
+.loading-grid-cell {
+	height: 100%;
+	width: 100%;
+	color: white;
+	background-color: black;
+	border: 5px black solid;
+}
+.hide-loading-div {
+	animation: loaded 2s ease 2s 1 forwards;	
+}
+#loading-div {
+	overflow: hidden;
+	z-index: 90;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	place-items: center;
+	padding: 0;
+	margin: 0;
+	border-bottom-right-radius: 25px;
+}
+#center-cell {
+	z-index: 99;
+	height: 33vh;
+	width: 33vw;
+	min-height: 300px;
+	min-width: 300px;
+	max-height: 500px;
+	max-width: 500px;
+	border: 2px solid black;
+	background: linear-gradient(180deg, black, black 0 35%, transparent 35% 65%, black 65%);
+	transform-origin: center center;
+	animation: pulse 1s ease alternate-reverse infinite;
+}
+#center-cell > img {
+	position: absolute;
+	top: 25%;
+	left: 0%;
+	height: 50%;
+	width: 100%;
+	background-color: rgba(255,255,255,0.3);
+}
+
+#center-cell > h1 {
+	font-family: yuseiMagic;
+	position: relative;
+	top: 0;
+	font-size: 1.75rem;
+}
+
+#center-cell > h2 {
+	font-family: yuseiMagic;
+	position: relative;
+	top: 55%;
+	font-size: 1rem;
+}
+
+#main {
+	z-index: 1;
+	position: absolute;
+	height: auto;
+	min-height: 100vh;
+	width: 100%;
+	background-color: purple;
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		border: 5px solid black;
+	}
+	to {
+		transform: scale(0.9);
+		border: 15px solid black;
+	}
+}
+
+@keyframes loaded {
+	from {
+		opacity: 1;
+		z-index: 90;
+		transform: scale(1);
+	}
+	to {
+		top: -50vh;
+		left: -50vw;
+		opacity: 0;
+		z-index: 0;
+		transform: scale(0);
+	}
+}

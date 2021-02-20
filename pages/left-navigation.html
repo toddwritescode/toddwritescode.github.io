@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Navigation</title>
+</head>
+<body>
+    <input type="checkbox" style="z-index:0;position:absolute;top:0;left:0;display:none;" name="toggle-menu" id="toggle-menu" onchange="storeMenuState()">
+    <section id="nav-section">
+        <nav>
+            <div class="nav-option">
+                <label for="toggle-menu" style="height:100%;width:100%;">
+                    <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g data-name="67-menu" id="_67-menu"><rect class="cls-1" height="12" width="12" x="1" y="1"/><rect class="cls-1" height="12" width="12" x="1" y="19"/><rect class="cls-1" height="12" width="12" x="19" y="19"/><rect class="cls-1" height="12" width="12" x="19" y="1"/></g></svg>
+                </label>
+            </div>
+        </nav>
+    </section>
+    <section id="body-section"></section>
+</body>
+<script>
+    (function(){
+        var menuOpened = false;
+        // fire on browser load
+        if(typeof(Storage) != "undefined"){
+            menuOpened = window.localStorage.getItem('menuState') == 'true' ? true : false;
+        }
+        toggleMenu(menuOpened);
+    })();
+
+    function storeMenuState() {
+        var menuOpened = document.getElementById('toggle-menu').checked;
+        if(typeof(Storage) != undefined){
+            window.localStorage.setItem('menuState', menuOpened.toString());
+        }
+    }
+
+    function toggleMenu(isOpen){
+        document.getElementById('toggle-menu').checked = isOpen;
+    }
+</script>
+<style>
+    /* tags */
+
+    body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        grid-gap: 0;
+        grid-template-areas: "one two three four five six seven eight nine ten eleven twelve";
+    }
+
+    nav {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: "one" "two" "three" "four" "five" "six";
+    }
+
+    svg {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    section {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: auto;
+    }
+
+    /* classes */
+
+    .nav-option {
+        height: 80%;
+        width: 80%;
+        z-index: 9;
+    }
+    .nav-option > label > svg:hover {
+        cursor: pointer;
+    }    
+
+    /* ids */
+
+    #nav-section {
+        grid-column-start: one;
+        grid-column-end: one;
+        background-color:grey;
+    }
+
+    #body-section {
+        grid-column-start: two;
+        grid-column-end: twelve;
+        background-color: goldenrod;
+    }
+
+    #toggle-menu ~ #nav-section {
+        animation: navigationClosed 2s ease 0s forwards;
+    }
+
+    #toggle-menu ~ #nav-section > nav {
+        /* nav is closed only show open menu icon */
+        /* animation: navigationClosed 2s ease 0s forwards; */
+        grid-row-start: one;
+        grid-row-end: one;
+    }
+
+    #toggle-menu:checked ~ #nav-section {
+        animation: navigationOpen 2s ease 0s forwards;
+    }
+
+    #toggle-menu:checked ~ #nav-section > nav {
+        /* nav is opened cascade all icons down the side of screen */
+        /* animation: navigationOpen 2s ease 0s forwards; */
+        grid-row-start: one;
+        grid-row-end: six;
+    }
+
+    #toggle-menu ~ #body-section {
+        animation: whenNavigationClosed 2s ease 0s forwards;
+    }
+
+    #toggle-menu:checked ~ #body-section {
+        animation: whenNavigationOpen 2s ease 0s forwards;
+    }
+
+    /* animations */
+
+    @keyframes navigationClosed {
+        0% {
+            grid-column-end: two;
+            filter: invert(0);
+        }
+        25% {
+            grid-column-end: two;
+            filter: invert(0);
+        }
+        100% {
+            grid-column-end: one;
+            filter: invert(1);
+        }
+    }
+
+    @keyframes navigationOpen {
+        0% {
+            filter: invert(1);
+            grid-column-end: one;
+        }
+        75% {
+            grid-column-end: two;
+            filter: invert(0);
+        }
+        100% {
+            grid-column-end: two;
+            filter: invert(0);
+        }
+    }
+
+@keyframes whenNavigationClosed {
+    0% {
+        grid-column-start: three;
+    }
+    25% {
+        grid-column-start: three;
+    }
+    100% {
+        grid-column-start: two;
+    }
+}
+
+@keyframes whenNavigationOpen {
+    0% {
+        grid-column-start: two;
+    }
+    75% {
+        grid-column-start: three;
+    }
+    100% {
+        grid-column-start: three;
+    }
+}
+</style>
+</html>

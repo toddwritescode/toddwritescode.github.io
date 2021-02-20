@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrallax Effect</title>
+</head>
+<body>
+    <h1>Parallax Effect</h1>
+    <section id="section-1">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam exercitationem quas ducimus expedita, dolorum nemo debitis facere eaque omnis! Iste, necessitatibus quia nesciunt tenetur ducimus impedit odio voluptate assumenda modi!
+    </section>
+    <section id="section-2">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam exercitationem quas ducimus expedita, dolorum nemo debitis facere eaque omnis! Iste, necessitatibus quia nesciunt tenetur ducimus impedit odio voluptate assumenda modi!
+    </section>
+</body>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background-image: url('../images/mountains.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-size: 30px;
+    }
+    h1 {
+        color: #141F2B;
+        font-size: 75px;
+    }
+    section {
+        position: relative;
+        padding: 25%;
+        /* margin: 0 15vw; */
+        margin-top: 25px;
+        height: 50vh;
+        width: auto;
+    }
+    #section-1 {
+        top: 25vh;
+        background-color: #8EA5BD;
+
+    }
+    #section-2 {
+        top: 75vh;
+        height: 50vh;
+        background-color: #141F2B;
+        color: white;
+    }
+</style>
+</html>

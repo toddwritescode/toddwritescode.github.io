@@ -72,16 +72,5 @@
         var columns = parseInt(document.getElementById('columns').value);
         var rows = parseInt(document.getElementById('rows').value);
         var theGrid = document.getElementById('the-grid');
-
-        console.log('draw grid with ' + columns + ' columns and ' + rows + ' rows.');
-
-        theGrid.innerHTML = "";
-        var columnsAndRowsHTML = "";
-        for(x = 0; x < columns*rows; x++){
-            columnsAndRowsHTML += "<div class='grid-div'></div>";
-        }
-        theGrid.innerHTML = columnsAndRowsHTML;
-        document.getElementById('the-grid').style.cssText = "grid-template-columns: " + "1fr ".repeat(columns) + "; grid-template-rows: " + "1fr ".repeat(rows);
-    }
 </script>
 </html>

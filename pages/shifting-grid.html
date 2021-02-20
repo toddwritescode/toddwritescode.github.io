@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grid</title>
+</head>
+<body>
+    <!-- <div id="grid-inputs">
+        <h1>Specify your grid</h1>
+        Columns: <input id="columns" name="columns" type="text" value="1" onchange="redrawGrid()">
+        Rows: <input id="rows" name="columns" type="text" value="1" onchange="redrawGrid()">
+    </div> -->
+    <!-- <button type="button" name="button" onclick="changeColour();">Change Colour</button> -->
+    <div id="the-grid">
+        <div></div>
+    </div>
+</body>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    #grid-inputs {
+        position: absolute;
+        top: 25px;
+        left: calc(50vw - 250px);
+        height: 100px;
+        width: 500px;
+        text-align: center;
+    }
+    #the-grid {
+        position: absolute;
+        top: 50px;
+        left: calc(50vw - 250px);
+        height: 500px;
+        width: 500px;
+        display: grid;
+        /* grid-gap: 10px; */
+    }
+    #the-grid > div {
+        background-color: black;
+    }
+
+
+    .cube {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: 1.5s;
+      transform: rotateY(0);
+    }
+
+    .cube__face {
+      position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.cube__face--front  {
+  background-color: red;
+  transform: rotateY(0deg);
+}
+.cube__face--right  {
+  background-color: blue;
+  transform: rotateY( 90deg);
+}
+.cube__face--left   {
+  background-color: green;
+  transform: rotateY(270deg);
+}
+.cube__face--back   {
+  background-color: yellow;
+  transform: rotateY(180deg);
+}
+</style>
+<script>
+    var currentColourIndex = 0;
+    function redrawGrid() {
+        // var columns = parseInt(document.getElementById('columns').value);
+        // var rows = parseInt(document.getElementById('rows').value);
+        var columns = rows = 12;
+        var theGrid = document.getElementById('the-grid');
+
+        theGrid.innerHTML = "";
+        var columnsAndRowsHTML = "";
+        for(x = 0; x < columns*rows; x++){
+            columnsAndRowsHTML += '<div class="cube" style="z-index: 99;transition-delay:'+(0+((x%12)/10))+'s">';
+            columnsAndRowsHTML += '<div class="cube__face cube__face--front"></div><div class="cube__face cube__face--back"></div><div class="cube__face cube__face--right"></div><div class="cube__face cube__face--left"></div>';
+            columnsAndRowsHTML += '</div>';
+        }
+        theGrid.innerHTML = columnsAndRowsHTML;
+        document.getElementById('the-grid').style.cssText = "grid-template-columns: " + "1fr ".repeat(columns) + "; grid-template-rows: " + "1fr ".repeat(rows);
+
+        changeColour();
+    }
+
+    function changeColour(condition, callback) {
+      var cubes = document.getElementsByClassName('cube');
+      var y = 0;
+        switch(currentColourIndex++){
+          case 0:
+            y = 90;
+          break;
+          case 1:
+            y = 270;
+          break;
+          case 2:
+            y = 180;
+          break;
+          case 3:
+            y = 0;
+          break;
+          default:
+            currentColourIndex = 0;
+            changeColour();
+          break;
+        }
+
+        Array.from(cubes).forEach(function(cube){
+          cube.style.transform = "rotateY("+y+"deg)";
+        });
+
+          // change grid colour every 2 seconds
+          window.setTimeout(changeColour.bind(null, condition, callback), 2500);
+    }
+
+    redrawGrid();
+
+</script>
+</html>

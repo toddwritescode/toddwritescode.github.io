@@ -23,6 +23,8 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-color: white;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
     
     a {
@@ -48,18 +50,6 @@
         }
         p {
             font-size: 16px;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: auto;
-            width: 75vw;
-            left: 12.5vw;
-            padding-bottom: 25px;
-            background-color: rgba(240, 240, 240);
-            box-shadow: 0 2px rgba(0, 0, 0, 0.1);
-            z-index: 99;
         }
         section {
             position: relative;
@@ -104,17 +94,6 @@
         }
         p {
             font-size: 16px;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: auto;
-            width: 100%;
-            padding-bottom: 15px;
-            background-color: rgba(240, 240, 240);
-            box-shadow: 0 2px rgba(0, 0, 0, 0.1);
-            z-index: 99;
         }
         section {
             position: relative;

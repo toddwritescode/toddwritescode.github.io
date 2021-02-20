@@ -1,41 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="generator" content="Todd Writes Code BoilerPlate">
     <meta name="dcterms.created" content="Thu, 18 Feb 2021 00:47:19 GMT">
-    <meta name="description" content="Landing page for Todd Writes Code">
-    <meta name="keywords" content="Landing page for Todd Writes Code">
+    <meta name="description" content="Homepage of Todd Writes Code">
+    <meta name="keywords" content="website toddwritescode todd_writes_code toddwritescode">
     <!-- Using .ico to be backwards compatible with IE9 -->
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="./favicon.ico">
     <!-- Below code also will allow for png to be used, but not back compat with IE9 -->
     <!-- <link rel="icon" href="./favicon.png"> -->
     <title>Todd Writes Code</title>
     <!-- styles -->
-    <link rel="stylesheet" href="/styles/classes.css">
+    <link rel="stylesheet" href="./styles/loading-screen.css">
+    <link rel="stylesheet" href="./styles/classes.css">
+    <!-- scripts -->
+    <script src="./scripts/start-up-scripts.js"></script>
 </head>
+
 <body class="noselect">
+    <noscript>
+        <!-- To display in the case of JavaScript being disabled -->
+        <div id="noscript-dialog" class="dialog">
+            <div class="dialog-heading">
+                <span class="bubble red"></span>
+                <span class="bubble yellow"></span>
+                <span class="bubble green"></span>
+                <h1>Javascript Disabled</h1>
+            </div>
+            <div class="dialog-body">
+                <p>
+                    Sorry, your browser does not support JavaScript or you may not have it turned off.<br>
+                    Or something has gone wrong...
+                </p>
+                <p>
+                    <a href="http://bit.ly/2Mxnqyy" target="_blank">Enable JavaScript</a>
+                </p>
+            </div>
+        </div>
+    </noscript>
+    <div id="loading-div">
+        <!-- Used to show loading animation whilst all page assets load -->
+        <div class="loading-grid-cell"></div>
+        <div class="loading-grid-cell"></div>
+        <div class="loading-grid-cell"></div>
+        <div class="loading-grid-cell"></div>
+        <div class="loading-grid-cell" id="center-cell">
+            <h1>Welcome to</h1>
+            <img src="./images/twc text.svg" alt="TWC with city skyline">
+            <h2>Won't be a minute,<br> just cleaning up.</h2>
+        </div>
+        <div class="loading-grid-cell">
+        </div>
+        <div class="loading-grid-cell"></div>
+        <div class="loading-grid-cell"></div>
+        <div class="loading-grid-cell"></div>       
+    </div>
+    <!-- BEGIN Menu -->    
     <input type="checkbox" name="menu-toggle" id="menu-toggle" style="display:none;" onchange="storeMenuState()">
-    <div class="container">
-        <img src="./images/twc keycap logo.svg" alt="Todd Writes Code Logo">
+    <div class="menu-container">
+        <img class="lazy" src="./images/twc keycap logo.svg" alt="Todd Writes Code Logo">
         <div id="menu-icon">
             <label for="menu-toggle">
-                <div id="top-line" class="line"></div>
-                <div id="center-line" class="line"></div>
-                <div id="bottom-line" class="line"></div>
+                <div id="top-line" class="menu-line"></div>
+                <div id="center-line" class="menu-line"></div>
+                <div id="bottom-line" class="menu-line"></div>
             </label>
         </div>
         <nav>
             <div class="nav-padder"></div>
             <div id="nav-items">
                 <h1><u>Menu</u></h1>
-                <h2 id="home-heading">
-                    <a href="/">Home</a>
-                </h2>
-                <h2 id="days-of-code-heading">
-                    <a href="/pages/daysofcode">#100daysofcode</a>
-                </h2>
+                <h2 id="home-heading">Home</h2>
+                <h2 id="days-of-code-heading">#100daysofcode</h2>
                 <h2 id="youtube-heading">
                     <a id="yt-link" target="_blank" href="https://bit.ly/toddsmyth-YT">YouTube</a>
                 </h2>
@@ -48,284 +87,18 @@
         <div class="container-footer">
             <h1></h1>
         </div>
-    </div>        
-    <div id="noscript-dialog" class="dialog">
-        <div class="dialog-heading">
-            <span class="bubble red"></span>
-            <span class="bubble yellow"></span>
-            <span class="bubble green"></span>
-            <h1>Javascript Disabled</h1>
-        </div>
-        <div class="dialog-body">
-            <p>
-                Sorry, your browser does not support JavaScript or you may not have it turned off.
-                (Or something might have gone wrong...)
-            </p>
-            <p>
-                <a href="http://bit.ly/2Mxnqyy" target="_blank">Enable JavaScript</a>
-            </p>
-        </div>
-    </div>
+    </div> 
+    <!-- END Menu -->
 </body>
+<!-- styles -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="./fonts/fonts.css">
+<link rel="stylesheet" href="./styles/tags.css">
+<link rel="stylesheet" href="./styles/identifiers.css">
+<link rel="stylesheet" href="./styles/menu-styles.css">
 <!-- scripts -->
+<script src="./scripts/menu-scripts.js"></script>
 <script>
-    function storeMenuState() {
-        var menuOpened = document.getElementById('menu-toggle').checked;
-        if(typeof(Storage) != undefined){
-            window.localStorage.setItem('menuState', menuOpened.toString());
-        }
-    }
-
-    function toggleMenu(isOpen){
-        document.getElementById('menu-toggle').checked = isOpen;
-    }
-
-    function checkForJavaScript() {
-        // first thing to fire on page
-        console.warn('Welcome to Todd Writes Code. Are you lost? Or did you mean to come here?');
-        // show useless facts dialog and hide non javascript dialog if javascript enabled
-        document.getElementById('noscript-dialog').classList.add('hide');
-    }
-
-    // determine if JS enabled for browser
-    checkForJavaScript();
-
-    (function(){
-        var menuOpened = false;
-        // fire on browser load
-        if(typeof(Storage) != "undefined"){
-            menuOpened = window.localStorage.getItem('menuState') == 'true' ? true : false;
-        }
-        toggleMenu(menuOpened);
-    })();
+    pageHasLoaded();
 </script>
-<style>
-    /* tags */
-
-    body {
-        padding: 0;
-        margin: 0;
-        background-color: #1284ea;
-    }
-
-    nav {
-        transition: 1s;
-        z-index: 9;
-        position: relative;
-        top: -500px;
-        left: -500px;
-        font-family: yuseiMagic;
-        text-align: center;
-        opacity: 0;
-        display: grid;
-        grid-template-columns: 1fr 4fr 1fr;
-        grid-template-rows: 1fr;
-    }
-
-    /* classes */
-    .container {
-        z-index: 8;
-        transition: 1.25s;
-        position: absolute;
-        padding: 0;
-        margin: 0;
-        top: 0;
-        left: 0;
-        height: 60px;
-        width: 60px;
-        background-color: black;
-        color: white;
-        border-bottom-right-radius: 25px;
-    }
-
-    .container > img {
-        transition: 2s;
-        position: absolute;
-        top: -530px;
-        left: -555px;
-        height: auto;
-        width: 350px;
-        opacity: 0.5;
-        transform-origin: center center;
-        animation: spinningCoin 90s linear infinite;
-    }
-
-    @keyframes spinningCoin {
-        from {
-            transform: rotateZ(0);
-        }
-        to {
-            transform: rotateZ(360deg);
-        }
-    }
-
-    .line {
-        transition: 1.5s;
-        animation-timing-function: linear;
-        position: relative;
-        top: 0;
-        left: 0;
-        padding: 0;
-        margin: 12.5px;
-        margin-left: 0;
-        height: 0;
-        width: 30px;
-        border: none;
-        border-top: 2px solid #d484ea;
-        transform-origin: top left;
-        transform: rotateZ(0);
-    }
-
-    /* ids */
-    #menu-icon {
-        transition: 1s;
-        position: relative;
-        z-index: 15;
-        height: 30px;
-        width: 30px;
-        top: 0;
-        left: 12.5px;
-    }
-
-    #nav-items {
-        position: relative;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: auto;
-        min-width: 50vw;
-        max-width: 100vw;
-        color: white;
-    }
-
-    #nav-items > h1 {
-        font-size: 4.5rem;
-    }
-
-    #nav-items > h2 {
-        font-size: 2rem;
-        z-index: 11;
-        cursor: pointer;
-        transition: 1s;
-        background: linear-gradient(#fff, #fff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #nav-items > h2:hover {
-        font-size: 3rem;
-        z-index: 11;
-        cursor: pointer;
-    }
-
-    #nav-items > h2#home-heading:hover {
-        /* https://cssgradient.io/blog/css-gradient-text/ */
-        background: linear-gradient(#ebc439, #ebda39);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #nav-items > h2#days-of-code-heading:hover {
-        background: linear-gradient(#0289fe, #02ebfe);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #nav-items > h2#youtube-heading:hover {
-        background: linear-gradient(white, red);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #nav-items > h2#instagram-heading:hover {
-        background: linear-gradient(#e66465, #c528fe);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #top-line {
-        top: 0;
-        left: 0;
-    }
-
-    #center-line {
-        top: 0;
-        left: 0;
-        transform: rotateZ(0);
-    }
-
-    #bottom-line {
-        top: 0;
-        left: 0;
-    }
-
-    #menu-icon:hover > label {
-        cursor: pointer;
-    }
-
-    #menu-icon:hover > label > #top-line,
-    #menu-icon:hover > label > #center-line,
-    #menu-icon:hover > label > #bottom-line {
-        filter: invert(1);
-        border-color: #fc475c;
-    }
-
-    #menu-toggle:checked ~ .container {
-        padding: 0;
-        background-color: black;
-        color: white;
-        height: 100vh;
-        width: 100vw;
-    }
-
-    #menu-toggle:checked ~ .container > img {
-        top: -130px;
-        left: -55px;
-    }
-
-    #menu-toggle:checked ~ .container > nav {
-        top: 0;
-        left: 0;
-        transition: 2s;
-        z-index: 10;
-        opacity: 1;
-    }
-
-    #menu-toggle:checked ~ .container > #menu-icon {
-        top: 15px;
-        left: calc(100% - 45px);
-    }
-
-    #menu-toggle:checked ~ .container > #menu-icon > label > .line {
-        margin: 0;
-        transform-origin: center center;
-        transform: rotateZ(45deg);
-        border-top: 4px solid white;
-    }
-
-    #menu-toggle:checked ~ .container > #menu-icon:hover > label > #top-line,
-    #menu-toggle:checked ~ .container > #menu-icon:hover > label > #center-line,
-    #menu-toggle:checked ~ .container > #menu-icon:hover > label > #bottom-line {
-        filter: invert(1);
-        border-color: #fc475c;
-    }
-
-    #menu-toggle:checked ~ .container > #menu-icon > label > #top-line {
-        top: 14px;
-    }
-    #menu-toggle:checked ~ .container > #menu-icon > label > #center-line {
-        top: 10px;
-        transform: rotateZ(135deg);
-    }
-
-    #menu-toggle:checked ~ .container > #menu-icon > label > #bottom-line {
-        top: 7px;
-        border-bottom: 0;
-    }
-</style>
 </html>
