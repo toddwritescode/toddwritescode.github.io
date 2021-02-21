@@ -17,12 +17,11 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    background-image: url('../images/earth.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/earth.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: white;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -46,7 +45,6 @@ p {
 
 section {
     transition: 1s;
-    /*transition: 1s; -- appears to cause glitching due to performance */ 
 }
 
 section:first-of-type {
@@ -54,6 +52,15 @@ section:first-of-type {
 }
 
 /* Tablet and Desktop Classes */
+
+@media(min-width: 1000px) {
+    /* center sections and enforce a maximum width */
+    section {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 1000px;
+    }
+}
 
 @media(min-width:768px) {
     h1 {
