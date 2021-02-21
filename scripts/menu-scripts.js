@@ -25,4 +25,14 @@ window.onscroll = function(){
     	document.getElementById('menu-bar').classList.remove('minified');
         document.getElementById('scroll-to-top').classList.add('hide');
     }
+
+    // only have colour on visible sections
+    for (var sections = document.getElementsByTagName('section'), i = sections.length; i--;) {
+    	blackWhiteSection(sections[i]);
+    }
 };
+
+document.getElementById("nav-items").addEventListener("click", function(){
+    toggleMenu(false);
+    storeMenuState();
+});

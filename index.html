@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,12 +16,6 @@
     <link rel="stylesheet" href="./styles/loading-screen.css">
     <link rel="stylesheet" href="./styles/classes.css">
     <!-- scripts -->
-    <script>
-        (function(){
-            // scroll to top of page
-            window.scrollTo(0, 0);
-        })();
-    </script>
     <script src="./scripts/start-up-scripts.js"></script>
 </head>
 
@@ -84,7 +77,10 @@
             <div id="nav-items">
                 <h1><u>Menu</u></h1>
                 <h2 id="home-heading">Home</h2>
-                <h2 id="days-of-code-heading">#100daysofcode</h2>
+                <h2 id="projects-heading">
+                    <a id="project-demos-link" href="#project-demos">Projects & Demos</a>
+                </h2>
+                <!-- <h2 id="days-of-code-heading">#100daysofcode</h2> -->
                 <h2 id="youtube-heading">
                     <a id="yt-link" target="_blank" href="https://bit.ly/toddsmyth-YT">YouTube</a>
                 </h2>
@@ -109,23 +105,7 @@
     </div>
     <!-- END Menu -->
     <!-- BEGIN Page Contents -->
-    <!-- <section class="blur full-width two-column">
-        <div>
-            <img class="lazy quarter-image" src="./images/10 years.svg" alt="Text 10">
-            <p>
-                <b>Over 10 years of experience</b> working on over 100 projects.
-                <br>Front End or Full Stack?<br>Framework or Vanilla?<br><b>Todd can do it all</b>.
-            </p>
-        </div>
-        <div>
-            <p>
-                <b>Working in both the public and private sectors</b> of the workforce, Todd is able to adapt quickly to any new environment.<br>
-                <b>From Start Ups to Universities</b>, there's not been a management style Todd hasn't experienced first hand.
-            </p>
-            <img class="lazy quarter-image" src="./images/public and private.svg" alt="Text Public and Private">
-        </div>
-    </section> -->
-    <section class="blur full-width right-third-image-banner">
+    <section class="blur black-n-white full-width right-third-image-banner">
         <div>
             <p>An accomplished programmer with <b>over 10 years of experience</b>. Working on projects in multiple different roles ranging <b>from Front End developer to Full Stack Programmer</b> and even Project Manager.</p>
             <p>Todd has worked in <b>both public and private enterprises</b>. With clientele ranging from tnternationally renowned Universities to fresh Start Ups, with <b>no build to big or too small</b>.</p>
@@ -133,18 +113,60 @@
         <div style="background-image:url('./images/twc keycap logo - timber.svg');">
         </div>
     </section>
-    <section class="blur full-width left-third-image-banner">
+    <section class="blur black-n-white full-width left-third-image-banner">
         <div style="background-image:url('./images/burning logo.svg');">
         </div>
         <div>
             <p>With a passion for development burning inside, Todd is <b>always ready to take on any challenge</b>, and even willing to burn the midnight oil to deliver a project (as he is <b>yet to miss a deadline</b>).</p>
         </div>
     </section>
-    <section class="blur full-width right-third-image-banner">
+    <section class="blur black-n-white full-width right-third-image-banner">
         <div>
             <p>Often found with his head in the clouds, Todd is always dreaming of what could be possible. <b>Exploring new technologies and methods to come up with cutting edge builds</b> using all the new school code and technologies.</p>
         </div>
         <div style="background-image:url('./images/sky logo.svg');">
+        </div>
+    </section>
+    <div class="section-title" id="project-demos">
+        <h2>Projects & Demos</h2>
+    </div>
+    <section class="blur full-width two-column">
+        <div>
+            <img class="lazy quarter-image" src="./images/useless facts.svg" alt="Text Random Useless Facts">
+            <p>
+                Everyone loves a good useless fact.<br>So how about getting <b>a random new one every 3 seconds</b>?
+            </p><p>
+            This little project is all about randomly generating a useless fact from an array of strings (a V2 is in the works).
+            </p>
+            <p><a href="./pages/useless-facts-loader.html"><b>Click for Useless Facts Demo</b></a></p>
+        </div>
+        <div>
+            <p><a href="./pages/dynamic-grid.html"><b>Click for CSS Grid Demo</b></a></p>
+            <p>
+                When Todd was learning to code, table layouts were the big thing when it came to page design and structure.
+                <br> Thankfully things have changed a little bit since then.
+            </p>
+            <p>
+                This little project highlights the functionality of a basic CSS grid as an educational reference.
+            </p>
+            <img class="lazy quarter-image" src="./images/css grid.svg" alt="Text Css Grid">
+        </div>
+    </section>
+    <section class="blur full-width two-column">
+        <div>            
+            <p><a href="./pages/moving-landscape.html"><b>Click for SVG Animation Demo</b></a></p>
+            <p>
+                A lot of websites today are heavily leveraging SVGs instead of just writing pure HTML and CSS. To highlight a potential usage of this Todd has generated a small animation that could be used as a landing page for a website.
+            </p>
+            <img class="lazy quarter-image" src="./images/svg animate.svg" alt="Text svg animate in triangle">
+        </div>
+        <div>
+            <img class="lazy quarter-image" src="./images/code blur.svg" alt="Text Code Blur and Magnifying Glass Icon">
+            <p>
+                So Todd wears glasses and people always ask him, what is that like? So naturally he built a project that shows you exactly what thats like.
+            </p>
+            <p>(Best viewed on a full screen desktop)</p>
+            <p><a href="./pages/blurred-focus.html"><b>Click for Code Blur Demo</b></a></p>
         </div>
     </section>
     <!-- END Page Contents -->

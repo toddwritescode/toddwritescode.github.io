@@ -35,7 +35,8 @@ a:hover {
     text-decoration: none;
 }
 
-h1 {
+h1,
+h2 {
     font-family: yuseiMagic;
 }
 
@@ -44,6 +45,7 @@ p {
 }
 
 section {
+    transition: 1s;
     /*transition: 1s; -- appears to cause glitching due to performance */ 
 }
 
@@ -67,8 +69,7 @@ section:first-of-type {
     section {
         position: relative;
         padding: 15px 25px;
-        margin: 0 15vw;
-        margin-top: 25px;
+        margin: 25px 15vw;
         /* height: 100vh; */
         height: auto;
         width: auto;

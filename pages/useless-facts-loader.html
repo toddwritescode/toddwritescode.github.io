@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Todd Writes Code BoilerPlate">
+    <meta name="dcterms.created" content="Thu, 18 Feb 2021 00:47:19 GMT">
+    <meta name="description" content="Random Useless Facts generator">
+    <meta name="keywords" content="useless random facts generator dialog example">
+    <!-- Using .ico to be backwards compatible with IE9 -->
+    <link rel="icon" href="./favicon.ico">
+    <!-- Below code also will allow for png to be used, but not back compat with IE9 -->
+    <!-- <link rel="icon" href="./favicon.png"> -->
     <title>Useless Facts</title>
+    <link rel="stylesheet" href="../fonts/fonts.css">
     <link rel="stylesheet" href="../styles/classes.css">
     <script src="../scripts/useless-facts-scripts.js"></script>
 </head>
-
 <body>
-    <h1 id="hidden-message">Facts have been stopped...</h1>
     <div id="useless-facts-dialog" class="dialog">
         <div class="dialog-heading">
             <span class="bubble red "></span>
             <span class="bubble yellow "></span>
             <span class="bubble green "></span>
-            <h1 id="useless-facts-heading">Welcome to Todd Writes Code</h1>
+            <h1 id="useless-facts-heading">Did you know?</h1>
         </div>
         <div class="dialog-body">
             <h2>Useless Fact #<span id="factNumber">0</span></h2>
@@ -35,6 +42,11 @@
     body {
         padding-top: 25%;
         text-align: center;
+        font-family: yuseiMagic;
+    }
+
+    p {
+        font-family: serif;
     }
     
     .dialog-loading-indicator {

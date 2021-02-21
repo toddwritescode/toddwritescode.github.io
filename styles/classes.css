@@ -12,6 +12,10 @@
     animation-duration: 0.4s;
 }
 
+.black-n-white {
+    filter: grayscale(100%);
+}
+
 .noselect {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -505,4 +509,13 @@
 .full-dialog > .dialog-heading > h1 {
     font-size: 35px;
     padding: 15px;
+}
+
+.section-title {
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    background-color: black;
+    color: white;
 }

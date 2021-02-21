@@ -133,6 +133,14 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
+#nav-items > h2#projects-heading:hover {
+    /* https://cssgradient.io/blog/css-gradient-text/ */
+    background: linear-gradient(#30eb70, #309770);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 #nav-items > h2#days-of-code-heading:hover {
     /* https://cssgradient.io/blog/css-gradient-text/ */
     background: linear-gradient(#0289fe, #02ebfe);
