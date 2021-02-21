@@ -30,12 +30,8 @@
 }
 #center-cell {
 	z-index: 99;
-	height: 33vh;
-	width: 33vw;
-	min-height: 300px;
-	min-width: 300px;
-	max-height: 500px;
-	max-width: 500px;
+	height: 300px;
+	width: 300px;
 	border: 2px solid black;
 	background: linear-gradient(180deg, black, black 0 35%, transparent 35% 65%, black 65%);
 	transform-origin: center center;

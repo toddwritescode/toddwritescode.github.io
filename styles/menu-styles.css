@@ -141,7 +141,7 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
-#nav-items > h2#days-of-code-heading:hover {
+#nav-items > h2#contact-heading:hover {
     /* https://cssgradient.io/blog/css-gradient-text/ */
     background: linear-gradient(#0289fe, #02ebfe);
     background-clip: text;
