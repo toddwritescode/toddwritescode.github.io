@@ -69,7 +69,7 @@
     min-height: 250px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr
+    grid-template-rows: 1fr;
     place-items: center;
 }
 
@@ -93,7 +93,7 @@
     min-height: 250px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr
+    grid-template-rows: 1fr;
     place-items: center;
 }
 
@@ -331,6 +331,53 @@
 /* Mobile Classes */
 
 @media(max-width:767px) {
+
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+    }
+
+    .left-third-image-banner {
+        height: auto;
+        min-height: 250px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+    }
+
+    /* show no images on tablet and lower */
+    .left-third-image-banner > div:first-of-type {
+        display: none;
+    }
+
+    .left-third-image-banner > div:last-of-type {
+        padding: 15px;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .right-third-image-banner {
+        height: auto;
+        min-height: 250px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+    }
+
+    .right-third-image-banner > div:last-of-type {
+        display: none;
+    }
+
+    .right-third-image-banner > div:first-of-type {
+        padding: 15px;
+        margin: 0;
+        font-size: 2rem;
+    }
+
     .navigation-icon {
         display: none;
     }
@@ -486,6 +533,11 @@
         width: 1px;
         height: 1px;
         z-index: 0;
+    }
+
+    .quarter-image {
+        /* no need to be showing images on mobile devices */
+        display: none;
     }
 }
 

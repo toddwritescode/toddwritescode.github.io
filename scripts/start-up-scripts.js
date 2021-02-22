@@ -29,7 +29,12 @@ function pageHasLoaded() {
     setTimeout(function(){
         for (var sections = document.getElementsByTagName('section'), i = sections.length; i--;) {
             [/*Sections to not unblur*/].indexOf(sections[i].id) == -1 && (sections[i].classList.remove('blur'));
-            blackWhiteSection(sections[i]);
+            if(screen.width >= 768){
+                // Only black and white on desktop and large tablet
+                blackWhiteSection(sections[i]);
+                // Only show full menu on desktop and large tablet
+                document.getElementById('menu-bar').classList.remove('minified');
+            }
         }
         // enable page scrolling
         var bodyElement = document.getElementsByTagName('BODY')[0];
